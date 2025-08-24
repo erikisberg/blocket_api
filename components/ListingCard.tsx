@@ -35,6 +35,7 @@ interface Listing {
   ai_recommendation?: string
   ai_analyzed_at?: string | Date
   ai_model?: string
+  profit_analysis?: any
   created_at: string | Date
   updated_at: string | Date
 }

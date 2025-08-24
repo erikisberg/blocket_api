@@ -39,6 +39,7 @@ interface Listing {
   ai_recommendation?: string
   ai_analyzed_at?: string | Date
   ai_model?: string
+  profit_analysis?: any
   created_at: string | Date
   updated_at: string | Date
 }
@@ -484,6 +485,14 @@ export default function Home() {
                           {listing.ai_reasoning}
                         </p>
                       )}
+                      {/* Profit Analysis Preview */}
+                      {listing.profit_analysis && (
+                        <div className="mt-1 pt-1 border-t border-gray-50">
+                          <p className="text-xs text-green-600 font-medium">
+                            💰 Vinst: {listing.profit_analysis.estimated_profit}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   )}
                 </button>
@@ -524,7 +533,8 @@ export default function Home() {
               condition: listing.condition || 'Okänt',
               images: listing.images || [], // Use images from database
               location: listing.location || 'Okänd plats',
-              sellerType: listing.seller_type || 'Okänd'
+              sellerType: listing.seller_type || 'Okänd',
+              profit_analysis: listing.profit_analysis // Include profit analysis
             }))}
           />
         </div>

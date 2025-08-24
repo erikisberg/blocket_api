@@ -36,6 +36,7 @@ export interface Listing {
   ai_recommendation?: string
   ai_analyzed_at?: string | Date
   ai_model?: string
+  profit_analysis?: any
   created_at: string | Date
   updated_at: string | Date
 }
@@ -467,7 +468,8 @@ export class DatabaseService {
         discovered_at: row.discovered_at,
         created_at: row.created_at,
         updated_at: row.updated_at,
-        ai_analyzed_at: row.ai_analyzed_at
+        ai_analyzed_at: row.ai_analyzed_at,
+        profit_analysis: row.profit_analysis
       }))
     } finally {
       client.release()
