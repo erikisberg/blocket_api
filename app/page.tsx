@@ -1,13 +1,13 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { ListingCard } from '@/components/ListingCard'
-import { ListView } from '@/components/ListView'
-import { ViewToggle } from '@/components/ViewToggle'
-import { SettingsPanel } from '@/components/SettingsPanel'
-import { BatchAnalysis } from '@/components/BatchAnalysis'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ListingCard } from '../components/ListingCard'
+import { ListView } from '../components/ListView'
+import { ViewToggle } from '../components/ViewToggle'
+import { SettingsPanel } from '../components/SettingsPanel'
+import { BatchAnalysis } from '../components/BatchAnalysis'
+import { Button } from '../components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { ChevronLeft, ChevronRight, Search, Filter, Bike, Brain } from 'lucide-react'
 import { formatPrice, formatDate } from '../components/utils'
 
@@ -115,15 +115,21 @@ export default function Home() {
   const currentListing = filteredListings[currentIndex]
 
   const nextListing = () => {
-    setCurrentIndex((prev) => (prev + 1) % filteredListings.length)
+    if (filteredListings.length > 0) {
+      setCurrentIndex((prev) => (prev + 1) % filteredListings.length)
+    }
   }
 
   const previousListing = () => {
-    setCurrentIndex((prev) => (prev - 1 + filteredListings.length) % filteredListings.length)
+    if (filteredListings.length > 0) {
+      setCurrentIndex((prev) => (prev - 1 + filteredListings.length) % filteredListings.length)
+    }
   }
 
   const goToListing = (index: number) => {
-    setCurrentIndex(index)
+    if (index >= 0 && index < filteredListings.length) {
+      setCurrentIndex(index)
+    }
   }
 
   const resetFilters = () => {
@@ -311,7 +317,11 @@ export default function Home() {
 
         {/* Current Listing or List View */}
         {viewMode === 'cards' ? (
-          currentListing && <ListingCard listing={currentListing} />
+          currentListing ? <ListingCard listing={currentListing} /> : (
+            <div className="text-center py-12">
+              <p className="text-gray-500">Ingen annons vald</p>
+            </div>
+          )
         ) : (
           <div className="mb-8">
             <ListView 
@@ -321,6 +331,8 @@ export default function Home() {
                 if (index !== -1) {
                   setCurrentIndex(index)
                   setViewMode('cards')
+                } else {
+                  console.warn('Listing not found in filtered list')
                 }
               }} 
             />

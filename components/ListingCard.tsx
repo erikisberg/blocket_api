@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { ImageSlider } from './ImageSlider'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import { Button } from './ui/button'
+
 import { AIAnalysisCard } from './AIAnalysisCard'
 import { ExternalLink, MapPin, Calendar, User, Tag } from 'lucide-react'
 

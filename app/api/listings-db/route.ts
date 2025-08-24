@@ -11,6 +11,10 @@ export async function GET(request: NextRequest) {
     // Get all listings from database
     const listings = await DatabaseService.getAllListings()
     
+    if (!listings || !Array.isArray(listings)) {
+      throw new Error('Invalid data received from database')
+    }
+    
     // Apply filters
     let filteredListings = listings
     
@@ -54,9 +58,16 @@ export async function GET(request: NextRequest) {
     }
     
     // Sort by discovered_at (newest first)
-    filteredListings.sort((a, b) => 
-      new Date(b.discovered_at).getTime() - new Date(a.discovered_at).getTime()
-    )
+          filteredListings.sort((a, b) => {
+        try {
+          const dateA = new Date(b.discovered_at).getTime()
+          const dateB = new Date(a.discovered_at).getTime()
+          return dateA - dateB
+        } catch (error) {
+          console.warn('Error sorting by date:', error)
+          return 0
+        }
+      })
     
     return NextResponse.json({
       success: true,
