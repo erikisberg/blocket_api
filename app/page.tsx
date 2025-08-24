@@ -8,6 +8,7 @@ import { SettingsPanel } from '../components/SettingsPanel'
 import { BatchAnalysis } from '../components/BatchAnalysis'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import ImageSlider from '../components/ImageSlider'
 import { ChevronLeft, ChevronRight, Search, Filter, Bike, Brain } from 'lucide-react'
 import { formatPrice, formatDate } from '../components/utils'
 
@@ -403,7 +404,10 @@ export default function Home() {
                   <div className="relative mb-2">
                     {listing.images && listing.images.length > 0 ? (
                       <img
-                        src={listing.images[0].url}
+                        src={listing.images[0].url.includes('blocketcdn.se') ? 
+                          `${listing.images[0].url}?type=original` : 
+                          listing.images[0].url
+                        }
                         alt={listing.images[0].description || 'Thumbnail'}
                         className="w-full h-24 object-cover rounded"
                         onError={(e) => {
@@ -413,7 +417,7 @@ export default function Home() {
                       />
                     ) : (
                       <div className="w-full h-24 bg-gray-200 rounded flex items-center justify-center">
-                        <span className="text-sm text-gray-500">Blocket</span>
+                        <span className="text-xs text-gray-500">Blocket</span>
                       </div>
                     )}
                     

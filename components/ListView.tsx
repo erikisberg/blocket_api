@@ -4,6 +4,7 @@ import React from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import ImageSlider from './ImageSlider'
 import { ExternalLink, Calendar, MapPin, User, TrendingUp } from 'lucide-react'
 import { formatPrice, formatDate } from './utils'
 
@@ -59,7 +60,10 @@ export function ListView({ listings, onListingClick }: ListViewProps) {
                     <div className="flex-shrink-0">
                       {listing.images && listing.images.length > 0 ? (
                         <img
-                          src={listing.images[0].url}
+                          src={listing.images[0].url.includes('blocketcdn.se') ? 
+                            `${listing.images[0].url}?type=original` : 
+                            listing.images[0].url
+                          }
                           alt={listing.images[0].description || 'Thumbnail'}
                           className="w-16 h-16 object-cover rounded-lg"
                           onError={(e) => {

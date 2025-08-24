@@ -1,188 +1,209 @@
 'use client'
 
-import React, { useState } from 'react'
-import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { cn } from './utils'
+import React, { useState, useCallback } from 'react'
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, X } from 'lucide-react'
+import { Button } from './ui/button'
 
-interface ImageSliderProps {
-  images: Array<{
-    url: string
-    width: number
-    height: number
-    type: string
-  }>
-  title: string
+interface Image {
+  url: string
+  description?: string
+  thumbnail_url?: string
 }
 
-export function ImageSlider({ images, title }: ImageSliderProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [isFullscreen, setIsFullscreen] = useState(false)
+interface ImageSliderProps {
+  images: Image[]
+  title: string
+  onClose?: () => void
+}
+
+export default function ImageSlider({ images, title, onClose }: ImageSliderProps) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isZoomed, setIsZoomed] = useState(false)
+  const [zoomLevel, setZoomLevel] = useState(1)
+
+  const nextImage = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+    setIsZoomed(false)
+    setZoomLevel(1)
+  }, [images.length])
+
+  const prevImage = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+    setIsZoomed(false)
+    setZoomLevel(1)
+  }, [images.length])
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    switch (e.key) {
+      case 'ArrowRight':
+        nextImage()
+        break
+      case 'ArrowLeft':
+        prevImage()
+        break
+      case 'Escape':
+        onClose?.()
+        break
+      case '=':
+      case '+':
+        e.preventDefault()
+        setZoomLevel(prev => Math.min(prev + 0.5, 3))
+        break
+      case '-':
+        e.preventDefault()
+        setZoomLevel(prev => Math.max(prev - 0.5, 0.5))
+        break
+    }
+  }, [nextImage, prevImage, onClose])
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
 
   if (!images || images.length === 0) {
     return (
-      <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+      <div className="flex items-center justify-center h-64 bg-gray-100 rounded-lg">
         <p className="text-gray-500">Inga bilder tillgängliga</p>
       </div>
     )
   }
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length)
-  }
-
-  const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
-  }
-
-  const goToImage = (index: number) => {
-    setCurrentImageIndex(index)
-  }
-
-  const toggleFullscreen = () => {
-    setIsFullscreen(!isFullscreen)
-  }
-
-  // Optimize image URL for better quality
-  const getOptimizedImageUrl = (url: string, size: 'large' | 'medium' | 'small' = 'large') => {
-    // If it's a Blocket image, try to get higher resolution
-    if (url.includes('blocket.se') || url.includes('blocketcdn.com')) {
-      // Remove any size parameters and get original
-      return url.split('?')[0]
+  const currentImage = images[currentIndex]
+  
+  // Get high-quality image URL
+  const getHighQualityUrl = (url: string) => {
+    if (url.includes('blocketcdn.se')) {
+      // Add original quality parameter for Blocket images
+      if (url.includes('?type=original')) {
+        return url
+      }
+      return url.includes('?') ? `${url}&type=original` : `${url}?type=original`
     }
     return url
   }
 
-  return (
-    <>
-      <div className="relative w-full">
-        {/* Main Image */}
-        <div className="relative w-full h-96 bg-gray-100 rounded-lg overflow-hidden">
-          <img
-            src={getOptimizedImageUrl(images[currentImageIndex].url)}
-            alt={`${title} - Bild ${currentImageIndex + 1}`}
-            className="w-full h-full object-contain bg-white"
-            loading="eager"
-            onError={(e) => {
-              // Fallback to original URL if optimized fails
-              const target = e.target as HTMLImageElement
-              target.src = images[currentImageIndex].url
-            }}
-          />
-          
-          {/* Navigation Buttons */}
-          {images.length > 1 && (
-            <>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={previousImage}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={nextImage}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button>
-            </>
-          )}
+  const highQualityUrl = getHighQualityUrl(currentImage.url)
 
-          {/* Zoom Button */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={toggleFullscreen}
-            className="absolute top-2 right-2 bg-white/90 hover:bg-white shadow-lg"
-          >
-            <ZoomIn className="h-4 w-4" />
-          </Button>
-          
-          {/* Image Counter */}
-          <div className="absolute bottom-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-sm">
-            {currentImageIndex + 1} / {images.length}
-          </div>
+  return (
+    <div className="relative group">
+      {/* Main Image Container */}
+      <div className="relative overflow-hidden rounded-lg bg-gray-100">
+        <div 
+          className={`transition-all duration-200 ease-in-out ${
+            isZoomed ? 'cursor-move' : 'cursor-zoom-in'
+          }`}
+          style={{
+            transform: `scale(${zoomLevel})`,
+            transformOrigin: 'center center'
+          }}
+        >
+          <img
+            src={highQualityUrl}
+            alt={currentImage.description || `Bild för ${title}`}
+            className="w-full h-auto object-contain max-h-96"
+            draggable={false}
+            onClick={() => !isZoomed && setIsZoomed(true)}
+          />
         </div>
 
-        {/* Thumbnail Navigation */}
+        {/* Navigation Controls */}
         {images.length > 1 && (
-          <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
-            {images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => goToImage(index)}
-                className={cn(
-                  "flex-shrink-0 w-20 h-20 rounded border-2 overflow-hidden bg-white",
-                  currentImageIndex === index
-                    ? "border-black shadow-lg"
-                    : "border-gray-300 hover:border-gray-400"
-                )}
-              >
-                <img
-                  src={getOptimizedImageUrl(image.url, 'small')}
-                  alt={`${title} - Miniatyr ${index + 1}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </button>
-            ))}
+          <>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+              onClick={prevImage}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+              onClick={nextImage}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </>
+        )}
+
+        {/* Zoom Controls */}
+        <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="bg-black/20 hover:bg-black/40 text-white h-8 w-8 p-0"
+            onClick={() => setZoomLevel(prev => Math.max(prev - 0.5, 0.5))}
+          >
+            <ZoomOut className="h-3 w-3" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="bg-black/20 hover:bg-black/40 text-white h-8 w-8 p-0"
+            onClick={() => setZoomLevel(prev => Math.min(prev + 0.5, 3))}
+          >
+            <ZoomIn className="h-3 w-3" />
+          </Button>
+        </div>
+
+        {/* Image Counter */}
+        {images.length > 1 && (
+          <div className="absolute bottom-2 left-2 bg-black/20 text-white px-2 py-1 rounded text-sm">
+            {currentIndex + 1} av {images.length}
           </div>
+        )}
+
+        {/* Close Button (if modal) */}
+        {onClose && (
+          <Button
+            variant="ghost"
+            size="sm"
+            className="absolute top-2 left-2 bg-black/20 hover:bg-black/40 text-white h-8 w-8 p-0"
+            onClick={onClose}
+          >
+            <X className="h-3 w-3" />
+          </Button>
         )}
       </div>
 
-      {/* Fullscreen Modal */}
-      {isFullscreen && (
-        <div 
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-          onClick={toggleFullscreen}
-        >
-          <div className="relative max-w-full max-h-full">
-            <img
-              src={getOptimizedImageUrl(images[currentImageIndex].url)}
-              alt={`${title} - Bild ${currentImageIndex + 1}`}
-              className="max-w-full max-h-full object-contain"
-            />
-            
-            {/* Close button */}
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleFullscreen}
-              className="absolute top-4 right-4 bg-white/90 hover:bg-white"
+      {/* Thumbnail Navigation */}
+      {images.length > 1 && (
+        <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
+          {images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setCurrentIndex(index)
+                setIsZoomed(false)
+                setZoomLevel(1)
+              }}
+              className={`flex-shrink-0 transition-all duration-200 ${
+                index === currentIndex
+                  ? 'ring-2 ring-blue-500 ring-offset-2'
+                  : 'hover:opacity-80'
+              }`}
             >
-              ✕
-            </Button>
-            
-            {/* Navigation in fullscreen */}
-            {images.length > 1 && (
-              <>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={(e) => { e.stopPropagation(); previousImage(); }}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white"
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                </Button>
-                
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white"
-                >
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              </>
-            )}
-          </div>
+              <img
+                src={getHighQualityUrl(image.thumbnail_url || image.url)}
+                alt={`Miniatyr ${index + 1}`}
+                className="w-16 h-16 object-cover rounded border border-gray-200"
+                draggable={false}
+              />
+            </button>
+          ))}
         </div>
       )}
-    </>
+
+      {/* Keyboard Shortcuts Info */}
+      <div className="text-xs text-gray-500 mt-2 text-center">
+        <span className="hidden sm:inline">
+          Piltangenter för navigation • +/- för zoom • ESC för att stänga
+        </span>
+      </div>
+    </div>
   )
 }
