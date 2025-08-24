@@ -226,6 +226,40 @@ export default function Home() {
     }
   }
 
+  const testSMS = async () => {
+    try {
+      const phoneNumber = prompt('Ange telefonnummer (format: +46701234567):')
+      if (!phoneNumber) return
+
+      console.log('📱 Testing SMS service...')
+
+      const response = await fetch('/api/test-sms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          phoneNumber,
+          message: '🧪 Test SMS från Blocket AI Monitor - SMS-tjänsten fungerar! 🚀'
+        })
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        alert('✅ SMS skickat framgångsrikt!')
+        console.log('📱 SMS test successful:', result)
+      } else {
+        alert(`❌ SMS-test misslyckades: ${result.error}`)
+        console.error('📱 SMS test failed:', result)
+      }
+
+    } catch (error) {
+      console.error('❌ SMS test error:', error)
+      alert('❌ Fel vid SMS-test. Se konsolen för detaljer.')
+    }
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -400,6 +434,16 @@ export default function Home() {
               } hover:bg-green-100`}
             >
               📅 Dagens hämtning
+            </Button>
+
+            {/* SMS Test Button */}
+            <Button
+              onClick={testSMS}
+              variant="outline"
+              size="sm"
+              className="text-xs bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100"
+            >
+              📱 Testa SMS
             </Button>
 
             {/* Update Images Button */}
