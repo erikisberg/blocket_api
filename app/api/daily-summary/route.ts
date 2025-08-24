@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Pool } from 'pg'
-import { SMSService } from '../../../lib/sms-service'
+import { SMSService } from '../../../components/sms-service'
 
 const pool = new Pool({
   connectionString: process.env.NEON_DATABASE_URL || process.env.POSTGRES_URL || process.env.DATABASE_URL,
