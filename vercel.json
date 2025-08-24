@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/monitor-bevakningar",
+      "schedule": "0 9 * * *"
+    }
+  ]
+}

@@ -260,6 +260,34 @@ export default function Home() {
     }
   }
 
+  const sendDailySummary = async () => {
+    try {
+      console.log('📊 Sending daily summary...')
+
+      const response = await fetch('/api/daily-summary', {
+        method: 'POST'
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        if (result.listingsCount > 0) {
+          alert(`✅ Daglig sammanfattning skickad! Hittade ${result.listingsCount} högpoängsannonser.`)
+        } else {
+          alert('ℹ️ Inga högpoängsannonser hittades idag.')
+        }
+        console.log('📊 Daily summary sent:', result)
+      } else {
+        alert(`❌ Daglig sammanfattning misslyckades: ${result.error}`)
+        console.error('📊 Daily summary failed:', result)
+      }
+
+    } catch (error) {
+      console.error('❌ Daily summary error:', error)
+      alert('❌ Fel vid daglig sammanfattning. Se konsolen för detaljer.')
+    }
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -444,6 +472,16 @@ export default function Home() {
               className="text-xs bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100"
             >
               📱 Testa SMS
+            </Button>
+
+            {/* Daily Summary Button */}
+            <Button
+              onClick={sendDailySummary}
+              variant="outline"
+              size="sm"
+              className="text-xs bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100"
+            >
+              📊 Daglig sammanfattning
             </Button>
 
             {/* Update Images Button */}

@@ -65,8 +65,25 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ success: true, message: 'Monitoring service stopped' })
       
       case 'run_once':
+        console.log('🚀 Running single monitoring cycle...')
         await monitoringService.runMonitoringCycle()
-        return NextResponse.json({ success: true, message: 'Single monitoring cycle completed' })
+        
+        // Also send daily summary if it's a new day
+        try {
+          const dailySummaryResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/daily-summary`, {
+            method: 'POST'
+          })
+          if (dailySummaryResponse.ok) {
+            console.log('📊 Daily summary sent successfully')
+          }
+        } catch (summaryError) {
+          console.warn('⚠️ Daily summary failed:', summaryError)
+        }
+        
+        return NextResponse.json({ 
+          success: true, 
+          message: 'Single monitoring cycle completed with daily summary' 
+        })
       
       case 'status':
         return NextResponse.json({ 
