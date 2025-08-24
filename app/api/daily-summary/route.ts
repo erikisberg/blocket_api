@@ -137,7 +137,7 @@ function createDailySummaryMessage(listings: any[], date: string): string {
   message += `📈 SAMMANFATTNING:\n`
   message += `Total värde: ${totalValue} kr\n`
   message += `Snittpris: ${avgPrice} kr\n`
-  message += `Kategorier: ${[...new Set(listings.map(l => l.category))].join(', ')}\n\n`
+  message += `Kategorier: ${Array.from(new Set(listings.map(l => l.category))).join(', ')}\n\n`
   
   message += `🔗 Se alla: https://blocket-api.vercel.app/\n`
   message += `📱 AI-analys körs automatiskt varje dag`
@@ -187,7 +187,7 @@ export async function GET() {
           score5: highScoreListings.filter(l => l.ai_score === 5).length,
           score4: highScoreListings.filter(l => l.ai_score === 4).length,
           totalValue: highScoreListings.reduce((sum, l) => sum + l.price, 0),
-          categories: [...new Set(highScoreListings.map(l => l.category))]
+          categories: Array.from(new Set(highScoreListings.map(l => l.category)))
         }
       })
 
