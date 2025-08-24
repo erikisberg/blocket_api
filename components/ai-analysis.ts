@@ -71,12 +71,29 @@ export interface ListingForAnalysis {
   sellerType: string
 }
 
-// Function to save AI analysis results to the listings file
+// Function to save AI analysis results to the database
 export async function saveAnalysisResults(bevakningId: string, listingId: string, result: AIAnalysisResult): Promise<void> {
   try {
     console.log(`💾 Saving AI analysis for listing ${listingId} in bevakning ${bevakningId}`)
     
-    // Use absolute URL for server-side fetch
+    // Try to save directly to database first
+    try {
+      const { DatabaseService } = await import('./database')
+      await DatabaseService.updateAIAnalysis(listingId, {
+        score: result.score,
+        confidence: result.confidence,
+        reasoning: result.reasoning,
+        factors: result.factors,
+        recommendation: result.recommendation,
+        model: result.model || 'claude-opus-4-1-20250805'
+      })
+      console.log(`✅ AI analysis saved directly to database for listing ${listingId}`)
+      return
+    } catch (dbError) {
+      console.warn('⚠️ Direct database save failed, trying API fallback:', dbError)
+    }
+    
+    // Fallback to API call
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
     const response = await fetch(`${baseUrl}/api/save-analysis`, {
       method: 'POST',
@@ -96,18 +113,34 @@ export async function saveAnalysisResults(bevakningId: string, listingId: string
     }
 
     const saveResult = await response.json()
-    console.log(`✅ AI analysis saved successfully:`, saveResult.message)
+    console.log(`✅ AI analysis saved via API fallback:`, saveResult.message)
   } catch (error) {
-    console.error('Failed to save analysis results:', error)
+    console.error('❌ Failed to save analysis results:', error)
     throw error // Re-throw so calling function knows it failed
   }
 }
 
-// Function to load cached AI analysis results
+// Function to load cached AI analysis results from database
 export function getCachedAnalysis(listing: any): AIAnalysisResult | null {
+  // Check if we have AI analysis data from database
+  if (listing.ai_score && listing.ai_reasoning) {
+    return {
+      score: listing.ai_score,
+      reasoning: listing.ai_reasoning,
+      confidence: listing.ai_confidence || 0.5,
+      factors: listing.ai_factors || [],
+      recommendation: listing.ai_recommendation || '',
+      analyzedAt: listing.ai_analyzed_at || new Date().toISOString(),
+      model: listing.ai_model || 'claude-opus-4-1-20250805',
+      profit_analysis: undefined // Will be added later if needed
+    }
+  }
+  
+  // Fallback to old format
   if (listing.ai_analysis) {
     return listing.ai_analysis
   }
+  
   return null
 }
 
@@ -115,11 +148,16 @@ export function getCachedAnalysis(listing: any): AIAnalysisResult | null {
 export function isAnalysisFresh(analysis: AIAnalysisResult): boolean {
   if (!analysis.analyzedAt) return false
   
-  const analyzedDate = new Date(analysis.analyzedAt)
-  const now = new Date()
-  const hoursDiff = (now.getTime() - analyzedDate.getTime()) / (1000 * 60 * 60)
-  
-  return hoursDiff < 24 // Consider fresh if less than 24 hours old
+  try {
+    const analyzedDate = new Date(analysis.analyzedAt)
+    const now = new Date()
+    const hoursDiff = (now.getTime() - analyzedDate.getTime()) / (1000 * 60 * 60)
+    
+    return hoursDiff < 24 // Consider fresh if less than 24 hours old
+  } catch (error) {
+    console.warn('⚠️ Error checking analysis freshness:', error)
+    return false // If we can't parse the date, consider it stale
+  }
 }
 
 export async function analyzeListing(listing: ListingForAnalysis, listingId?: string, bevakningId?: string): Promise<AIAnalysisResult> {
