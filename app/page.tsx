@@ -25,6 +25,11 @@ interface Listing {
   seller_type?: string
   blocket_url?: string
   frontend_url?: string
+  images?: Array<{
+    url: string
+    description?: string
+    thumbnail_url?: string
+  }>
   discovered_at: string | Date
   ai_score?: number
   ai_confidence?: number
@@ -475,7 +480,7 @@ export default function Home() {
               currency: listing.currency,
               category: listing.category || 'Okänd kategori',
               condition: listing.condition || 'Okänt',
-              images: [], // No images in database
+              images: listing.images || [], // Use images from database
               location: listing.location || 'Okänd plats',
               sellerType: listing.seller_type || 'Okänd'
             }))}
