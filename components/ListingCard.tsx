@@ -21,16 +21,16 @@ interface Listing {
   seller_type?: string
   blocket_url?: string
   frontend_url?: string
-  discovered_at: Date
+  discovered_at: string | Date
   ai_score?: number
   ai_confidence?: number
   ai_reasoning?: string
   ai_factors?: string[]
   ai_recommendation?: string
-  ai_analyzed_at?: Date
+  ai_analyzed_at?: string | Date
   ai_model?: string
-  created_at: Date
-  updated_at: Date
+  created_at: string | Date
+  updated_at: string | Date
 }
 
 interface ListingCardProps {
