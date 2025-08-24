@@ -1,0 +1,4010 @@
+{
+  "11998349": [
+    {
+      "ad": {
+        "ad_id": "1212894864",
+        "list_id": "1212894864",
+        "state_id": "0c837305-cc32-4413-8f23-c46d612aeceb",
+        "type": "s",
+        "zipcode": "83751",
+        "ad_status": "active",
+        "list_time": "2025-08-15T00:20:36+02:00",
+        "subject": "Giro merit spherical",
+        "body": "Trail hjälm från Giro. Använd ett fåtal gånger. Inga tecken på användning så i väldigt gott skick. Storlek M. Nypris 2299kr",
+        "price": {
+          "value": 750,
+          "old_value": 1000,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "price_badge": {
+          "id": "shipping_enabled",
+          "label": "Köp nu",
+          "icon": {
+            "url": "https://public-assets.blocketcdn.se/static/icons/shipping-buyer-protection.png"
+          }
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Mycket bra skick - Som ny",
+                "short_value": "Mycket bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6067",
+            "name": "Tillbehör"
+          }
+        ],
+        "advertiser": {
+          "name": "joeljansson",
+          "type": "private",
+          "account_id": "4909975",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "4909975",
+            "display_name": "joeljansson",
+            "account_created_at": "2018-06-24T17:49:00.175Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "6 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 2,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 2,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Åre",
+            "id": "36",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212894864",
+        "share_url": "https://www.blocket.se/annons/jamtland/giro_merit_spherical/1212894864",
+        "parameters_raw": {
+          "shipping_enabled": {
+            "value": "1"
+          },
+          "is_shipping_buy_now_enabled": {
+            "value": "1"
+          }
+        },
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212894864/fc08ecdd-3649-4a1b-b392-78167e231c15.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212894864/fc08ecdd-3649-4a1b-b392-78167e231c15.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.722Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212894864/91c96a5f-24e0-4591-939d-ce244ab4320a.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212894864/91c96a5f-24e0-4591-939d-ce244ab4320a.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.722Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212894864/edb624b7-61b3-4307-8085-1c1e150e53ab.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212894864/edb624b7-61b3-4307-8085-1c1e150e53ab.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "map": {
+          "label": "837 51 Åre, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283751%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": true,
+      "discovered_at": "2025-08-23T20:26:07.652283",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "Giro Merit Spherical är en högkvalitativ MIPS-hjälm med nypris 2299 kr. Vid 750 kr (33% av nypris) för en hjälm i 'mycket bra skick' är detta ett rättvärderat pris snarare än undervärderat. Hjälmar har begränsat andrahandsvärde då de är säkerhetsutrustning med rekommenderad livslängd på 3-5 år och bör bytas efter stötar. Begagnade hjälmar säljs typiskt för 30-40% av nypris i utmärkt skick. Det finns ingen fixpotential här - hjälmar kan inte 'fixas' för vidareförsäljning av säkerhetsskäl. Marknaden för begagnade hjälmar är också begränsad då många köpare föredrar nya av säkerhetsskäl. Platsen Åre kan vara fördelaktig under skidsäsong men begränsar köparbasen.",
+        "confidence": 0.85,
+        "factors": [
+          "Säkerhetsutrustning med begränsat andrahandsvärde",
+          "Ingen fixpotential - hjälmar kan inte renoveras",
+          "Pris redan på typisk andrahandsnivå (30-35% av nypris)",
+          "Begränsad köparbas för begagnade hjälmar"
+        ],
+        "recommendation": "AVSTÅ från köp för vidareförsäljning. Detta är ingen bra handelsmöjlighet. Hjälmen är rättvärderat prissatt för slutanvändare men erbjuder ingen vinstmarginal. Du kan inte 'fixa' en hjälm och sälja vidare av säkerhetsskäl. Även om du skulle sälja den för 900-1000 kr (vilket är optimistiskt) ger det endast 150-250 kr vinst före transportkostnader och tid. För handel, fokusera istället på cyklar, växlar, hjul eller andra komponenter som kan renoveras och har högre vinstpotential.",
+        "analyzedAt": "2025-08-23T20:00:13.062Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212894856",
+        "list_id": "1212894856",
+        "state_id": "af245b32-8a10-4811-a2e1-187d3ba521ae",
+        "type": "s",
+        "zipcode": "83751",
+        "ad_status": "active",
+        "list_time": "2025-08-15T00:18:26+02:00",
+        "subject": "Giro sanction 2 dlx mips",
+        "body": "Säljer nu denna fullface hjälm från giro. Använd en gång så som ny. Säljes pga tidsbrist å intresset inte riktigt fanns där. Ett litet färgsläpp bak som knappt syns. Storlek L. Nypris 2199kr",
+        "price": {
+          "value": 1000,
+          "old_value": 1250,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "price_badge": {
+          "id": "shipping_enabled",
+          "label": "Köp nu",
+          "icon": {
+            "url": "https://public-assets.blocketcdn.se/static/icons/shipping-buyer-protection.png"
+          }
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Mycket bra skick - Som ny",
+                "short_value": "Mycket bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6067",
+            "name": "Tillbehör"
+          }
+        ],
+        "advertiser": {
+          "name": "joeljansson",
+          "type": "private",
+          "account_id": "4909975",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "4909975",
+            "display_name": "joeljansson",
+            "account_created_at": "2018-06-24T17:49:00.175Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "6 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 2,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 2,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Åre",
+            "id": "36",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212894856",
+        "share_url": "https://www.blocket.se/annons/jamtland/giro_sanction_2_dlx_mips/1212894856",
+        "parameters_raw": {
+          "shipping_enabled": {
+            "value": "1"
+          },
+          "is_shipping_buy_now_enabled": {
+            "value": "1"
+          }
+        },
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212894856/c8a42c09-a5df-4bbe-aef1-7810237ec830.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212894856/c8a42c09-a5df-4bbe-aef1-7810237ec830.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212894856/2eb955cf-d95b-42e5-b9a8-96f125e681ac.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212894856/2eb955cf-d95b-42e5-b9a8-96f125e681ac.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212894856/980c60b1-028a-457e-b8b1-b66cb54adad0.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212894856/980c60b1-028a-457e-b8b1-b66cb54adad0.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212894856/0cf1bf24-82f3-4181-b8a8-42d6b74f150f.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212894856/0cf1bf24-82f3-4181-b8a8-42d6b74f150f.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "map": {
+          "label": "837 51 Åre, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283751%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": true,
+      "discovered_at": "2025-08-23T20:26:07.652297"
+    },
+    {
+      "ad": {
+        "ad_id": "1212847027",
+        "list_id": "1212847027",
+        "state_id": "32d682b9-a727-42af-b4e3-bf1a6c5ea210",
+        "type": "s",
+        "zipcode": "83191",
+        "ad_status": "active",
+        "list_time": "2025-08-12T12:41:56+02:00",
+        "subject": "Dirtbike 26\"",
+        "body": "Specialized dirtbike. Perfekt för pumptrack etc. Single speed, hydraulisk handbroms bal. Funkar perfekt.",
+        "price": {
+          "value": 1500,
+          "old_value": 1750,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Jens",
+          "type": "private",
+          "account_id": "2134234",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "2134234",
+            "display_name": "Jens",
+            "account_created_at": "2015-01-09T14:35:13.764Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "19 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 49,
+              "overall_score": 98,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212847027",
+        "share_url": "https://www.blocket.se/annons/jamtland/dirtbike_26_/1212847027",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212847027/01c1dbf8-9312-485a-9091-fe809f386916.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212847027/01c1dbf8-9312-485a-9091-fe809f386916.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212847027/08bd6749-51d7-42b8-b509-b396e89f13ec.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212847027/08bd6749-51d7-42b8-b509-b396e89f13ec.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212847027/5b985665-7246-4dfe-b43b-eb081815420f.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212847027/5b985665-7246-4dfe-b43b-eb081815420f.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 91 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283191%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": true,
+      "discovered_at": "2025-08-23T20:26:07.652300",
+      "ai_analysis": {
+        "score": 4,
+        "reasoning": "Detta är en Specialized P.Series dirtbike med Marzocchi Bomber-gaffel som är värd betydligt mer än 1500 kr. Bilderna visar en cykel i mycket gott skick med högkvalitativa komponenter. Gaffeln ensam (Marzocchi Bomber) är värd minst 3000-4000 kr begagnad. Cykeln har endast mindre kosmetiska skador som lackskador på ramen och lite slitage på styret. Den hydrauliska Clarks-bromsen fungerar enligt säljaren perfekt. Specialized P.Series är en respekterad modell inom dirt/pumptrack-segmentet. Med minimal insats (rengöring, eventuellt nya handtag för 100-200 kr) kan denna cykel säljas för 3500-4500 kr. Säljaren verkar inte vara medveten om cykelns verkliga värde, särskilt gaffelns värde.",
+        "confidence": 0.85,
+        "factors": [
+          "Marzocchi Bomber-gaffel värd 3000-4000 kr ensam",
+          "Specialized P.Series är ett erkänt märke/modell",
+          "Hydraulisk broms i fungerande skick",
+          "Endast kosmetiska skador synliga",
+          "Säljaren underskattar troligen värdet"
+        ],
+        "recommendation": "KÖP DIREKT om cykeln fungerar som beskrivet. Detta är en mycket bra deal. Gör en grundlig rengöring, byt eventuellt handtag och sälj för 3500-4500 kr. Förväntad vinst på minst 1800 kr efter minimal insats. Risken är låg då komponenterna har högt andrahandsvärde även om ramen skulle ha dolda skador.",
+        "profit_analysis": {
+          "estimated_repair_cost": "200 kr (nya handtag, rengöringsmedel)",
+          "estimated_repair_time": "2 timmar (rengöring och mindre justeringar)",
+          "estimated_sale_price": "3500-4500 kr",
+          "estimated_profit": "1800-2800 kr",
+          "profit_margin_percent": "120-187%",
+          "risk_level": "Låg risk",
+          "repair_items": [
+            "Nya handtag (100-150 kr)",
+            "Grundlig rengöring",
+            "Kontroll av bromsjustering",
+            "Eventuell kedjeservice om det finns kedja"
+          ],
+          "market_comparison": "Liknande Specialized P.Series säljs för 3000-5000 kr beroende på årsmodell. Marzocchi Bomber-gafflar säljs separat för 3000-4000 kr begagnade. Kompletta dirt/pumptrack-cyklar med liknande spec säljs för 4000-6000 kr."
+        },
+        "analyzedAt": "2025-08-23T21:04:29.948Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212805275",
+        "list_id": "1212805275",
+        "state_id": "1363bf5b-45c4-4fbb-bcc1-279850c2a52c",
+        "type": "s",
+        "zipcode": "84394",
+        "ad_status": "active",
+        "list_time": "2025-08-10T14:09:08+02:00",
+        "subject": "Motionscykel",
+        "body": "Bra skick med fungerande display.",
+        "price": {
+          "value": 500,
+          "old_value": 1000,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Mala",
+          "type": "private",
+          "account_id": "51060071",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "51060071",
+            "display_name": "Mala",
+            "account_created_at": "2025-08-10T06:56:05.646Z",
+            "badges": [],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Bräcke",
+            "id": "31",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212805275",
+        "share_url": "https://www.blocket.se/annons/jamtland/motionscykel/1212805275",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212805275/90b211ae-6e02-4b0e-aca7-37f1efcd5784.webp?type=original",
+            "width": 1280,
+            "height": 720,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212805275/90b211ae-6e02-4b0e-aca7-37f1efcd5784.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "843 94 Gällö, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2284394%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": true,
+      "discovered_at": "2025-08-23T20:26:07.652301",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Detta är en Kryobi spinningcykel som ser ut att vara i acceptabelt skick baserat på bilden. Cykeln står utomhus på en träaltan vilket indikerar att den förvarats utomhus eller åtminstone inte behandlats varsamt. Priset på 500 kr är inte särskilt lågt för en begagnad budgetmotionscykel av detta märke. Nya liknande spinningcyklar från budgetmärken kostar mellan 2000-4000 kr. Efter eventuell rengöring, smörjning och justering skulle denna kunna säljas för kanske 800-1000 kr, vilket ger en mycket begränsad vinstmarginal på endast 300-500 kr. Med tanke på arbetsinsatsen (1-2 timmar) och transportkostnader är detta knappast värt besväret. Platsen Bräcke är dessutom avlägsen vilket försvårar både hämtning och vidareförsäljning.",
+        "confidence": 0.8,
+        "factors": [
+          "Budgetmärke (Kryobi) med begränsat andrahandsvärde",
+          "Utomhusförvaring indikerar potentiell rost/korrosion",
+          "Begränsad vinstmarginal efter lagning (max 300-500 kr)",
+          "Avlägsen plats (Bräcke) ökar transportkostnader"
+        ],
+        "recommendation": "Undvik denna affär. Med en maximal vinstpotential på 300-500 kr efter 1-2 timmars arbete är detta inte värt tiden och ansträngningen. Transportkostnaden från Bräcke äter troligen upp eventuell vinst. Leta istället efter motionscyklar från bättre märken eller till betydligt lägre priser.",
+        "profit_analysis": {
+          "estimated_repair_cost": "100-200 kr (smörjmedel, rengöring, eventuella smådelar)",
+          "estimated_repair_time": "1-2 timmar (rengöring, smörjning, justering)",
+          "estimated_sale_price": "800-1000 kr",
+          "estimated_profit": "200-300 kr (efter kostnader)",
+          "profit_margin_percent": "30-40%",
+          "risk_level": "Medel risk",
+          "repair_items": [
+            "Grundlig rengöring från damm och smuts",
+            "Smörjning av kedja och lager",
+            "Kontroll och justering av motstånd",
+            "Eventuellt byte av pedaler om slitna",
+            "Kontroll av display och elektronik"
+          ],
+          "market_comparison": "Liknande begagnade spinningcyklar från budgetmärken säljs för 600-1200 kr i bra skick. Nya budgetmodeller kostar 2000-4000 kr. Bättre märken som Abilica eller Nordic Track har högre andrahandsvärde."
+        },
+        "analyzedAt": "2025-08-23T21:07:57.946Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212795657",
+        "list_id": "1212795657",
+        "state_id": "3623a01d-72d1-45e7-a580-a783bde569c1",
+        "type": "s",
+        "zipcode": "83245",
+        "ad_status": "active",
+        "list_time": "2025-08-10T09:01:00+02:00",
+        "subject": "barncyklar",
+        "body": "2st barncyklar säljes behöver fixas. Har inte använts på många år. Säljes för 50kr/st\n\nHar även en påhängscykel som säljs för 250.\n\nHämtas på Frösön",
+        "price": {
+          "value": 50,
+          "old_value": 200,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Funkar inte - Kan fixas",
+                "short_value": "Kan fixas"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6063",
+            "name": "Barncyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Tobias",
+          "type": "private",
+          "account_id": "778106",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "778106",
+            "display_name": "Tobias",
+            "account_created_at": "2012-12-15T20:50:23.335Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "12 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 1,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 2,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212795657",
+        "share_url": "https://www.blocket.se/annons/jamtland/barncyklar/1212795657",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212795657/626874e2-c116-4897-ac07-f63f55374ba1.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212795657/626874e2-c116-4897-ac07-f63f55374ba1.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 44 kg CO₂e vilket motsvarar produktionen av 2 nya jackor.",
+        "map": {
+          "label": "832 45 Frösön, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283245%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": true,
+      "discovered_at": "2025-08-23T20:26:07.652302",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Barncyklar för 50 kr/st låter billigt, men flera kritiska faktorer gör detta till en tveksam affär. Cyklarna har inte använts på många år vilket troligen betyder rost, trasiga däck, kedja som behöver bytas och potentiellt strukturella problem. Fixkostnader kan lätt hamna på 300-500 kr per cykel (nya däck 200 kr, kedja 100 kr, bromsar 100 kr). Begagnade barncyklar i bra skick säljs ofta för 300-800 kr beroende på storlek och märke. Efter fix skulle vinstmarginalen bli minimal eller negativ. Dessutom är marknaden för begagnade barncyklar begränsad och säsongsberoende. Utan bilder är det omöjligt att bedöma om cyklarna ens är värda att fixa.",
+        "confidence": 0.7,
+        "factors": [
+          "Okänt märke och modell - kan vara lågkvalitetscyklar",
+          "Många års stillastående = omfattande renovering krävs",
+          "Begränsad marknad för begagnade barncyklar",
+          "Fixkostnader kan överstiga försäljningsvärdet"
+        ],
+        "recommendation": "Undvik köp om du inte kan inspektera cyklarna först. Om de är av kända märken (Crescent, Monark etc) och bara behöver enklare fix (luft i däck, oljning) kan det vara värt 50 kr. Men räkna med minst 300-400 kr i fixkostnader per cykel. Förväntad vinst efter fix: -100 till +200 kr per cykel. Påhängscykeln för 250 kr kan vara mer intressant om den är i bättre skick.",
+        "analyzedAt": "2025-08-23T20:04:58.628Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212786780",
+        "list_id": "1212786780",
+        "state_id": "9a098413-e04d-4e28-a21c-e37e8a5d25b9",
+        "type": "s",
+        "zipcode": "83498",
+        "ad_status": "active",
+        "list_time": "2025-08-09T16:43:23+02:00",
+        "subject": "Damcykel med bockstyre",
+        "body": "Damcykel med bockstyre av märket Heidemann i lila metallic, 28 tum, 5 växlar.\nFinns både fotbroms och handbroms (fram och bak). Lampan fram fungerar men inte den bakre. Originaldäck, torrsprickor finns men håller luften. Originalcykelpump saknas.\nStått inomhus i 30 års tid.",
+        "price": {
+          "value": 1000,
+          "old_value": 1200,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6061",
+            "name": "Damcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Jennifer Aronsson",
+          "type": "private",
+          "account_id": "50323113",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "50323113",
+            "display_name": "Jennifer Aronsson",
+            "account_created_at": "2024-06-06T15:24:33.423Z",
+            "badges": [],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212786780",
+        "share_url": "https://www.blocket.se/annons/jamtland/damcykel_med_bockstyre/1212786780",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212786780/e08177ed-bac2-4e9c-86b4-e0a8e5d30ac6.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212786780/e08177ed-bac2-4e9c-86b4-e0a8e5d30ac6.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212786780/76fceb3c-a162-475f-bcf0-865a89e2b99f.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212786780/76fceb3c-a162-475f-bcf0-865a89e2b99f.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212786780/8199b3ec-94e6-4b6f-aa5d-4e5e27cb5a67.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212786780/8199b3ec-94e6-4b6f-aa5d-4e5e27cb5a67.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212786780/84b34113-acdb-4a83-85cc-cdb5e41d9d1d.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212786780/84b34113-acdb-4a83-85cc-cdb5e41d9d1d.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "834 98 Brunflo, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283498%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652304",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Detta är en 30 år gammal Heidemann-cykel som visserligen bevarats inomhus men har flera problem som gör den övervärderad på 1000 kr. Heidemann är inte ett premiumvarumärke utan snarare budget/mellanklass. Däcken har torrsprickor vilket innebär att de behöver bytas (ca 400-600 kr för båda). Bakljuset fungerar inte (50-100 kr). Även om cykeln fungerar är det en gammal 5-växlad damcykel som i bra skick kanske är värd 1500-2000 kr max på andrahandsmarknaden. Med nödvändiga investeringar på minst 500 kr plus arbetstid blir vinstmarginalen obefintlig eller negativ. Dessutom är efterfrågan på 30 år gamla damcyklar med endast 5 växlar mycket begränsad när nya budgetcyklar finns från 2500 kr.",
+        "confidence": 0.85,
+        "factors": [
+          "Torrsprickorna i däcken kräver byte (400-600 kr kostnad)",
+          "Lågt värde på andrahandsmarknaden för 30 år gamla mellanklass-damcyklar",
+          "Begränsad efterfrågan på 5-växlade retrocyklar"
+        ],
+        "recommendation": "Undvik denna cykel. Med ett inköpspris på 1000 kr plus minst 500 kr i däckbyte och eventuellt service blir totalkostnaden 1500+ kr. En sådan här cykel i toppskick är svår att sälja för mer än 1500-2000 kr, vilket ger ingen eller negativ vinstmarginal. Leta istället efter nyare cyklar (max 10-15 år) av bättre märken som endast behöver enkel service.",
+        "analyzedAt": "2025-08-23T19:59:23.354Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212753456",
+        "list_id": "1212753456",
+        "state_id": "ede97e61-7011-47e4-9739-85ad29d31cab",
+        "type": "s",
+        "zipcode": "83141",
+        "ad_status": "active",
+        "list_time": "2025-08-07T23:02:44+02:00",
+        "subject": "Crossway Striker Lady 1920",
+        "body": "Säljer en superfin Crossway Striker Lady 1920 storlek S i bra skick som bara är använd några enstaka gånger. Det är en hybridcykel i dam modell. Den har låsbar dämpargaffel, hydrauliska skivbromsar och Shinamo växel. 28” hjul med däck. 3x8 växlar (24). Lås och nyckel ingår. Köptes 2020 och kostade 4499kr för endast cykeln men nu är nypris 4000kr. \n2600kr, kan diskutera priset vid snabb affär.\nFinns att hämta i centrala Östersund.\n\nFinns mer att läsa på XXLs hemsida: https://www.xxl.se/merida-crossway-striker-lady-1920-hybridcykel-dam-svart/p/1159535_1_Style",
+        "price": {
+          "value": 2200,
+          "old_value": 2600,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6064",
+            "name": "Mountainbike"
+          }
+        ],
+        "advertiser": {
+          "name": "Nova Bergman",
+          "type": "private",
+          "account_id": "44201283",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "44201283",
+            "display_name": "Nova Bergman",
+            "account_created_at": "2023-01-07T13:38:57.571Z",
+            "badges": [],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212753456",
+        "share_url": "https://www.blocket.se/annons/jamtland/crossway_striker_lady_1920/1212753456",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212753456/e8687222-8b90-4aac-9d34-eb91df174b2c.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212753456/e8687222-8b90-4aac-9d34-eb91df174b2c.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212753456/4b001e00-a7f9-4e9c-a10f-61e14306d4eb.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212753456/4b001e00-a7f9-4e9c-a10f-61e14306d4eb.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212753456/a2421d22-94d7-4cca-aa0f-2b8e3c9d90aa.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212753456/a2421d22-94d7-4cca-aa0f-2b8e3c9d90aa.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212753456/d9c4f6b8-a40d-4692-8a1d-17d7c7220d14.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212753456/d9c4f6b8-a40d-4692-8a1d-17d7c7220d14.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 41 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283141%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652305",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "Merida Crossway Striker Lady är en kvalitetshybridcykel som kostade 4499 kr ny 2020. Med nuvarande nypris på 4000 kr och säljpris på 2200 kr (55% av nypris) för en sparsamt använd 4 år gammal cykel är priset relativt rimligt. Cykeln har bra komponenter som hydrauliska skivbromsar och låsbar dämpargaffel. Dock är det vinterperiod vilket normalt ger lägre cykelpriser, och hybridcyklar i dammodell har ofta något begränsad efterfrågan. Priset ligger i mittfåran för vad man kan förvänta sig - varken särskilt dyrt eller billigt. Säljaren har redan sänkt från 2600 kr vilket indikerar viss förhandlingsvilja.",
+        "confidence": 0.75,
+        "factors": [
+          "Vinterpris - cyklar är generellt billigare på vintern",
+          "55% av nypris för 4 år gammal sparsamt använd cykel är standard",
+          "Dammodell i storlek S begränsar köpargruppen",
+          "Bra komponenter och välkänt märke höjer värdet",
+          "Lås ingår vilket adderar cirka 200-300 kr värde"
+        ],
+        "recommendation": "För en köpare som söker en kvalitetshybridcykel är detta ett rimligt pris, särskilt om cykeln verkligen är i bra skick som beskrivet. Kan vara värt att förhandla ner till 2000 kr givet säsong och att säljaren redan visat förhandlingsvilja. För säljaren är priset realistiskt men kan behöva vänta på rätt köpare eller överväga ytterligare prissänkning för snabbare försäljning.",
+        "analyzedAt": "2025-08-23T19:06:25.681Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212725749",
+        "list_id": "1212725749",
+        "state_id": "0e52545d-5416-4af3-9768-ba73ef19da22",
+        "type": "s",
+        "zipcode": "83161",
+        "ad_status": "active",
+        "list_time": "2025-08-06T17:05:56+02:00",
+        "subject": "sparkcykel ",
+        "body": "Sparkcykel med handbroms och luft i däcken. Märket heter Two 2. ",
+        "price": {
+          "value": 500,
+          "old_value": 600,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Mycket bra skick - Som ny",
+                "short_value": "Mycket bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "svensson",
+          "type": "private",
+          "account_id": "51041136",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "51041136",
+            "display_name": "svensson",
+            "account_created_at": "2025-07-31T09:13:40.215Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "17 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 2 timmar",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 9,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212725749",
+        "share_url": "https://www.blocket.se/annons/jamtland/sparkcykel_/1212725749",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212725749/a546948f-1957-4f98-b7a2-336096fb7bae.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212725749/a546948f-1957-4f98-b7a2-336096fb7bae.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212725749/6c0fdd9f-c52a-46b9-9b6d-5e95ee0b8d94.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212725749/6c0fdd9f-c52a-46b9-9b6d-5e95ee0b8d94.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 61 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283161%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652306"
+    },
+    {
+      "ad": {
+        "ad_id": "1212676422",
+        "list_id": "1212676422",
+        "state_id": "6bac269d-387d-4d09-80c4-7bbfd7dbe770",
+        "type": "s",
+        "zipcode": "83253",
+        "ad_status": "active",
+        "list_time": "2025-08-04T14:10:27+02:00",
+        "subject": "Cykel för barn, 20 tum",
+        "body": "Robust treväxlad barncykel från Biltema med fotbroms bak, handbroms fram, reflexer och ringklocka. Allt fungerar som det ska och cykeln är bra. Passar 6-7 åringen.\n\nSkickas ej.",
+        "price": {
+          "value": 400,
+          "old_value": 500,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6063",
+            "name": "Barncyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "PG",
+          "type": "private",
+          "account_id": "3193083",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "3193083",
+            "display_name": "PG",
+            "account_created_at": "2016-09-14T16:02:04.361Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "5 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 3,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212676422",
+        "share_url": "https://www.blocket.se/annons/jamtland/cykel_for_barn_20_tum/1212676422",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212676422/e47f8297-e897-4964-bdf7-2bd154d54c27.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212676422/e47f8297-e897-4964-bdf7-2bd154d54c27.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 44 kg CO₂e vilket motsvarar produktionen av 2 nya jackor.",
+        "map": {
+          "label": "832 53 Frösön, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283253%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652307",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "Detta är en Biltema Yosemite 20\" barncykel som säljs för 400 kr. Nypriset för denna modell ligger runt 1500-1800 kr. Baserat på bilden ser cykeln ut att vara i acceptabelt skick med normal användningsslitage. Den gröna ramen ser hel ut, däcken verkar ha mönster kvar, och alla komponenter finns på plats. Dock syns viss rost på styret/framgaffeln och pakethållaren ser lite böjd ut. Med tanke på att liknande begagnade 20\" barncyklar i bra skick säljs för 600-900 kr på marknaden, och denna behöver lite fix för cirka 150-200 kr (rostborttagning, justering av bromsar, smörjning), skulle försäljningspriset efter fix hamna på max 700-800 kr. Detta ger en vinstmarginal på endast 150-200 kr vilket är för lågt för att motivera tiden och arbetet. Priset 400 kr är därför ganska rättvärderat för skicket.",
+        "confidence": 0.75,
+        "factors": [
+          "Biltema-cykel har lågt andrahandsvärde",
+          "Synlig rost på metalldelar",
+          "Begränsad marknad för 20\" cyklar (snäv åldersgrupp)",
+          "Låg vinstmarginal efter nödvändiga fix"
+        ],
+        "recommendation": "Skippa denna deal. Med endast 150-200 kr i potentiell vinst efter 2 timmars arbete och 150-200 kr i materialkostnader är detta inte värt tiden. ROI är för låg (25-33%) och risken medelhög då barncykelmarknaden är begränsad.",
+        "profit_analysis": {
+          "estimated_repair_cost": "150-200 kr",
+          "estimated_repair_time": "2 timmar",
+          "estimated_sale_price": "700-800 kr",
+          "estimated_profit": "150-200 kr",
+          "profit_margin_percent": "25-33%",
+          "risk_level": "Medel",
+          "repair_items": [
+            "Rostborttagning på styre och framgaffel (rostlösningsmedel 50 kr)",
+            "Justering och smörjning av bromsar (bromsolja 30 kr)",
+            "Kedjerengöring och smörjning (kedjeolja 40 kr)",
+            "Justering av pakethållare",
+            "Kontroll och justering av växlar",
+            "Allmän rengöring"
+          ],
+          "market_comparison": "Liknande 20\" barncyklar i bra skick säljs för 600-900 kr på Blocket. Biltema-cyklar har generellt lägre andrahandsvärde än märkescyklar. Crescent eller Monark i samma storlek kan säljas för 1000-1200 kr."
+        },
+        "analyzedAt": "2025-08-23T21:06:55.900Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212619218",
+        "list_id": "1212619218",
+        "state_id": "b45c81df-f3f4-4985-b15b-a528f0909e6e",
+        "type": "s",
+        "zipcode": "83798",
+        "ad_status": "active",
+        "list_time": "2025-08-01T19:32:31+02:00",
+        "subject": "Bromskit för mtb",
+        "body": "Ett bromskit som rullat ca 40mil. Bromshandtag med sensorer, 4-kolvs ok och 160mm skivor.\nSlangarna är klippta på ena sidan.\n\nFunkade fint när det plockades av, men säljs i befintligt skick. Det du får det som syns på bilderna.",
+        "price": {
+          "value": 600,
+          "old_value": 700,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "price_badge": {
+          "id": "shipping_enabled",
+          "label": "Köp nu",
+          "icon": {
+            "url": "https://public-assets.blocketcdn.se/static/icons/shipping-buyer-protection.png"
+          }
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6067",
+            "name": "Tillbehör"
+          }
+        ],
+        "advertiser": {
+          "name": "Reine",
+          "type": "private",
+          "account_id": "889121",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "889121",
+            "display_name": "Reine",
+            "account_created_at": "2013-02-24T14:20:22.224Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "15 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 5,
+              "overall_score": 98,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 8,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Åre",
+            "id": "36",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212619218",
+        "share_url": "https://www.blocket.se/annons/jamtland/bromskit_for_mtb/1212619218",
+        "parameters_raw": {
+          "shipping_enabled": {
+            "value": "1"
+          },
+          "is_shipping_buy_now_enabled": {
+            "value": "1"
+          }
+        },
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212619218/bc9f86fd-ee5d-4369-9b3d-beb358dd564d.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212619218/bc9f86fd-ee5d-4369-9b3d-beb358dd564d.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "map": {
+          "label": "837 98 Åre, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283798%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652308"
+    },
+    {
+      "ad": {
+        "ad_id": "1212524104",
+        "list_id": "1212524104",
+        "state_id": "bb3a272d-c924-465c-b108-4c3b2ec0d0bb",
+        "type": "s",
+        "zipcode": "83171",
+        "ad_status": "active",
+        "list_time": "2025-07-27T21:15:54+02:00",
+        "subject": "El cykel batteri med nyckel 17.5Ah/36V",
+        "body": "El cykel batteri med nyckel sparsamt använd ingår ej laddare.",
+        "price": {
+          "value": 1000,
+          "old_value": 1200,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "price_badge": {
+          "id": "shipping_enabled",
+          "label": "Frakt med köpskydd",
+          "icon": {
+            "url": "https://public-assets.blocketcdn.se/static/icons/shipping-buyer-protection.png"
+          }
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6067",
+            "name": "Tillbehör"
+          }
+        ],
+        "advertiser": {
+          "name": "Linda",
+          "type": "private",
+          "account_id": "41602051",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "41602051",
+            "display_name": "Linda",
+            "account_created_at": "2022-02-02T10:39:59.656Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "14 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 1,
+              "overall_score": 92,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 2,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212524104",
+        "share_url": "https://www.blocket.se/annons/jamtland/el_cykel_batteri_med_nyckel_17_5ah_36v/1212524104",
+        "parameters_raw": {
+          "shipping_enabled": {
+            "value": "1"
+          },
+          "is_shipping_buy_now_enabled": {
+            "value": "1"
+          }
+        },
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212524104/934a0de4-90e0-4e62-84bf-aef99769bece.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212524104/934a0de4-90e0-4e62-84bf-aef99769bece.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212524104/c057fdfa-46ec-4823-9610-8f4150649f9d.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212524104/c057fdfa-46ec-4823-9610-8f4150649f9d.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212524104/25d2876b-bc3e-488e-ac78-4c9d1d42ca2f.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212524104/25d2876b-bc3e-488e-ac78-4c9d1d42ca2f.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.723Z"
+          }
+        ],
+        "map": {
+          "label": "831 71 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283171%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652309"
+    },
+    {
+      "ad": {
+        "ad_id": "1212462120",
+        "list_id": "1212462120",
+        "state_id": "fed1c234-9d21-43e6-8181-7c212dcb87c3",
+        "type": "s",
+        "zipcode": "83148",
+        "ad_status": "active",
+        "list_time": "2025-07-24T11:10:12+02:00",
+        "subject": "sällsynt cool hoj",
+        "body": "Blyertsgrå udda cykel med cool design,\n2-växlat automatiskt nav, SRAM automatix.\nKolla gärna hur det funkar med hjälp av\nvalfri sökfunktion på nätet!\nHjulen är standard 28\", 622mm. \nSäljes i befintligt begagnat skick, \nKom och prova. ",
+        "price": {
+          "value": 650,
+          "old_value": 750,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Magnus",
+          "type": "private",
+          "account_id": "40309744",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "40309744",
+            "display_name": "Magnus",
+            "account_created_at": "2021-04-04T12:58:57.958Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "21 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 3,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212462120",
+        "share_url": "https://www.blocket.se/annons/jamtland/sallsynt_cool_hoj/1212462120",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212462120/50a526f4-dbc0-44dd-950e-a9329e49fae6.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212462120/50a526f4-dbc0-44dd-950e-a9329e49fae6.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212462120/10bc924b-e8ba-4649-a7f6-2e90d848120b.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212462120/10bc924b-e8ba-4649-a7f6-2e90d848120b.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212462120/b64ec240-0164-4be6-b10f-979ea08ab32c.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212462120/b64ec240-0164-4be6-b10f-979ea08ab32c.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212462120/9d5503d4-dfab-4fe6-9c18-c068c47f3ac0.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212462120/9d5503d4-dfab-4fe6-9c18-c068c47f3ac0.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212462120/9e603fa2-136b-4d8c-84a7-a0f634b2f212.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212462120/9e603fa2-136b-4d8c-84a7-a0f634b2f212.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 48 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283148%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652310",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "SRAM Automatix är ett intressant 2-växlat automatnav som kostade runt 1500-2000 kr nytt. Det är relativt ovanligt men har begränsad efterfrågan. En cykel med detta nav i bra skick kan säljas för 1200-1800 kr beroende på övriga komponenter. Med ett pris på 650 kr finns viss marginal, men flera faktorer gör detta till en tveksam affär: 1) Automatix-nav är svåra att serva om de krånglar (specialverktyg krävs), 2) Begränsad målgrupp - de flesta föredrar vanliga växlar, 3) 'Befintligt begagnat skick' antyder att cykeln behöver översyn, vilket kan kosta 300-500 kr för grundservice, 4) Östersund har begränsad marknad för udda cyklar. Efter eventuell service och rengöring (400 kr) skulle försäljningspriset behöva vara minst 1500 kr för acceptabel vinst, vilket är optimistiskt för denna nischprodukt.",
+        "confidence": 0.75,
+        "factors": [
+          "SRAM Automatix är ovanligt men har begränsad efterfrågan",
+          "Oklart skick trots 'bra skick' - säljaren säger 'befintligt begagnat'",
+          "Svårt att serva automatnav om problem uppstår",
+          "Begränsad marknad i Östersund för specialcyklar"
+        ],
+        "recommendation": "AVVAKTA - Detta är ingen uppenbar deal. Köp endast om: 1) Du kan provköra och verifiera att automatnavet fungerar felfritt, 2) Ramen och övriga komponenter är i genuint bra skick, 3) Du har en köpare i åtanke som specifikt vill ha automatväxel. Realistisk vinstpotential efter service (400 kr): 200-400 kr, vilket inte motiverar risken med ett potentiellt defekt automatnav. Leta hellre efter standardcyklar med högre omsättningsbarhet.",
+        "analyzedAt": "2025-08-23T20:02:57.429Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212461285",
+        "list_id": "1212461285",
+        "state_id": "d723d29c-1c0e-4e46-a482-7e78ecac3646",
+        "type": "s",
+        "zipcode": "83142",
+        "ad_status": "active",
+        "list_time": "2025-07-24T10:25:55+02:00",
+        "subject": "Sparkcykel Oxelo ",
+        "body": "Sparkcykel Oxelo för barn från 8-9 år. Max vikt 100kg. Användes knappast.",
+        "price": {
+          "value": 500,
+          "old_value": 600,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "lizaliza",
+          "type": "private",
+          "account_id": "51024153",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "51024153",
+            "display_name": "lizaliza",
+            "account_created_at": "2025-07-21T23:30:53.533Z",
+            "badges": [],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212461285",
+        "share_url": "https://www.blocket.se/annons/jamtland/sparkcykel_oxelo_/1212461285",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212461285/5e2f2a03-161f-4490-84a7-8c51e496eb4e.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212461285/5e2f2a03-161f-4490-84a7-8c51e496eb4e.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212461285/9ced8f0b-6194-4508-ada1-e676417cf031.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212461285/9ced8f0b-6194-4508-ada1-e676417cf031.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 42 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283142%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652311"
+    },
+    {
+      "ad": {
+        "ad_id": "1212458511",
+        "list_id": "1212458511",
+        "state_id": "220e6ad6-c7e3-4d4c-86eb-c98659302846",
+        "type": "s",
+        "zipcode": "83161",
+        "ad_status": "active",
+        "list_time": "2025-07-23T23:25:37+02:00",
+        "subject": "Chimo herrcykel ",
+        "body": "En charmig gammal racercykel av märket CHIMO.  Härlig cykel som passar perfekt för dig som vill ha något unikt för stadscykling eller pendling. \n\nStorleken är 58cm. Passar bra för en som är ca 180-190cm lång. \n\nPris kan diskuteras vid snabb affär. \n\n",
+        "price": {
+          "value": 1000,
+          "old_value": 2000,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6062",
+            "name": "Herrcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "erik",
+          "type": "private",
+          "account_id": "7634210",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "7634210",
+            "display_name": "erik",
+            "account_created_at": "2019-03-21T12:38:52.614Z",
+            "badges": [
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 3 timmar",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 1,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212458511",
+        "share_url": "https://www.blocket.se/annons/jamtland/chimo_herrcykel_/1212458511",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212458511/225794fb-3031-4af5-a3cd-eaf010596f44.webp?type=original",
+            "width": 890,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212458511/225794fb-3031-4af5-a3cd-eaf010596f44.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212458511/00cce65b-3dc9-4554-b680-fc3d99162be4.webp?type=original",
+            "width": 576,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212458511/00cce65b-3dc9-4554-b680-fc3d99162be4.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212458511/8ae0b28e-2899-40f2-84b8-7eeaf7d4403a.webp?type=original",
+            "width": 576,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212458511/8ae0b28e-2899-40f2-84b8-7eeaf7d4403a.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212458511/dd4e4459-9907-4ef4-8871-9860440f5b33.webp?type=original",
+            "width": 576,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212458511/dd4e4459-9907-4ef4-8871-9860440f5b33.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212458511/8c24a6e8-70d3-4f5c-ac3e-86dc91960f43.webp?type=original",
+            "width": 576,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212458511/8c24a6e8-70d3-4f5c-ac3e-86dc91960f43.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 61 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283161%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652311",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "En vintage CHIMO racercykel i bra skick för 1000 kr ligger inom det rimliga prisspannet för denna typ av cykel. CHIMO är ett äldre svenskt cykelmärke som inte längre tillverkas, vilket ger cykeln ett visst samlarvärde för entusiaster. Samtidigt är det inte ett högstatusvarumärke som Crescent eller Monark från samma era. För en fungerande vintage racercykel i bra skick är 800-1500 kr ett normalt prisspann på andrahandsmarknaden. Storleken 58cm är relativt stor vilket begränsar köparkretsen något. Att säljaren är öppen för prisförhandling vid snabb affär indikerar viss flexibilitet. Utan bilder är det svårt att bedöma det exakta skicket, men beskrivningen antyder att cykeln är i funktionsdugligt skick.",
+        "confidence": 0.6,
+        "factors": [
+          "CHIMO är ett ovanligt märke med begränsat men existerande samlarvärde",
+          "Avsaknad av bilder gör skickbedömning osäker",
+          "Stor ramstorlek (58cm) begränsar potentiella köpare",
+          "Säljaren signalerar förhandlingsvilja",
+          "Östersund har mindre marknad än storstäder"
+        ],
+        "recommendation": "Vid intresse bör du begära bilder för att bedöma skicket närmare. Erbjud 700-800 kr som utgångspunkt för förhandling. Om cykeln är i mycket gott skick med originaldelar kan 1000 kr vara rimligt. Kontrollera särskilt växlar, bromsar och om det finns rost på ramen vid visning.",
+        "analyzedAt": "2025-08-23T19:52:17.559Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212432565",
+        "list_id": "1212432565",
+        "state_id": "e3b8f1c8-eacd-428c-92af-2492d1a3adc0",
+        "type": "s",
+        "zipcode": "83178",
+        "ad_status": "active",
+        "list_time": "2025-07-22T14:58:48+02:00",
+        "subject": "elkickbike",
+        "body": "E-wheels e2s v1.\nSägs gå 30km/h men nu går den inte alls.\nLaddare medföljer. \nOrkar inte sätta mig in i problemet så säljer den till högsta bud.",
+        "price": {
+          "value": 500,
+          "old_value": 1000,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Funkar inte - Kan fixas",
+                "short_value": "Kan fixas"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "rotax",
+          "type": "private",
+          "account_id": "4515440",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "4515440",
+            "display_name": "rotax",
+            "account_created_at": "2018-02-05T17:14:04.684Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "8 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 5,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212432565",
+        "share_url": "https://www.blocket.se/annons/jamtland/elkickbike/1212432565",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212432565/f4b598ab-265b-4e1c-8711-2710a8871a34.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212432565/f4b598ab-265b-4e1c-8711-2710a8871a34.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212432565/1bc2f352-1d38-4804-9f87-ea310754b162.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212432565/1bc2f352-1d38-4804-9f87-ea310754b162.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212432565/04716526-81af-4351-bb83-7c390e870a4a.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212432565/04716526-81af-4351-bb83-7c390e870a4a.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212432565/a16d7c63-7b2a-4c65-9b47-709d2e1e80ad.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212432565/a16d7c63-7b2a-4c65-9b47-709d2e1e80ad.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212432565/e3e9198b-b1cc-45c1-b2e6-33ed26314346.webp?type=original",
+            "width": 576,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212432565/e3e9198b-b1cc-45c1-b2e6-33ed26314346.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 78 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283178%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652312"
+    },
+    {
+      "ad": {
+        "ad_id": "1212427385",
+        "list_id": "1212427385",
+        "state_id": "89e52672-f449-4b0e-9306-e754b7028e57",
+        "type": "s",
+        "zipcode": "83751",
+        "ad_status": "active",
+        "list_time": "2025-07-22T10:53:40+02:00",
+        "subject": "Miyata 26 tum - mountainbike ",
+        "body": "Retro mountainbike från Miyata. \nNyservad men har stått i ca 10 år utan användning och nu är det något problem med växel på lila kuggen. Växel på stora kugge fungerar perfekt och därmed växel 7, 14 & 21. \n\nDen hängiga fixar säkert lätt. \nFinns i Åre björnen men kan levereras både till Åre by och Duved \n",
+        "price": {
+          "value": 500,
+          "old_value": 750,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Okej skick - Synligt använd",
+                "short_value": "Okej skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6061",
+            "name": "Damcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Maria",
+          "type": "private",
+          "account_id": "1257856",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "1257856",
+            "display_name": "Maria",
+            "account_created_at": "2013-10-10T16:22:03.141Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "18 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 2 timmar",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 3,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Åre",
+            "id": "36",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212427385",
+        "share_url": "https://www.blocket.se/annons/jamtland/miyata_26_tum_mountainbike_/1212427385",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212427385/9a214ed4-32fb-4cd6-9124-064120f96fdc.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212427385/9a214ed4-32fb-4cd6-9124-064120f96fdc.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212427385/5db374b2-1460-4d5c-ad43-19c2b4447f60.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212427385/5db374b2-1460-4d5c-ad43-19c2b4447f60.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212427385/6fd01cb4-4aca-4292-aafe-c37599acafb8.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212427385/6fd01cb4-4aca-4292-aafe-c37599acafb8.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212427385/048e34c7-2d97-4234-aa81-4ac41b3510e2.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212427385/048e34c7-2d97-4234-aa81-4ac41b3510e2.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "837 51 Åre, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283751%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652313",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Detta är en gammal Miyata mountainbike som stått oanvänd i 10 år med växelproblem. Även om priset är lågt (500 kr) finns flera kritiska faktorer som gör detta till en tveksam affär: 1) Växelproblemet på 'lila kuggen' (troligen mellankuggen) betyder att endast 3 av 21 växlar fungerar - detta kräver minst justering av växelvajrar/mekanism (200-300 kr i delar) eller i värsta fall byte av kassett/växelreglage (500-800 kr). 2) Efter 10 års stillastående behövs troligen nya däck (400-600 kr), ny kedja (150-200 kr), och eventuellt bromsklossar. 3) Miyata är visserligen ett kvalitetsmärke men retro-MTB har begränsad efterfrågan. 4) En fungerande 26-tums MTB säljs för cirka 1500-2500 kr på andrahandsmarknaden. Med inköpspris 500 kr + minst 500-1000 kr i delar + 3-4 timmars arbete blir vinstmarginalen minimal eller obefintlig.",
+        "confidence": 0.8,
+        "factors": [
+          "Växelproblem kräver troligen mer än enkel justering",
+          "10 års stillastående = förmodligen behov av däck, kedja, bromsar",
+          "Begränsad marknad för 26-tums retro-MTB",
+          "Total fixkostnad 500-1000 kr ger minimal vinstmarginal"
+        ],
+        "recommendation": "UNDVIK denna cykel. Med inköp 500 kr + minst 500-1000 kr i delar (växelfix, däck, kedja) hamnar totalkostnaden på 1000-1500 kr. Marknadsvärdet efter fix är max 1500-2500 kr vilket ger en vinstmarginal på endast 0-1000 kr för 3-4 timmars arbete. Detta är inte värt tiden och risken. Leta istället efter cyklar som endast behöver kosmetisk rengöring eller enklare justeringar.",
+        "analyzedAt": "2025-08-23T20:01:56.248Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212394115",
+        "list_id": "1212394115",
+        "state_id": "75751094-66d2-4159-ade6-d96a864bdd57",
+        "type": "s",
+        "zipcode": "83431",
+        "ad_status": "active",
+        "list_time": "2025-07-20T09:38:45+02:00",
+        "subject": "cykelvagn",
+        "body": "Cykelvagn till salu.\nFinns plats till två barn.\nHar ett litet håll på sidan men inget som påverkar cykelvagnens funktion. \nFinns i Brunflo.\nMvh Iwona\n",
+        "price": {
+          "value": 400,
+          "old_value": 700,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6067",
+            "name": "Tillbehör"
+          }
+        ],
+        "advertiser": {
+          "name": "Iwona",
+          "type": "private",
+          "account_id": "3215311",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "3215311",
+            "display_name": "Iwona",
+            "account_created_at": "2016-09-20T17:45:33.888Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "10 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 2,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 5,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212394115",
+        "share_url": "https://www.blocket.se/annons/jamtland/cykelvagn/1212394115",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212394115/b4686cc1-0bab-4dac-a473-decde4f270eb.webp?type=original",
+            "width": 1280,
+            "height": 592,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212394115/b4686cc1-0bab-4dac-a473-decde4f270eb.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212394115/7e6bf9e6-81ad-4192-a39a-20aaf73730b4.webp?type=original",
+            "width": 473,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212394115/7e6bf9e6-81ad-4192-a39a-20aaf73730b4.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212394115/c6343b2e-e6ad-4478-b0ee-acb7e623fb4e.webp?type=original",
+            "width": 1280,
+            "height": 592,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212394115/c6343b2e-e6ad-4478-b0ee-acb7e623fb4e.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "map": {
+          "label": "834 31 Brunflo, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283431%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652314"
+    },
+    {
+      "ad": {
+        "ad_id": "1212386176",
+        "list_id": "1212386176",
+        "state_id": "f84ef40f-a1ce-4d9f-ad6a-2cee993f9c37",
+        "type": "s",
+        "zipcode": "83241",
+        "ad_status": "active",
+        "list_time": "2025-07-19T14:40:43+02:00",
+        "subject": "Damcykel Mustang",
+        "body": "Mustang damcykel 7 växlar säljes i befintligt skick. Cykeln fungerar bra att cykla på idag. Däremot behöver vissa tramplager repareras och eventuellt bytas och även se över växlarna. \nHämtas på plats. (Cykellåset på bilderna ingår inte i priset. Går dock bra att köpas separat för 100kr). ",
+        "price": {
+          "value": 200,
+          "old_value": 300,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Okej skick - Synligt använd",
+                "short_value": "Okej skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6061",
+            "name": "Damcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "KB",
+          "type": "private",
+          "account_id": "1982149",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "1982149",
+            "display_name": "KB",
+            "account_created_at": "2014-10-22T11:19:14.158Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "4 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212386176",
+        "share_url": "https://www.blocket.se/annons/jamtland/damcykel_mustang/1212386176",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212386176/ea0b9262-8453-4024-ba3e-a698adc777a8.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212386176/ea0b9262-8453-4024-ba3e-a698adc777a8.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212386176/902439e2-2074-43bd-8626-47c82a527a60.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212386176/902439e2-2074-43bd-8626-47c82a527a60.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212386176/9ceae0ff-cc22-47c6-af9f-493fdf5d8924.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212386176/9ceae0ff-cc22-47c6-af9f-493fdf5d8924.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "832 41 Frösön, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283241%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652315",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Detta är en typisk budgetcykel av märket Mustang som redan har betydande problem. Säljaren är ärlig om att tramplager behöver repareras/bytas och växlar behöver ses över - detta är kostsamma reparationer. Ett nytt vevparti kostar 300-500 kr plus arbete, växeljustering 200-300 kr. Bilderna visar en grundläggande citycykel med synligt slitage, rosttendenser på kedja/växlar, och allmänt dåligt underhållen. En liknande cykel i FUNGERANDE skick säljs för 500-800 kr på andrahandsmarknaden. Efter reparationer (minst 500-700 kr) plus 3-4 timmars arbete skulle du knappt gå jämnt upp. Mustang är dessutom ett lågprismärke med begränsat andrahandsvärde. För 200 kr får du visserligen en cykelram med hjul, men investeringen för att få den i säljbart skick överstiger troligen försäljningsvärdet.",
+        "confidence": 0.85,
+        "factors": [
+          "Tramplager/vevparti defekt - dyr reparation (300-500 kr)",
+          "Växlar behöver översyn - ytterligare kostnad (200-300 kr)",
+          "Mustang är budgetmärke med lågt andrahandsvärde",
+          "Synlig rost och slitage på komponenter",
+          "Marknadsvärde efter fix max 600-800 kr"
+        ],
+        "recommendation": "UNDVIK denna affär. Med reparationskostnader på minst 500-700 kr plus arbetstid hamnar din totala investering på 700-900 kr. En fungerande damcykel av detta märke säljs för 500-800 kr, vilket ger negativ eller obefintlig vinstmarginal. Leta istället efter cyklar som endast behöver enklare justeringar som däckbyte eller bromsservice. Om du ändå överväger köp, pruta till max 100 kr och räkna med att detta blir ett hobbyprojekt snarare än en vinstaffär.",
+        "analyzedAt": "2025-08-23T20:35:15.989Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212372853",
+        "list_id": "1212372853",
+        "state_id": "4c33c3b5-2257-4b8f-8aec-19a178ef80c9",
+        "type": "s",
+        "zipcode": "83143",
+        "ad_status": "active",
+        "list_time": "2025-07-18T14:25:26+02:00",
+        "subject": "26\" Mountainbike 21vxl",
+        "body": "Nyservade växlar och bromsar\nNya däck\nSadeln kanske kan behöva bytas\nEnklare lås medföljer\nAllt fungerar som det ska",
+        "price": {
+          "value": 1000,
+          "old_value": 1255,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Okej skick - Synligt använd",
+                "short_value": "Okej skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6064",
+            "name": "Mountainbike"
+          }
+        ],
+        "advertiser": {
+          "name": "Roland",
+          "type": "private",
+          "account_id": "379707",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "379707",
+            "display_name": "Roland",
+            "account_created_at": "2012-04-12T19:20:24.871Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "7 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 7,
+              "overall_score": 96,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 2,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212372853",
+        "share_url": "https://www.blocket.se/annons/jamtland/26_mountainbike_21vxl/1212372853",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212372853/8d68e3ba-2d77-4822-a1d8-6d89a898062c.webp?type=original",
+            "width": 1280,
+            "height": 868,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212372853/8d68e3ba-2d77-4822-a1d8-6d89a898062c.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212372853/c978c2f4-cd10-4d4b-b69f-57b9f7160e27.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212372853/c978c2f4-cd10-4d4b-b69f-57b9f7160e27.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212372853/6a324df7-10f0-4a81-99d8-d92beafd3a5b.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212372853/6a324df7-10f0-4a81-99d8-d92beafd3a5b.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212372853/6fa0e673-41c2-4986-a53d-2243078f6b61.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212372853/6fa0e673-41c2-4986-a53d-2243078f6b61.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212372853/3bdd5ee0-9b2a-4c74-a7e9-8046ae0d5d92.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212372853/3bdd5ee0-9b2a-4c74-a7e9-8046ae0d5d92.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 43 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283143%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652316",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "Efter noggrann analys av bilderna ser jag en äldre Centurion mountainbike med grundläggande komponenter. Cykeln är nyservad enligt säljaren med nya däck, vilket är positivt. Bilderna visar en cykel i acceptabelt skick utan synliga strukturella skador. Dock är detta en budgetcykel från början - troligen värd 1500-2000 kr i bra skick på andrahandsmarknaden. Med ett pris på 1000 kr och behov av ny sadel (ca 200-300 kr) blir den totala investeringen 1200-1300 kr. Efter fix kan cykeln säljas för kanske 1500-1800 kr, vilket ger en vinstmarginal på endast 200-600 kr. Detta är för lite marginal för att motivera tiden och arbetet. Cykeln är varken under- eller övervärderad utan snarare rättvist prissatt för sitt skick och kvalitet. Det är ingen dålig cykel för slutanvändare som behöver enkel transport, men som investeringsobjekt är potentialen begränsad.",
+        "confidence": 0.8,
+        "factors": [
+          "Budgetcykel med lågt marknadsvärde även i toppskick",
+          "Redan nyservad vilket minskar möjligheten att öka värdet",
+          "Begränsad vinstmarginal på max 200-600 kr efter sadelbytet"
+        ],
+        "recommendation": "Skippa denna deal. Med endast 200-600 kr i potentiell vinst efter sadelbytet är detta inte värt tiden. Cykeln är rättvist prissatt för en slutanvändare men saknar investeringspotential. Leta istället efter högre kvalitetscyklar som är undervärderade på grund av enkla fixbara problem, där du kan få minst 1000 kr i vinstmarginal.",
+        "analyzedAt": "2025-08-23T20:59:21.950Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212339725",
+        "list_id": "1212339725",
+        "state_id": "46c2db80-5ef8-4f25-92a5-c5e7447eedb7",
+        "type": "s",
+        "zipcode": "83175",
+        "ad_status": "active",
+        "list_time": "2025-07-16T11:39:56+02:00",
+        "subject": "Barncykel 24”",
+        "body": "Finns i Ängsmon Torvalla \nFrågor ring 0735107655",
+        "price": {
+          "value": 900,
+          "old_value": 1200,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6063",
+            "name": "Barncyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Marlén Johansson",
+          "type": "private",
+          "account_id": "20912995",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "20912995",
+            "display_name": "Marlén Johansson",
+            "account_created_at": "2019-11-13T14:21:32.025Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "9 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 2,
+              "overall_score": 95,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 5,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212339725",
+        "share_url": "https://www.blocket.se/annons/jamtland/barncykel_24_/1212339725",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212339725/aee57960-24a9-431f-9cc6-3bf153cc81d6.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212339725/aee57960-24a9-431f-9cc6-3bf153cc81d6.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 44 kg CO₂e vilket motsvarar produktionen av 2 nya jackor.",
+        "map": {
+          "label": "831 75 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283175%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652317"
+    },
+    {
+      "ad": {
+        "ad_id": "1212329971",
+        "list_id": "1212329971",
+        "state_id": "27ba83e9-0103-4288-a497-303fec5f0a91",
+        "type": "s",
+        "zipcode": "83142",
+        "ad_status": "active",
+        "list_time": "2025-07-15T18:12:12+02:00",
+        "subject": "Fixie med vändbart hjul",
+        "body": "Fixie med vändbart hjul för att få vanlig tramp. \n\nStår i garage bara och tar plats, ring för mer info eller visning.\n",
+        "price": {
+          "value": 1500,
+          "old_value": 2000,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6065",
+            "name": "Racer"
+          }
+        ],
+        "advertiser": {
+          "name": "Erik",
+          "type": "private",
+          "account_id": "3770567",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "3770567",
+            "display_name": "Erik",
+            "account_created_at": "2017-04-04T12:41:50.161Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "3 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 2,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212329971",
+        "share_url": "https://www.blocket.se/annons/jamtland/fixie_med_vandbart_hjul/1212329971",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212329971/999aa7b9-f3e0-4189-851d-3f7db86fab0b.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212329971/999aa7b9-f3e0-4189-851d-3f7db86fab0b.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212329971/f378bc9f-e20b-458c-8b44-2148c37f5a40.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212329971/f378bc9f-e20b-458c-8b44-2148c37f5a40.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212329971/65700250-2a08-4f25-b8fb-f24bcdc39363.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212329971/65700250-2a08-4f25-b8fb-f24bcdc39363.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 42 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283142%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652318",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "Efter noggrann analys av bilderna ser jag en stilren fixie/singlespeed med turkosa detaljer i överlag bra skick. Cykeln verkar vara en budgetmodell, troligen från kedjor som XXL eller liknande, med ett nypris runt 3000-4000 kr. Den har flip-flop nav vilket är standard för denna typ av cykel. Synliga problem inkluderar: saknad frambroms (endast bakbroms synlig), möjligen behov av ny kedja och mindre justeringar. Styret med turkost tejp ser välvårdat ut. Marknadsvärdet för liknande cyklar i bra skick ligger på 2000-2500 kr i storstäder, men i Östersund är efterfrågan lägre. Med 200-400 kr i fixkostnader (frambroms, kedja, justering) skulle totalinvesteringen bli 1700-1900 kr. Försäljningspris efter fix: max 2000-2200 kr i Östersund. Detta ger en vinstmarginal på endast 100-500 kr, vilket är för lågt för att motivera tid och arbete.",
+        "confidence": 0.8,
+        "factors": [
+          "Budgetcykel med begränsat andrahandsvärde",
+          "Östersund har lägre efterfrågan än storstäder",
+          "Saknar frambroms vilket kräver investering",
+          "Vinstmarginalen efter fix är för låg (100-500 kr)"
+        ],
+        "recommendation": "AVSTÅ från köp. Även om cykeln är i okej skick är priset 1500 kr inte tillräckligt undervärderat för att generera meningsfull vinst. Efter nödvändiga fix (frambroms 200-300 kr, eventuell kedja 100-200 kr) och tidsinsats skulle vinstmarginalen bli max 500 kr, vilket inte motiverar investeringen. Sök istället efter cyklar med minst 1000 kr vinstpotential eller högkvalitativa märkescyklar som kan säljas för 3000+ kr efter renovering.",
+        "analyzedAt": "2025-08-23T20:34:40.280Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212325552",
+        "list_id": "1212325552",
+        "state_id": "90572576-f6ea-482b-9648-d4548636928b",
+        "type": "s",
+        "zipcode": "83175",
+        "ad_status": "active",
+        "list_time": "2025-07-15T14:45:46+02:00",
+        "subject": "Herrcykel ",
+        "body": "Gör sommaräventyren lite mer spännande med en herrcykel!\n\nFinns i Ängsmon, Torvalla \nFrågor ring 0735107655\n\nMvh Marlén ",
+        "price": {
+          "value": 1500,
+          "old_value": 2000,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Mycket bra skick - Som ny",
+                "short_value": "Mycket bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6062",
+            "name": "Herrcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Marlén Johansson",
+          "type": "private",
+          "account_id": "20912995",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "20912995",
+            "display_name": "Marlén Johansson",
+            "account_created_at": "2019-11-13T14:21:32.025Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "9 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 2,
+              "overall_score": 95,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 5,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212325552",
+        "share_url": "https://www.blocket.se/annons/jamtland/herrcykel_/1212325552",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212325552/523fff1c-6c87-419a-b2fa-61d91e421c90.webp?type=original",
+            "width": 802,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212325552/523fff1c-6c87-419a-b2fa-61d91e421c90.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "831 75 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283175%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652319",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Detta är en standardcykel av okänt märke till ett pris som inte är särskilt attraktivt. Från bilden ser jag en vit damcykel (trots att den annonseras som herrcykel) med korg fram. Cykeln ser ut att vara en enkel citycykel/stadscykel, troligen värd 2000-3000 kr i mycket bra skick. Med ett pris på 1500 kr finns det minimal vinstmarginal. Cykeln ser välskött ut men verkar vara en budgetmodell. Annonsen är extremt vag - inget märke, ingen storlek, inga specifikationer om växlar eller komponenter. Detta är typiskt för säljare som inte vet mycket om produkten eller försöker dölja brister. Bildkvaliteten är dålig och tagen på avstånd vilket gör det svårt att bedöma faktiskt skick. För 1500 kr kan man ofta hitta bättre cyklar med tydligare information.",
+        "confidence": 0.75,
+        "factors": [
+          "Okänt märke och modell - troligen budgetcykel",
+          "Vag annons utan tekniska detaljer",
+          "Dålig bildkvalitet som försvårar skickbedömning",
+          "Felaktig kategorisering (damcykel som herrcykel)",
+          "Pris nära marknadsvärde för enkel citycykel"
+        ],
+        "recommendation": "UNDVIK denna affär. Med ett inköpspris på 1500 kr och ett troligt försäljningsvärde på max 2000-2500 kr efter eventuell rengöring/justering finns det för lite marginal. Risken är hög då informationen är så vag. Leta istället efter cyklar med tydligt märke (Crescent, Monark, Skeppshult etc.) till liknande pris, eller cyklar som behöver enkla fix (byte av däck, justering av växlar) där du kan få dem för 500-800 kr och sälja för 2000+ kr efter fix.",
+        "analyzedAt": "2025-08-23T20:14:54.303Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212322204",
+        "list_id": "1212322204",
+        "state_id": "e859c6bb-3e11-4f55-9292-186c4e888d78",
+        "type": "s",
+        "zipcode": "83171",
+        "ad_status": "active",
+        "list_time": "2025-07-15T12:15:42+02:00",
+        "subject": "Kellys 24 tum",
+        "body": "En fin cykel men bakväxel är trasig behöver byta det kostar ungefär 170 kr",
+        "price": {
+          "value": 1200,
+          "old_value": 1600,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6063",
+            "name": "Barncyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Dib",
+          "type": "private",
+          "account_id": "454855",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "454855",
+            "display_name": "Dib",
+            "account_created_at": "2012-05-26T16:31:21.805Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "5 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 2 timmar",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 2,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 2,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212322204",
+        "share_url": "https://www.blocket.se/annons/jamtland/kellys_24_tum/1212322204",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212322204/493538ea-9d4e-407c-877f-b820576d1dd3.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212322204/493538ea-9d4e-407c-877f-b820576d1dd3.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 44 kg CO₂e vilket motsvarar produktionen av 2 nya jackor.",
+        "map": {
+          "label": "831 71 Östersund, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283171%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652320",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Detta är en övervärderad affär. Kellys är ett budgetmärke och en ny 24-tums Kellys kostar cirka 3000-4000 kr. Med trasig bakväxel till ett pris av 1200 kr plus 170 kr för ny växel (totalt 1370 kr) hamnar vi på nästan halva nypriset. Efter reparation kan cykeln säljas för kanske 1800-2200 kr beroende på modell och årsmodell, vilket ger en vinstmarginal på endast 430-830 kr. Detta täcker knappt tiden för reparation och försäljning. Cykeln ser dessutom ut att ha stått ute och har synlig rost på kedjan och växelkomponenter. Den gula/gröna färgen är också mindre attraktiv på andrahandsmarknaden. Bildkvaliteten är dålig vilket indikerar låg omsorg från säljaren.",
+        "confidence": 0.85,
+        "factors": [
+          "Budgetmärke (Kellys) med begränsat andrahandsvärde",
+          "Reparationskostnad äter upp större delen av vinstmarginalen",
+          "Synlig rost och slitage utöver den trasiga växeln",
+          "24-tums barncyklar har begränsad målgrupp och kort användningstid"
+        ],
+        "recommendation": "Undvik denna affär. Med total investering på 1370 kr och ett realistiskt försäljningspris på max 2000 kr blir vinsten för liten (630 kr) för att motivera tid och arbete. Leta istället efter cyklar i bättre skick eller med enklare/billigare fel. En tumregel är att reparationskostnaden inte bör överstiga 10% av slutvärdet för att affären ska vara lönsam.",
+        "analyzedAt": "2025-08-23T20:14:07.372Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212203280",
+        "list_id": "1212203280",
+        "state_id": "10b01df9-2772-40de-b7e0-b83c90d8a32d",
+        "type": "s",
+        "zipcode": "83691",
+        "ad_status": "active",
+        "list_time": "2025-07-08T14:10:36+02:00",
+        "subject": "TRIACLE MTB ny herrcykel 26\"",
+        "body": "Oanvänd 18 vxl",
+        "price": {
+          "value": 1300,
+          "old_value": 1700,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Nytt skick - Helt ny",
+                "short_value": "Nytt skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6062",
+            "name": "Herrcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "stellaelize",
+          "type": "private",
+          "account_id": "2955993",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "2955993",
+            "display_name": "stellaelize",
+            "account_created_at": "2016-07-24T19:51:45.82Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "25 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 5,
+              "overall_score": 90,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 4,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212203280",
+        "share_url": "https://www.blocket.se/annons/jamtland/triacle_mtb_ny_herrcykel_26_/1212203280",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212203280/5d358734-ce00-4e70-831f-16f0263070af.webp?type=original",
+            "width": 1280,
+            "height": 577,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212203280/5d358734-ce00-4e70-831f-16f0263070af.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212203280/844ff271-7e5f-4d03-b111-a71162c3fe31.webp?type=original",
+            "width": 1280,
+            "height": 577,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212203280/844ff271-7e5f-4d03-b111-a71162c3fe31.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.724Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212203280/e35d44b2-af43-4f45-8e99-78c4a72350db.webp?type=original",
+            "width": 461,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212203280/e35d44b2-af43-4f45-8e99-78c4a72350db.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212203280/87f72c43-d308-452a-9580-81eae477faa2.webp?type=original",
+            "width": 461,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212203280/87f72c43-d308-452a-9580-81eae477faa2.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "836 91 Lit, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283691%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652321",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Denna cykel är övervärderad trots att den påstås vara 'oanvänd'. TRIACLE är ett lågprismärke som säljs på varuhus som Jula/Biltema för cirka 2000-2500 kr ny. Vid 1300 kr för en begagnad budgetcykel finns minimal vinstmarginal. Bilderna visar tydligt att cykeln har stått utomhus - det finns gräs som växer runt hjulen, vilket indikerar längre tids förvaring. Prislappen sitter fortfarande kvar men cykeln ser inte helt ny ut. Neonfärgen på bakhjulet är daterad och minskar attraktiviteten. En liknande cykel i bra skick säljs för 1500-2000 kr begagnad, vilket ger max 200-700 kr marginal före eventuella kostnader för rengöring, smörjning och justering (200-300 kr). Efter arbetsinsats blir vinsten försumbar eller negativ.",
+        "confidence": 0.85,
+        "factors": [
+          "Lågkvalitetsmärke med begränsat andrahandsvärde",
+          "Utomhusförvaring synlig - behöver service",
+          "Minimal vinstmarginal även efter enkla fix"
+        ],
+        "recommendation": "Undvik denna affär. Med ett marknadsvärde på max 1500-1800 kr efter service och rengöring, och inköpspris på 1300 kr plus 200-300 kr i servicekostnader, blir det ingen vinst. Tiden är bättre investerad i cyklar med högre kvalitet eller lägre inköpspris. Om du ändå överväger köp, förhandla ner till max 800-900 kr för att få rimlig marginal.",
+        "analyzedAt": "2025-08-23T20:32:22.357Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212102085",
+        "list_id": "1212102085",
+        "state_id": "e2c8a7d6-ccd7-43dd-ab21-786300793141",
+        "type": "s",
+        "zipcode": "83691",
+        "ad_status": "active",
+        "list_time": "2025-07-03T10:34:37+02:00",
+        "subject": "Merida 27\"",
+        "body": "Merida \"hybrid\" 21 vxl.",
+        "price": {
+          "value": 1500,
+          "old_value": 2000,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Mycket bra skick - Som ny",
+                "short_value": "Mycket bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6062",
+            "name": "Herrcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "stellaelize",
+          "type": "private",
+          "account_id": "2955993",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "2955993",
+            "display_name": "stellaelize",
+            "account_created_at": "2016-07-24T19:51:45.82Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "25 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 5,
+              "overall_score": 90,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 4,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212102085",
+        "share_url": "https://www.blocket.se/annons/jamtland/merida_27_/1212102085",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212102085/28eaca27-5952-4005-bbc4-c31d7d6fa66b.webp?type=original",
+            "width": 1280,
+            "height": 577,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212102085/28eaca27-5952-4005-bbc4-c31d7d6fa66b.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212102085/0c93726b-a56e-49d5-972c-7f8c117b1ab1.webp?type=original",
+            "width": 1280,
+            "height": 577,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212102085/0c93726b-a56e-49d5-972c-7f8c117b1ab1.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212102085/3925b28c-0eaa-4816-a806-d7b57ccf1e5d.webp?type=original",
+            "width": 461,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212102085/3925b28c-0eaa-4816-a806-d7b57ccf1e5d.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212102085/b2b8f657-b972-4210-8168-cf25e43f473f.webp?type=original",
+            "width": 1280,
+            "height": 577,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212102085/b2b8f657-b972-4210-8168-cf25e43f473f.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212102085/4a71fd38-9226-4572-a0ab-c35b9ffb5e92.webp?type=original",
+            "width": 461,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212102085/4a71fd38-9226-4572-a0ab-c35b9ffb5e92.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212102085/9afd8e0d-8054-43c5-b8d1-ff4ba2b7a8d7.webp?type=original",
+            "width": 461,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212102085/9afd8e0d-8054-43c5-b8d1-ff4ba2b7a8d7.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "836 91 Lit, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283691%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652322",
+      "ai_analysis": {
+        "score": 3,
+        "reasoning": "En Merida hybrid 27\" med 21 växlar för 1500 kr i 'mycket bra skick' är ett relativt rättvärderat pris. Merida är ett respekterat märke men inte premium. Nypriset för en liknande hybridcykel ligger runt 4000-6000 kr. På andrahandsmarknaden säljs liknande cyklar i bra skick för 1800-2500 kr. Med tanke på att säljaren anger 'mycket bra skick - som ny' finns det begränsat utrymme för värdeökning genom fix. Eventuell vinstmarginal efter försäljning skulle vara max 500-800 kr, vilket knappt täcker tid och möda. Avsaknaden av detaljerad beskrivning och specificerad modell gör det svårt att bedöma exakt värde. Östersund har begränsad marknad jämfört med storstäder.",
+        "confidence": 0.7,
+        "factors": [
+          "Merida är ett mellanklasspris-märke med ok andrahandsvärde",
+          "Priset 1500 kr för 'mycket bra skick' ger liten marginal för värdeökning",
+          "Begränsad information om modell och årsmodell",
+          "Östersunds mindre marknad kan göra vidareförsäljning svårare"
+        ],
+        "recommendation": "AVSTÅ från köp. Med ett inköpspris på 1500 kr och realistiskt försäljningspris på 2000-2300 kr finns endast 500-800 kr marginal. Detta täcker knappt transport, tid för visning och eventuella småfix. För att detta ska vara intressant borde priset ligga under 1000 kr. Fokusera istället på cyklar med tydliga, enkla fel som kan fixas billigt eller premium-märken till underpris.",
+        "analyzedAt": "2025-08-23T20:12:04.221Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1212097707",
+        "list_id": "1212097707",
+        "state_id": "8d125d3e-d515-44c4-8497-93ce2fc63fdf",
+        "type": "s",
+        "zipcode": "83691",
+        "ad_status": "active",
+        "list_time": "2025-07-02T21:49:55+02:00",
+        "subject": "El sparkcykel ",
+        "body": "En mindre elsparkcykel för barn. Laddar, fungerar, hastighet ca 20h/h. ",
+        "price": {
+          "value": 300,
+          "old_value": 400,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Okej skick - Synligt använd",
+                "short_value": "Okej skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "TOM-MEK",
+          "type": "private",
+          "account_id": "658019",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "658019",
+            "display_name": "TOM-MEK",
+            "account_created_at": "2012-10-12T09:53:19.97Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "7 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 0,
+              "overall_score": 0
+            },
+            "number_of_active_ads": 1,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212097707",
+        "share_url": "https://www.blocket.se/annons/jamtland/el_sparkcykel_/1212097707",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212097707/46c06bbb-d71d-4e9d-81b6-b25f4b5c01a2.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212097707/46c06bbb-d71d-4e9d-81b6-b25f4b5c01a2.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "836 91 Lit, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283691%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652323"
+    },
+    {
+      "ad": {
+        "ad_id": "1212026972",
+        "list_id": "1212026972",
+        "state_id": "40e482bd-969f-4495-97ca-45d457bfbd8a",
+        "type": "s",
+        "zipcode": "83154",
+        "ad_status": "active",
+        "list_time": "2025-06-28T19:24:57+02:00",
+        "subject": "canyon F8 Sl Ram large ",
+        "body": "MTb ram canyon F8 Sl large \nKvitto fins \nJag säljer detta för att jag har inte tid nu så jag kan bygga upp det \n",
+        "price": {
+          "value": 1350,
+          "old_value": 2800,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Bra skick - Sparsamt använd",
+                "short_value": "Bra skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6062",
+            "name": "Herrcyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "polixronis",
+          "type": "private",
+          "account_id": "42276740",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "42276740",
+            "display_name": "polixronis",
+            "account_created_at": "2022-06-16T08:36:55.029Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "16 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 1 timme",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 2,
+              "overall_score": 96,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 3,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Östersund",
+            "id": "37",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1212026972",
+        "share_url": "https://www.blocket.se/annons/jamtland/canyon_f8_sl_ram_large_/1212026972",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212026972/cbc989ab-b15f-4f66-a531-2707c21a9ba2.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212026972/cbc989ab-b15f-4f66-a531-2707c21a9ba2.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212026972/4cfad458-1bec-43b4-a4b0-0d3f1c3a30cb.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212026972/4cfad458-1bec-43b4-a4b0-0d3f1c3a30cb.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212026972/80b2f2af-947d-4a9a-9ec9-157cf89af344.webp?type=original",
+            "width": 1280,
+            "height": 960,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212026972/80b2f2af-947d-4a9a-9ec9-157cf89af344.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1212026972/4d480ad6-cd92-48b6-9ca7-620f5f3c2e05.webp?type=original",
+            "width": 768,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1212026972/4d480ad6-cd92-48b6-9ca7-620f5f3c2e05.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner."
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652324",
+      "ai_analysis": {
+        "score": 2,
+        "reasoning": "Efter noggrann analys av bilderna och annonsen bedömer jag detta som övervärderat. Canyon är visserligen ett kvalitetsmärke, men detta är en ofullständig cykel som kräver betydande investeringar. Ramen med gaffel, bakhjul, vevparti och pedaler är allt som ingår. För att bygga en komplett cykel krävs minst 3000-5000 kr i delar (framhjul, bromsar, växelsystem, styre, sadel, sadelstolpe etc.) plus 10-15 timmars arbete. En komplett Canyon F8 i bra skick säljs för 6000-8000 kr på andrahandsmarknaden. Med köppris 1350 kr + delar 3000-5000 kr = totalkostnad 4350-6350 kr, vilket ger minimal eller ingen vinstmarginal. Däcken ser slitna ut med synlig smuts/damm, vilket indikerar att cykeln använts mer än 'sparsamt'. Risken är hög då vi inte kan verifiera ramens strukturella integritet eller om vevpartiet fungerar korrekt.",
+        "confidence": 0.85,
+        "factors": [
+          "Ofullständig cykel som kräver stora investeringar i delar",
+          "Höga kostnader för att komplettera till fungerande cykel",
+          "Begränsad vinstmarginal efter alla kostnader"
+        ],
+        "recommendation": "Undvik denna affär. Trots att Canyon är ett bra märke blir totalkostnaden för hög i förhållande till marknadsvärdet för en komplett cykel. Leta istället efter kompletta cyklar som bara behöver mindre justeringar.",
+        "profit_analysis": {
+          "estimated_repair_cost": "3000-5000 kr (framhjul, bromsar, växelsystem, styre, sadel, sadelstolpe, kedja, kassett, växelreglage, vajrar)",
+          "estimated_repair_time": "10-15 timmar (komplett uppbyggnad av cykel)",
+          "estimated_sale_price": "6000-8000 kr (komplett Canyon F8 i bra skick)",
+          "estimated_profit": "-350 till 1650 kr (risk för förlust)",
+          "profit_margin_percent": "-5% till 20% (mycket låg/negativ marginal)",
+          "risk_level": "Hög risk",
+          "repair_items": [
+            "Framhjul (800-1500 kr)",
+            "Komplett bromssystem (500-1000 kr)",
+            "Växelsystem fram och bak (500-800 kr)",
+            "Styre och stem (200-400 kr)",
+            "Sadel och sadelstolpe (200-400 kr)",
+            "Kedja och kassett (200-300 kr)",
+            "Växelreglage och vajrar (200-300 kr)",
+            "Grips och tejp (50-100 kr)",
+            "Eventuell service av vevparti"
+          ],
+          "market_comparison": "Kompletta Canyon F8 MTB i bra skick säljs för 6000-8000 kr. Nya Canyon-cyklar kostar 15000-25000 kr. Med tanke på alla kostnader blir detta ingen lönsam affär."
+        },
+        "analyzedAt": "2025-08-23T21:05:58.758Z",
+        "model": "claude-opus-4-1-20250805"
+      }
+    },
+    {
+      "ad": {
+        "ad_id": "1211940601",
+        "list_id": "1211940601",
+        "state_id": "a460f62e-84c3-42fe-8b12-4f8b8cd8d9d1",
+        "type": "s",
+        "zipcode": "83562",
+        "ad_status": "active",
+        "list_time": "2025-06-23T17:26:49+02:00",
+        "subject": "Slädar",
+        "body": "Jag har aldrig använt den själv. Lämnade kvar av tidigare ägare. \n\nFinns att hämta i Storåbränna. ",
+        "price": {
+          "value": 750,
+          "old_value": 900,
+          "suffix": "kr",
+          "price_lowered": true
+        },
+        "parameter_groups": [
+          {
+            "type": "general",
+            "label": "Allmän information",
+            "parameters": [
+              {
+                "id": "item_condition",
+                "label": "Skick",
+                "value": "Okej skick - Synligt använd",
+                "short_value": "Okej skick"
+              }
+            ]
+          }
+        ],
+        "category": [
+          {
+            "id": "6000",
+            "name": "Fritid & hobby"
+          },
+          {
+            "id": "6060",
+            "name": "Cyklar"
+          },
+          {
+            "id": "6066",
+            "name": "Övriga cyklar"
+          }
+        ],
+        "advertiser": {
+          "name": "Paul",
+          "type": "private",
+          "account_id": "50547993",
+          "contact_methods": {
+            "mc": true
+          },
+          "public_profile": {
+            "blocket_account_id": "50547993",
+            "display_name": "Paul",
+            "account_created_at": "2024-09-25T08:52:28.201Z",
+            "badges": [
+              {
+                "id": "active-user",
+                "label": "Aktiv på Blocket",
+                "description": "6 annonser inom 6 mån",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/medal.png",
+                "icon_bui": "IconMedalMulticolor"
+              },
+              {
+                "id": "fast-reply",
+                "label": "Svarar snabbt",
+                "description": "Svarstid ca 2 timmar",
+                "icon_src": "https://public-assets.blocketcdn.se/static/icons/paper_plane.png",
+                "icon_bui": "IconQuickResponseMulticolor"
+              }
+            ],
+            "reviews": {
+              "reviews_received_count": 1,
+              "overall_score": 100,
+              "worded_overall_score": "Perfekt"
+            },
+            "number_of_active_ads": 3,
+            "verified": true,
+            "verified_label": "BankID"
+          }
+        },
+        "location": [
+          {
+            "name": "Jämtland",
+            "id": "3",
+            "query_key": "r"
+          },
+          {
+            "name": "Krokom",
+            "id": "33",
+            "query_key": "m"
+          }
+        ],
+        "map_url": "https://www.hitta.se/kartan/partner/blocketv2?ad_id=1211940601",
+        "share_url": "https://www.blocket.se/annons/jamtland/sladar/1211940601",
+        "images": [
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1211940601/70a5d85f-8b7e-40b3-bc1b-5c90cd26b0cd.webp?type=original",
+            "width": 1280,
+            "height": 720,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1211940601/70a5d85f-8b7e-40b3-bc1b-5c90cd26b0cd.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          },
+          {
+            "url": "https://i.blocketcdn.se/pictures/recommerce/1211940601/277e20eb-54a2-4099-86a0-96f733a6409b.webp?type=original",
+            "width": 576,
+            "height": 1024,
+            "type": "image",
+            "originalUrl": "https://i.blocketcdn.se/pictures/recommerce/1211940601/277e20eb-54a2-4099-86a0-96f733a6409b.jpg",
+            "quality": "original",
+            "updatedAt": "2025-08-23T20:29:11.725Z"
+          }
+        ],
+        "co2_text": "Denna vara sparar 94 kg CO₂e vilket motsvarar produktionen av 3 nya mobiltelefoner.",
+        "map": {
+          "label": "835 62 Föllinge, Jämtlands län",
+          "image_url": "https://api.hitta.se/image/v2/0/15?location=%7B%22zip%22:%2283562%22%7D&zoom.to=location",
+          "type": "zipcode"
+        }
+      },
+      "is_new": false,
+      "discovered_at": "2025-08-23T20:26:07.652325"
+    }
+  ]
+}
