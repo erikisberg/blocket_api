@@ -15,7 +15,7 @@ cd frontend
 cp env.example .env.local
 ```
 
-### 2. **Uppdatera `.env.local` med dina riktiga nycklar:**
+### 2. **Uppdatera `.env.local` med dina riktiga nycklar:** test
 ```env
 # Anthropic API Key för AI-analys
 ANTHROPIC_API_KEY=sk-ant-api03-din-riktiga-nyckel-här
