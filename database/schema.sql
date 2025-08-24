@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS listings (
     seller_type VARCHAR(50),
     blocket_url TEXT,
     frontend_url TEXT,
+    images JSONB DEFAULT '[]', -- Array of image URLs and metadata from Blocket
     discovered_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     
     -- AI analysis fields
@@ -77,6 +78,7 @@ CREATE TABLE IF NOT EXISTS user_settings (
 -- Indexes for performance
 CREATE INDEX IF NOT EXISTS idx_listings_bevakning_id ON listings(bevakning_id);
 CREATE INDEX IF NOT EXISTS idx_listings_ad_id ON listings(ad_id);
+CREATE INDEX IF NOT EXISTS idx_listings_images ON listings USING GIN (images);
 CREATE INDEX IF NOT EXISTS idx_listings_ai_score ON listings(ai_score);
 CREATE INDEX IF NOT EXISTS idx_listings_discovered_at ON listings(discovered_at);
 CREATE INDEX IF NOT EXISTS idx_sms_notifications_status ON sms_notifications(status);
