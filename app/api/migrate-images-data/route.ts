@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
               const values = [JSON.stringify(listing.images), listing.ad_id]
               const result = await client.query(updateQuery, values)
               
-              if (result.rowCount > 0) {
+              if (result.rowCount && result.rowCount > 0) {
                 updatedCount++
                 console.log(`✅ Updated images for listing: ${listing.ad_id}`)
               }
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
           WHERE images = '[]' OR images IS NULL
         `
         const result = await client.query(updateQuery)
-        updatedCount = result.rowCount
+        updatedCount = result.rowCount || 0
         
         console.log(`✅ Created placeholder images for ${updatedCount} listings`)
       }
