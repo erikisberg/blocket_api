@@ -145,12 +145,11 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# Keep frontend folder structure but ignore build artifacts
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/build/
-frontend/dist/
+# Next.js build artifacts
+.next/
+out/
+build/
+dist/
 
 # Next.js
 .next/
