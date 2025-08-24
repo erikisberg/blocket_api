@@ -356,11 +356,23 @@ export default function Home() {
                     }
                   `}
                 >
-                  {/* Image Placeholder */}
+                  {/* Image */}
                   <div className="relative mb-2">
-                    <div className="w-full h-24 bg-gray-200 rounded flex items-center justify-center">
-                      <span className="text-sm text-gray-500">Blocket</span>
-                    </div>
+                    {listing.images && listing.images.length > 0 ? (
+                      <img
+                        src={listing.images[0].url}
+                        alt={listing.images[0].description || 'Thumbnail'}
+                        className="w-full h-24 object-cover rounded"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYgIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmaWxsPSIjOUNBM0FGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CbG9ja2V0PC90ZXh0Pgo8L3N2Zz4K'
+                        }}
+                      />
+                    ) : (
+                      <div className="w-full h-24 bg-gray-200 rounded flex items-center justify-center">
+                        <span className="text-sm text-gray-500">Blocket</span>
+                      </div>
+                    )}
                     
                     {/* AI Score Badge */}
                     {listing.ai_score && (

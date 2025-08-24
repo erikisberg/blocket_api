@@ -55,11 +55,23 @@ export function ListView({ listings, onListingClick }: ListViewProps) {
                 {/* Left side - Main info */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start gap-3">
-                    {/* Thumbnail Placeholder */}
+                    {/* Thumbnail */}
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center">
-                        <span className="text-xs text-gray-500">Blocket</span>
-                      </div>
+                      {listing.images && listing.images.length > 0 ? (
+                        <img
+                          src={listing.images[0].url}
+                          alt={listing.images[0].description || 'Thumbnail'}
+                          className="w-16 h-16 object-cover rounded-lg"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement
+                            target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjMyIiB5PSIzMiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmaWxsPSIjOUNBM0FGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CbG9ja2V0PC90ZXh0Pgo8L3N2Zz4K'
+                          }}
+                        />
+                      ) : (
+                        <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center">
+                          <span className="text-xs text-gray-500">Blocket</span>
+                        </div>
+                      )}
                     </div>
                     
                     {/* Text content */}

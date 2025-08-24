@@ -92,11 +92,34 @@ export function ListingCard({ listing }: ListingCardProps) {
       </CardHeader>
 
       <CardContent className="space-y-6">
-        {/* Image Placeholder */}
+        {/* Images */}
         <div className="mb-6">
-          <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-            <span className="text-lg text-gray-500">Blocket Annons</span>
-          </div>
+          {listing.images && listing.images.length > 0 ? (
+            <div className="space-y-4">
+              {listing.images.map((image, index) => (
+                <div key={index} className="relative">
+                  <img
+                    src={image.url}
+                    alt={image.description || `Bild ${index + 1}`}
+                    className="w-full h-64 object-cover rounded-lg"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDQwMCAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjU2IiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTI4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM5Q0EzQUYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPgo='
+                    }}
+                  />
+                  {image.description && (
+                    <div className="absolute bottom-2 left-2 bg-black bg-opacity-75 text-white px-2 py-1 rounded text-sm">
+                      {image.description}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+              <span className="text-lg text-gray-500">Inga bilder tillgängliga</span>
+            </div>
+          )}
         </div>
 
         {/* Description */}

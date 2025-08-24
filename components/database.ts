@@ -23,6 +23,11 @@ export interface Listing {
   seller_type?: string
   blocket_url?: string
   frontend_url?: string
+  images?: Array<{
+    url: string
+    description?: string
+    thumbnail_url?: string
+  }>
   discovered_at: string | Date
   ai_score?: number
   ai_confidence?: number
@@ -94,9 +99,9 @@ export class DatabaseService {
         INSERT INTO listings (
           bevakning_id, ad_id, title, price, currency, description, 
           category, condition, location, seller_type, blocket_url, frontend_url,
-          discovered_at, ai_score, ai_confidence, ai_reasoning, ai_factors, 
+          images, discovered_at, ai_score, ai_confidence, ai_reasoning, ai_factors, 
           ai_recommendation, ai_analyzed_at, ai_model
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)
         ON CONFLICT (ad_id) DO NOTHING
       `
       
@@ -113,6 +118,7 @@ export class DatabaseService {
         listing.seller_type,
         listing.blocket_url,
         listing.frontend_url,
+        listing.images ? JSON.stringify(listing.images) : '[]',
         listing.discovered_at,
         listing.ai_score,
         listing.ai_confidence,
@@ -136,11 +142,13 @@ export class DatabaseService {
       const query = `
         INSERT INTO listings (
           bevakning_id, ad_id, title, price, currency, description, 
-          category, condition, location, seller_type, blocket_url, frontend_url
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+          category, condition, location, seller_type, blocket_url, frontend_url,
+          images
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
         ON CONFLICT (ad_id) DO UPDATE SET
           title = EXCLUDED.title,
           price = EXCLUDED.price,
+          images = EXCLUDED.images,
           updated_at = NOW()
         RETURNING *
       `
@@ -157,7 +165,8 @@ export class DatabaseService {
         listing.location,
         listing.seller_type,
         listing.blocket_url,
-        listing.frontend_url
+        listing.frontend_url,
+        listing.images ? JSON.stringify(listing.images) : '[]'
       ]
       
       const result = await client.query(query, values)
@@ -457,6 +466,27 @@ export class DatabaseService {
         ['all']
       ]
       
+      await client.query(query, values)
+    } finally {
+      client.release()
+    }
+  }
+
+  // Update listing images
+  static async updateListingImages(adId: string, images: Array<{
+    url: string
+    description?: string
+    thumbnail_url?: string
+  }>): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        UPDATE listings 
+        SET images = $1, updated_at = NOW()
+        WHERE ad_id = $2
+      `
+      
+      const values = [JSON.stringify(images), adId]
       await client.query(query, values)
     } finally {
       client.release()
