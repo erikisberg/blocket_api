@@ -17,6 +17,16 @@ export async function GET(request: NextRequest) {
       await client.query('SELECT 1')
       console.log('✅ Database connection successful')
 
+      // Check if listings table has required columns
+      const columnCheck = await client.query(`
+        SELECT column_name 
+        FROM information_schema.columns 
+        WHERE table_name = 'listings' 
+        AND column_name IN ('price', 'ai_score', 'category', 'discovered_at')
+      `)
+      const availableColumns = columnCheck.rows.map(r => r.column_name)
+      console.log('✅ Available columns:', availableColumns)
+
       // Get monitoring statistics
       const statsQuery = `
         SELECT 
@@ -28,25 +38,44 @@ export async function GET(request: NextRequest) {
           MAX(discovered_at) as last_discovery
         FROM listings
       `
-      const statsResult = await client.query(statsQuery)
-      const stats = statsResult.rows[0]
-      console.log('✅ Stats query completed')
+      let stats = null
+      try {
+        const statsResult = await client.query(statsQuery)
+        stats = statsResult.rows[0]
+        console.log('✅ Stats query completed')
+      } catch (statsError) {
+        console.error('❌ Stats query failed:', statsError)
+        stats = {
+          total_listings: 0,
+          analyzed_listings: 0,
+          high_score_listings: 0,
+          profit_analyzed_listings: 0,
+          first_discovery: null,
+          last_discovery: null
+        }
+      }
 
       // Get recent discoveries by date
-      const discoveriesQuery = `
-        SELECT 
-          DATE(discovered_at) as discovery_date,
-          COUNT(*) as new_listings,
-          COUNT(CASE WHEN ai_score IS NOT NULL THEN 1 END) as analyzed_count,
-          COUNT(CASE WHEN ai_score >= 4 THEN 1 END) as high_score_count
-        FROM listings
-        GROUP BY DATE(discovered_at)
-        ORDER BY discovery_date DESC
-        LIMIT 30
-      `
-      const discoveriesResult = await client.query(discoveriesQuery)
-      const discoveries = discoveriesResult.rows
-      console.log('✅ Discoveries query completed')
+      let discoveries = []
+      try {
+        const discoveriesQuery = `
+          SELECT 
+            DATE(discovered_at) as discovery_date,
+            COUNT(*) as new_listings,
+            COUNT(CASE WHEN ai_score IS NOT NULL THEN 1 END) as analyzed_count,
+            COUNT(CASE WHEN ai_score >= 4 THEN 1 END) as high_score_count
+          FROM listings
+          GROUP BY DATE(discovered_at)
+          ORDER BY discovery_date DESC
+          LIMIT 30
+        `
+        const discoveriesResult = await client.query(discoveriesQuery)
+        discoveries = discoveriesResult.rows
+        console.log('✅ Discoveries query completed')
+      } catch (discoveriesError) {
+        console.error('❌ Discoveries query failed:', discoveriesError)
+        discoveries = []
+      }
 
       // Get SMS notification history
       const smsQuery = `
@@ -61,59 +90,85 @@ export async function GET(request: NextRequest) {
         ORDER BY sn.created_at DESC
         LIMIT 50
       `
-      const smsResult = await client.query(smsQuery)
-      const smsHistory = smsResult.rows
-      console.log('✅ SMS query completed')
+      let smsHistory = []
+      try {
+        const smsResult = await client.query(smsQuery)
+        smsHistory = smsResult.rows
+        console.log('✅ SMS query completed')
+      } catch (smsError) {
+        console.error('❌ SMS query failed:', smsError)
+        smsHistory = []
+      }
 
       // Get category distribution
-      const categoryQuery = `
-        SELECT 
-          category,
-          COUNT(*) as count,
-          AVG(price) as avg_price,
-          COUNT(CASE WHEN ai_score >= 4 THEN 1 END) as high_score_count
-        FROM listings
-        WHERE category IS NOT NULL
-        GROUP BY category
-        ORDER BY count DESC
-      `
-      const categoryResult = await client.query(categoryQuery)
-      const categoryStats = categoryResult.rows
-      console.log('✅ Category query completed')
+      let categoryStats = []
+      try {
+        const categoryQuery = `
+          SELECT 
+            category,
+            COUNT(*) as count,
+            ROUND(AVG(price)) as avg_price,
+            COUNT(CASE WHEN ai_score >= 4 THEN 1 END) as high_score_count
+          FROM listings
+          WHERE category IS NOT NULL
+          GROUP BY category
+          ORDER BY count DESC
+        `
+        const categoryResult = await client.query(categoryQuery)
+        categoryStats = categoryResult.rows
+        console.log('✅ Category query completed')
+      } catch (categoryError) {
+        console.error('❌ Category query failed:', categoryError)
+        categoryStats = []
+      }
 
       // Get price range distribution
       const priceQuery = `
         SELECT 
-          CASE 
-            WHEN price < 500 THEN '0-500 kr'
-            WHEN price < 1000 THEN '500-1000 kr'
-            WHEN price < 2000 THEN '1000-2000 kr'
-            WHEN price < 5000 THEN '2000-5000 kr'
-            ELSE '5000+ kr'
-          END as price_range,
+          price_range,
           COUNT(*) as count,
           COUNT(CASE WHEN ai_score >= 4 THEN 1 END) as high_score_count
-        FROM listings
-        GROUP BY 
-          CASE 
-            WHEN price < 500 THEN '0-500 kr'
-            WHEN price < 1000 THEN '500-1000 kr'
-            WHEN price < 2000 THEN '1000-2000 kr'
-            WHEN price < 5000 THEN '2000-5000 kr'
-            ELSE '5000+ kr'
-          END
+        FROM (
+          SELECT 
+            CASE 
+              WHEN price < 500 THEN '0-500 kr'
+              WHEN price < 1000 THEN '500-1000 kr'
+              WHEN price < 2000 THEN '1000-2000 kr'
+              WHEN price < 5000 THEN '2000-5000 kr'
+              ELSE '5000+ kr'
+            END as price_range,
+            ai_score
+          FROM listings
+        ) price_ranges
+        GROUP BY price_range
         ORDER BY 
-          CASE 
-            WHEN price < 500 THEN 1
-            WHEN price < 1000 THEN 2
-            WHEN price < 2000 THEN 3
-            WHEN price < 5000 THEN 4
+          CASE price_range
+            WHEN '0-500 kr' THEN 1
+            WHEN '500-1000 kr' THEN 2
+            WHEN '1000-2000 kr' THEN 3
+            WHEN '2000-5000 kr' THEN 4
             ELSE 5
           END
       `
-      const priceResult = await client.query(priceQuery)
-      const priceStats = priceResult.rows
-      console.log('✅ Price query completed')
+      let priceStats = []
+      try {
+        const priceResult = await client.query(priceQuery)
+        priceStats = priceResult.rows
+        console.log('✅ Price query completed')
+      } catch (priceError) {
+        console.warn('⚠️ Price query failed, using fallback:', priceError)
+        // Fallback: simple price count
+        const fallbackPriceQuery = `
+          SELECT 
+            'Alla priser' as price_range,
+            COUNT(*) as count,
+            COUNT(CASE WHEN ai_score >= 4 THEN 1 END) as high_score_count
+          FROM listings
+        `
+        const fallbackResult = await client.query(fallbackPriceQuery)
+        priceStats = fallbackResult.rows
+        console.log('✅ Fallback price query completed')
+      }
 
       console.log('📊 Logs and statistics fetched successfully')
 
