@@ -21,37 +21,93 @@ export function BatchAnalysis({ listings }: BatchAnalysisProps) {
   const [error, setError] = useState<string | null>(null)
   const [filterScore, setFilterScore] = useState<number>(4) // Show undervalued items by default
 
+  const [progress, setProgress] = useState(0)
+  const [currentChunk, setCurrentChunk] = useState(0)
+  const [isProcessing, setIsProcessing] = useState(false)
+
   const analyzeAll = async () => {
     setLoading(true)
     setError(null)
+    setProgress(0)
+    setCurrentChunk(0)
+    setIsProcessing(true)
+    
+    const allResults: AnalysisResultWithListing[] = []
+    let startIndex = 0
+    const chunkSize = 5 // Process 5 listings at a time
     
     try {
-      const response = await fetch('/api/analyze', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ multipleListings: listings }),
-      })
+      while (startIndex < listings.length) {
+        console.log(`🔄 Processing chunk starting at index ${startIndex}`)
+        
+        const response = await fetch('/api/analyze-batch', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ 
+            listings, 
+            chunkSize, 
+            startIndex 
+          }),
+        })
 
-      if (!response.ok) {
-        throw new Error('Batch-analys misslyckades')
-      }
+        if (!response.ok) {
+          throw new Error(`Batch-analys misslyckades för chunk ${startIndex + 1}`)
+        }
 
-      const data = await response.json()
-      if (data.success) {
-        const resultsWithListings = listings.map((listing, index) => ({
-          listing,
-          result: data.results[index]
-        }))
-        setResults(resultsWithListings)
-      } else {
-        throw new Error(data.error || 'Okänt fel')
+        const data = await response.json()
+        if (data.success) {
+          // Add results from this chunk
+          const chunkResults = data.results.map((result: any) => {
+            const listing = listings.find(l => l.title === result.listingTitle)
+            return {
+              listing: listing!,
+              result: {
+                score: result.score,
+                reasoning: result.reasoning,
+                confidence: result.confidence,
+                factors: result.factors,
+                recommendation: result.recommendation,
+                analyzedAt: result.analyzedAt,
+                model: result.model,
+                profit_analysis: result.profit_analysis
+              }
+            }
+          })
+          
+          allResults.push(...chunkResults)
+          setResults([...allResults])
+          
+          // Update progress
+          setProgress(data.progress.percentage)
+          setCurrentChunk(data.progress.completed)
+          
+          console.log(`✅ Chunk completed: ${data.progress.completed}/${data.progress.total} (${data.progress.percentage}%)`)
+          
+          // Check if we have more to process
+          if (!data.hasMore) {
+            break
+          }
+          
+          startIndex = data.nextChunk
+          
+          // Small delay between chunks
+          await new Promise(resolve => setTimeout(resolve, 1000))
+          
+        } else {
+          throw new Error(data.error || 'Okänt fel i chunk')
+        }
       }
+      
+      console.log(`🎉 All chunks completed! Total results: ${allResults.length}`)
+      
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Ett fel uppstod')
+      console.error('Batch analysis error:', err)
     } finally {
       setLoading(false)
+      setIsProcessing(false)
     }
   }
 
@@ -95,8 +151,8 @@ export function BatchAnalysis({ listings }: BatchAnalysisProps) {
             <p className="text-gray-600 mb-4">
               Analysera alla {listings.length} annonser för att hitta dolda guldkorn
             </p>
-            <Button onClick={analyzeAll} className="w-full">
-              Starta batch-analys
+            <Button onClick={analyzeAll} className="w-full" disabled={isProcessing}>
+              {isProcessing ? 'Analyserar...' : 'Starta batch-analys'}
             </Button>
             <p className="text-xs text-gray-500 mt-2">
               Detta kan ta flera minuter beroende på antal annonser
@@ -111,6 +167,25 @@ export function BatchAnalysis({ listings }: BatchAnalysisProps) {
             <p className="text-sm text-gray-500">
               {listings.length} annonser att analysera
             </p>
+            
+            {/* Progress Bar */}
+            {isProcessing && (
+              <div className="mt-4 space-y-3">
+                <div className="flex justify-between text-sm text-gray-600">
+                  <span>Förlopp: {currentChunk} av {listings.length}</span>
+                  <span>{progress}%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+                <p className="text-xs text-gray-500">
+                  Bearbetar chunk {Math.ceil(currentChunk / 5)} av {Math.ceil(listings.length / 5)}
+                </p>
+              </div>
+            )}
           </div>
         )}
 
