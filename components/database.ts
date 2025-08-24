@@ -2,10 +2,10 @@ import { Pool } from 'pg'
 
 // Database connection pool
 const pool = new Pool({
-      connectionString: process.env.POSTGRES_URL || process.env.NEON_DATABASE_URL,
-  ssl: {
+  connectionString: process.env.POSTGRES_URL || process.env.NEON_DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? {
     rejectUnauthorized: false
-  }
+  } : false
 })
 
 // Database types

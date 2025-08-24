@@ -20,8 +20,11 @@ async function migrateJSONToDatabase() {
       return
     }
     
-    const listings = JSON.parse(fs.readFileSync(listingsPath, 'utf8'))
+    const listingsData = JSON.parse(fs.readFileSync(listingsPath, 'utf8'))
     const state = JSON.parse(fs.readFileSync(statePath, 'utf8'))
+    
+    // Extract listings from the nested structure
+    const listings = Object.values(listingsData).flat()
     
     console.log(`📊 Found ${listings.length} listings and ${Object.keys(state).length} bevakningar`)
     
