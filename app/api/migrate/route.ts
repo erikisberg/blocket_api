@@ -7,9 +7,9 @@ export async function POST(request: NextRequest) {
   try {
     console.log('🚀 Starting JSON to database migration via API...')
     
-    // Read JSON files
-    const listingsPath = path.join(process.cwd(), 'bevakningar_listings.json')
-    const statePath = path.join(process.cwd(), 'bevakningar_state.json')
+    // Read JSON files from data directory
+    const listingsPath = path.join(process.cwd(), 'data', 'bevakningar_listings.json')
+    const statePath = path.join(process.cwd(), 'data', 'bevakningar_state.json')
     
     if (!fs.existsSync(listingsPath)) {
       return NextResponse.json({
