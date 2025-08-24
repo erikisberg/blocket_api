@@ -128,6 +128,14 @@ export async function POST(request: NextRequest) {
       // Format phone number
       const formattedPhone = smsService.formatPhoneNumber(phoneNumber)
 
+      // Check if SMS API key is configured
+      if (!process.env.FORTYSIXELK_API_KEY) {
+        return NextResponse.json({ 
+          error: 'SMS API key not configured',
+          details: 'Please add FORTYSIXELK_API_KEY to your environment variables to enable SMS notifications'
+        }, { status: 400 })
+      }
+
       // Send test SMS
       const testMessage = {
         to: formattedPhone,
@@ -145,6 +153,13 @@ Du kommer nu få SMS när undervärderade objekt hittas!`
       const result = await smsService.sendSMS(testMessage)
 
       if (result.success) {
+        if (result.message_id === 'skipped_no_api_key') {
+          return NextResponse.json({ 
+            error: 'SMS API key not configured',
+            details: 'Please add FORTYSIXELK_API_KEY to your environment variables to enable SMS notifications'
+          }, { status: 400 })
+        }
+
         return NextResponse.json({ 
           success: true, 
           message: 'Test SMS sent successfully',
