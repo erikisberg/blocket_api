@@ -8,61 +8,29 @@ import { AIAnalysisCard } from './AIAnalysisCard'
 import { ExternalLink, MapPin, Calendar, User, Tag } from 'lucide-react'
 
 interface Listing {
-  ad: {
-    ad_id: string
-    subject: string
-    body: string
-    price: {
-      value: number
-      suffix: string
-      old_value?: number
-      price_lowered?: boolean
-    }
-    zipcode: string
-    list_time: string
-    ad_status: string
-    images: Array<{
-      url: string
-      width: number
-      height: number
-      type: string
-    }>
-    advertiser: {
-      name: string
-      type: string
-      public_profile?: {
-        display_name: string
-        reviews?: {
-          overall_score: number
-          worded_overall_score: string
-        }
-      }
-    }
-    category: Array<{
-      id: string
-      name: string
-    }>
-    location: Array<{
-      name: string
-      id: string
-    }>
-    share_url?: string
-    parameter_groups?: Array<{
-      parameters: Array<{
-        value: string
-      }>
-    }>
-  }
-  discovered_at: string
-  ai_analysis?: {
-    score: number
-    reasoning: string
-    confidence: number
-    factors: string[]
-    recommendation: string
-    analyzedAt: string
-    model: string
-  }
+  id: string
+  bevakning_id: string
+  ad_id: string
+  title: string
+  price: number
+  currency: string
+  description?: string
+  category?: string
+  condition?: string
+  location?: string
+  seller_type?: string
+  blocket_url?: string
+  frontend_url?: string
+  discovered_at: Date
+  ai_score?: number
+  ai_confidence?: number
+  ai_reasoning?: string
+  ai_factors?: string[]
+  ai_recommendation?: string
+  ai_analyzed_at?: Date
+  ai_model?: string
+  created_at: Date
+  updated_at: Date
 }
 
 interface ListingCardProps {
@@ -70,10 +38,8 @@ interface ListingCardProps {
 }
 
 export function ListingCard({ listing }: ListingCardProps) {
-  const { ad } = listing
-  
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('sv-SE', {
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('sv-SE', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -87,11 +53,11 @@ export function ListingCard({ listing }: ListingCardProps) {
   }
 
   const getCategoryName = () => {
-    return ad.category?.[ad.category.length - 1]?.name || 'Okänd kategori'
+    return listing.category || 'Okänd kategori'
   }
 
   const getLocationName = () => {
-    return ad.location?.[ad.location.length - 1]?.name || 'Okänd plats'
+    return listing.location || 'Okänd plats'
   }
 
   return (
@@ -99,44 +65,43 @@ export function ListingCard({ listing }: ListingCardProps) {
       <CardHeader>
         <div className="flex justify-between items-start">
           <div className="flex-1">
-            <CardTitle className="text-2xl mb-2">{ad.subject}</CardTitle>
+            <CardTitle className="text-2xl mb-2">{listing.title}</CardTitle>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Tag className="h-4 w-4" />
                 {getCategoryName()}
               </div>
-              <div className="flex items-center gap-1">
-                <MapPin className="h-4 w-4" />
-                {getLocationName()} ({ad.zipcode})
-              </div>
-              <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                {formatDate(ad.list_time)}
-              </div>
+                              <div className="flex items-center gap-1">
+                  <MapPin className="h-4 w-4" />
+                  {getLocationName()}
+                </div>
+                <div className="flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  {formatDate(listing.discovered_at)}
+                </div>
             </div>
           </div>
           
-          <div className="text-right">
-            <div className="text-3xl font-bold text-primary">
-              {formatPrice(ad.price.value)} {ad.price.suffix}
-            </div>
-            {ad.price.price_lowered && ad.price.old_value && (
-              <div className="text-sm text-muted-foreground line-through">
-                {formatPrice(ad.price.old_value)} {ad.price.suffix}
+                      <div className="text-right">
+              <div className="text-3xl font-bold text-primary">
+                {formatPrice(listing.price)} {listing.currency}
               </div>
-            )}
-          </div>
+            </div>
         </div>
       </CardHeader>
 
       <CardContent className="space-y-6">
-        {/* Image Slider */}
-        <ImageSlider images={ad.images} title={ad.subject} />
+        {/* Image Placeholder */}
+        <div className="mb-6">
+          <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+            <span className="text-lg text-gray-500">Blocket Annons</span>
+          </div>
+        </div>
 
         {/* Description */}
         <div>
           <h4 className="font-semibold mb-2">Beskrivning</h4>
-          <p className="text-gray-700 leading-relaxed">{ad.body}</p>
+          <p className="text-gray-700 leading-relaxed">{listing.description || 'Ingen beskrivning tillgänglig'}</p>
         </div>
 
 
@@ -145,34 +110,42 @@ export function ListingCard({ listing }: ListingCardProps) {
         <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
           <div>
             <p><strong>Upptäckt:</strong> {formatDate(listing.discovered_at)}</p>
-            {ad.list_time && (
-              <p><strong>Skapad på Blocket:</strong> {formatDate(ad.list_time)}</p>
+            {listing.ai_analyzed_at && (
+              <p><strong>AI-analyserad:</strong> {formatDate(listing.ai_analyzed_at)}</p>
             )}
           </div>
           <div>
             <p><strong>Kategori:</strong> {getCategoryName()}</p>
-            <p><strong>Säljare:</strong> {ad.advertiser.type === 'private' ? 'Företag' : 'Privat'}</p>
+            <p><strong>Säljare:</strong> {listing.seller_type === 'private' ? 'Företag' : 'Privat'}</p>
           </div>
         </div>
 
         {/* AI Analysis */}
         <div className="border-t pt-6">
           <AIAnalysisCard 
-            key={ad.ad_id}
+            key={listing.ad_id}
             listing={{
-              title: ad.subject,
-              description: ad.body,
-              price: ad.price.value,
-              currency: ad.price.suffix,
+              title: listing.title,
+              description: listing.description || '',
+              price: listing.price,
+              currency: listing.currency,
               category: getCategoryName(),
-              condition: ad.parameter_groups?.[0]?.parameters?.[0]?.value,
-              images: ad.images?.map(img => ({ url: img.url })),
+              condition: listing.condition || 'Okänt',
+              images: [],
               location: getLocationName(),
-              sellerType: ad.advertiser.type
+              sellerType: listing.seller_type || 'Okänd'
             }}
-            listingId={ad.ad_id}
-            bevakningId="11998349"
-            cachedAnalysis={listing.ai_analysis}
+            listingId={listing.ad_id}
+            bevakningId={listing.bevakning_id}
+            cachedAnalysis={{
+              score: listing.ai_score,
+              reasoning: listing.ai_reasoning,
+              confidence: listing.ai_confidence,
+              factors: listing.ai_factors || [],
+              recommendation: listing.ai_recommendation,
+              analyzedAt: listing.ai_analyzed_at?.toISOString(),
+              model: listing.ai_model
+            }}
           />
         </div>
 
@@ -182,25 +155,19 @@ export function ListingCard({ listing }: ListingCardProps) {
           <div className="flex items-center gap-2">
             <User className="h-4 w-4" />
             <span className="font-medium">
-              {ad.advertiser.public_profile?.display_name || ad.advertiser.name}
+              {listing.seller_type || 'Okänd säljare'}
             </span>
             <span className="text-sm text-muted-foreground">
-              ({ad.advertiser.type === 'private' ? 'Privat' : 'Företag'})
+              ({listing.seller_type === 'private' ? 'Privat' : 'Företag'})
             </span>
-            {ad.advertiser.public_profile?.reviews && (
-              <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">
-                {ad.advertiser.public_profile.reviews.worded_overall_score} 
-                ({ad.advertiser.public_profile.reviews.overall_score}/100)
-              </span>
-            )}
           </div>
         </div>
 
         {/* Actions */}
         <div className="flex gap-3 pt-4">
-          {ad.share_url && (
+          {listing.blocket_url && (
             <Button asChild>
-              <a href={ad.share_url} target="_blank" rel="noopener noreferrer">
+              <a href={listing.blocket_url} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Visa på Blocket
               </a>
