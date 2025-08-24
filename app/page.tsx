@@ -315,13 +315,13 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex items-center gap-3">
-              <Bike className="h-8 w-8 text-primary" />
+              <Bike className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
               <div>
-                <h1 className="text-2xl font-bold">Blocket Bevakningar</h1>
-                <p className="text-sm text-muted-foreground">
+                <h1 className="text-xl sm:text-2xl font-bold">Blocket Bevakningar</h1>
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   Cyklar säljes i Jämtland • {filteredListings.length} annonser
                   {dateFilter !== 'all' && (
                     <span className="ml-2 text-blue-600">
@@ -333,12 +333,12 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <ViewToggle 
                 currentView={viewMode} 
                 onViewChange={setViewMode} 
               />
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs sm:text-sm text-muted-foreground">
                 {currentIndex + 1} av {filteredListings.length}
               </span>
             </div>
@@ -349,47 +349,49 @@ export default function Home() {
       {/* Filters */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex flex-wrap gap-4 items-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 items-start sm:items-center">
             {/* Search */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full sm:w-auto">
               <Search className="h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
                 placeholder="Sök bland annonser..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-1 sm:w-64 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm"
               />
             </div>
             
             {/* Price Filter */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full sm:w-auto">
               <Filter className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm">Pris:</span>
-              <input
-                type="number"
-                placeholder="Min"
-                value={priceRange[0]}
-                onChange={(e) => setPriceRange([Number(e.target.value) || 0, priceRange[1]])}
-                className="w-20 px-2 py-1 border rounded text-sm"
-              />
-              <span>-</span>
-              <input
-                type="number"
-                placeholder="Max"
-                value={priceRange[1]}
-                onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value) || 10000])}
-                className="w-20 px-2 py-1 border rounded text-sm"
-              />
+              <span className="text-sm whitespace-nowrap">Pris:</span>
+              <div className="flex items-center gap-1">
+                <input
+                  type="number"
+                  placeholder="Min"
+                  value={priceRange[0]}
+                  onChange={(e) => setPriceRange([Number(e.target.value) || 0, priceRange[1]])}
+                  className="w-16 sm:w-20 px-2 py-1 border rounded text-sm"
+                />
+                <span className="text-sm">-</span>
+                <input
+                  type="number"
+                  placeholder="Max"
+                  value={priceRange[1]}
+                  onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value) || 10000])}
+                  className="w-16 sm:w-20 px-2 py-1 border rounded text-sm"
+                />
+              </div>
             </div>
 
             {/* Score Filter */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm">AI Score:</span>
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <span className="text-sm whitespace-nowrap">AI Score:</span>
               <select
                 value={scoreFilter || ''}
                 onChange={(e) => setScoreFilter(e.target.value ? Number(e.target.value) : null)}
-                className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                className="flex-1 sm:w-48 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm"
               >
                 <option value="">Alla scores</option>
                 <option value="5">5 - Mycket undervärderat</option>
@@ -400,12 +402,12 @@ export default function Home() {
             </div>
 
             {/* Date Filter */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm">Datum:</span>
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <span className="text-sm whitespace-nowrap">Datum:</span>
               <select
                 value={dateFilter}
                 onChange={(e) => setDateFilter(e.target.value as 'all' | 'today' | 'week' | 'month')}
-                className={`px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm ${
+                className={`flex-1 sm:w-40 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm ${
                   dateFilter !== 'all' ? 'bg-blue-50 border-blue-300' : ''
                 }`}
               >
@@ -415,7 +417,7 @@ export default function Home() {
                 <option value="month">Senaste månaden</option>
               </select>
               {dateFilter !== 'all' && (
-                <Badge variant="outline" className="bg-blue-100 text-blue-800">
+                <Badge variant="outline" className="bg-blue-100 text-blue-800 text-xs">
                   {dateFilter === 'today' ? 'Idag' : 
                    dateFilter === 'week' ? 'Vecka' : 'Månad'}
                 </Badge>
@@ -423,12 +425,12 @@ export default function Home() {
             </div>
 
             {/* Category Filter */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm">Kategori:</span>
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <span className="text-sm whitespace-nowrap">Kategori:</span>
               <select
                 value={categoryFilter}
                 onChange={(e) => setCategoryFilter(e.target.value)}
-                className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                className="flex-1 sm:w-48 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm"
               >
                 <option value="all">Alla kategorier</option>
                 <option value="Tillbehör">Tillbehör</option>
@@ -440,84 +442,120 @@ export default function Home() {
               </select>
             </div>
 
-            {/* Reset Button */}
-            <Button
-              onClick={resetFilters}
-              variant="outline"
-              size="sm"
-              className="text-xs"
-            >
-              Återställ filter
-            </Button>
+            {/* Action Buttons Row */}
+            <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+              {/* Reset Button */}
+              <Button
+                onClick={resetFilters}
+                variant="outline"
+                size="sm"
+                className="text-xs flex-1 sm:flex-none"
+              >
+                Återställ filter
+              </Button>
 
-            {/* Today's Fetch Button */}
-            <Button
-              onClick={() => setDateFilter('today')}
-              variant="outline"
-              size="sm"
-              className={`text-xs ${
-                dateFilter === 'today' 
-                  ? 'bg-green-50 border-green-200 text-green-700' 
-                  : 'bg-gray-50 border-gray-200 text-gray-700'
-              } hover:bg-green-100`}
-            >
-              📅 Dagens hämtning
-            </Button>
+              {/* Today's Fetch Button */}
+              <Button
+                onClick={() => setDateFilter('today')}
+                variant="outline"
+                size="sm"
+                className={`text-xs flex-1 sm:flex-none ${
+                  dateFilter === 'today' 
+                    ? 'bg-green-50 border-green-200 text-green-700' 
+                    : 'bg-gray-50 border-gray-200 text-gray-700'
+                } hover:bg-green-100`}
+              >
+                📅 Dagens hämtning
+              </Button>
 
-            {/* SMS Test Button */}
-            <Button
-              onClick={testSMS}
-              variant="outline"
-              size="sm"
-              className="text-xs bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100"
-            >
-              📱 Testa SMS
-            </Button>
+              {/* SMS Test Button */}
+              <Button
+                onClick={testSMS}
+                variant="outline"
+                size="sm"
+                className="text-xs bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100 flex-1 sm:flex-none"
+              >
+                📱 Testa SMS
+              </Button>
 
-            {/* Daily Summary Button */}
-            <Button
-              onClick={sendDailySummary}
-              variant="outline"
-              size="sm"
-              className="text-xs bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100"
-            >
-              📊 Daglig sammanfattning
-            </Button>
+              {/* Daily Summary Button */}
+              <Button
+                onClick={sendDailySummary}
+                variant="outline"
+                size="sm"
+                className="text-xs bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 flex-1 sm:flex-none"
+              >
+                📊 Daglig sammanfattning
+              </Button>
 
-            {/* Update Images Button */}
-            <Button
-              onClick={updateAllImages}
-              variant="outline"
-              size="sm"
-              className="text-xs bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100"
-            >
-              🖼️ Uppdatera alla bilder
-            </Button>
+              {/* Update Images Button */}
+              <Button
+                onClick={updateAllImages}
+                variant="outline"
+                size="sm"
+                className="text-xs bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 flex-1 sm:flex-none"
+              >
+                🖼️ Uppdatera alla bilder
+              </Button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Navigation */}
-        <div className="flex justify-between items-center mb-6">
-          <Button
-            onClick={previousListing}
-            disabled={filteredListings.length <= 1}
-            variant="outline"
-          >
-            <ChevronLeft className="h-4 w-4 mr-2" />
-            Föregående
-          </Button>
-          
-          <Button
-            onClick={nextListing}
-            disabled={filteredListings.length <= 1}
-            variant="outline"
-          >
-            Nästa
-            <ChevronRight className="h-4 w-4 ml-2" />
-          </Button>
+      <main className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+        {/* Navigation and Actions */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 sm:mb-6">
+          {/* Navigation Buttons */}
+          <div className="flex justify-between items-center w-full sm:w-auto">
+            <Button
+              onClick={previousListing}
+              disabled={filteredListings.length <= 1}
+              variant="outline"
+              size="sm"
+              className="text-sm"
+            >
+              <ChevronLeft className="h-4 w-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Föregående</span>
+              <span className="sm:hidden">←</span>
+            </Button>
+            
+            <Button
+              onClick={nextListing}
+              disabled={filteredListings.length <= 1}
+              variant="outline"
+              size="sm"
+              className="text-sm"
+            >
+              <span className="hidden sm:inline">Nästa</span>
+              <span className="sm:hidden">→</span>
+              <ChevronRight className="h-4 w-4 ml-1 sm:ml-2" />
+            </Button>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex gap-2 w-full sm:w-auto">
+            <Button
+              onClick={fetchNewListings}
+              disabled={fetchingNew}
+              variant="outline"
+              size="sm"
+              className="text-xs sm:text-sm flex-1 sm:flex-none"
+            >
+              {fetchingNew ? (
+                <>
+                  <Loader2 className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 animate-spin" />
+                  <span className="hidden sm:inline">Hämtar...</span>
+                  <span className="sm:hidden">⏳</span>
+                </>
+              ) : (
+                <>
+                  <span className="hidden sm:inline">🔄 Hämta nya listings</span>
+                  <span className="sm:hidden">🔄</span>
+                </>
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Current Listing or List View */}
@@ -546,15 +584,15 @@ export default function Home() {
 
         {/* Thumbnail Navigation */}
         {filteredListings.length > 1 && (
-          <div className="mt-8">
-            <h3 className="text-lg font-semibold mb-4">Alla annonser</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="mt-6 sm:mt-8">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Alla annonser</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-4">
               {filteredListings.map((listing, index) => (
                 <button
                   key={listing.ad_id}
                   onClick={() => goToListing(index)}
                   className={`
-                    text-left p-3 border rounded-lg transition-all hover:shadow-md bg-white
+                    text-left p-2 sm:p-3 border rounded-lg transition-all hover:shadow-md bg-white
                     ${currentIndex === index 
                       ? 'border-primary bg-primary/5' 
                       : 'border-gray-200 hover:border-gray-300'
@@ -570,14 +608,14 @@ export default function Home() {
                           listing.images[0].url
                         }
                         alt={listing.images[0].description || 'Thumbnail'}
-                        className="w-full h-24 object-cover rounded"
+                        className="w-full h-16 sm:h-24 object-cover rounded"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement
                           target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYgIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmaWxsPSIjOUNBM0FGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CbG9ja2V0PC90ZXh0Pgo8L3N2Zz4K'
                         }}
                       />
                     ) : (
-                      <div className="w-full h-24 bg-gray-200 rounded flex items-center justify-center">
+                      <div className="w-full h-16 sm:h-24 bg-gray-200 rounded flex items-center justify-center">
                         <span className="text-xs text-gray-500">Blocket</span>
                       </div>
                     )}
@@ -585,7 +623,7 @@ export default function Home() {
                     {/* AI Score Badge */}
                     {listing.ai_score && (
                       <div className="absolute top-1 right-1">
-                        <div className={`px-2 py-1 rounded-full text-white font-bold text-xs ${
+                        <div className={`px-1 sm:px-2 py-1 rounded-full text-white font-bold text-xs ${
                           listing.ai_score === 5 ? 'bg-red-500' :
                           listing.ai_score === 4 ? 'bg-orange-500' :
                           listing.ai_score === 3 ? 'bg-yellow-500' :
@@ -599,12 +637,12 @@ export default function Home() {
                   </div>
                   
                   {/* Title */}
-                  <p className="text-sm font-medium line-clamp-2 mb-2 text-gray-900">
+                  <p className="text-xs sm:text-sm font-medium line-clamp-2 mb-2 text-gray-900">
                     {listing.title}
                   </p>
                   
                   {/* Price */}
-                  <p className="text-lg font-bold text-primary mb-2">
+                  <p className="text-base sm:text-lg font-bold text-primary mb-2">
                     {listing.price} {listing.currency}
                   </p>
                   
@@ -612,20 +650,20 @@ export default function Home() {
                   <div className="space-y-1 text-xs text-gray-600">
                     <p className="flex items-center gap-1">
                       <span>📍</span>
-                      {listing.location || 'Okänd plats'}
+                      <span className="truncate">{listing.location || 'Okänd plats'}</span>
                     </p>
                     
                     {/* Discovery Date */}
                     <p className="flex items-center gap-1">
                       <span>🔍</span>
-                      Upptäckt: {formatDate(listing.discovered_at)}
+                      <span className="truncate">Upptäckt: {formatDate(listing.discovered_at)}</span>
                     </p>
                     
                     {/* AI Analysis Date */}
                     {listing.ai_analyzed_at && (
                       <p className="flex items-center gap-1">
                         <span>🤖</span>
-                        Analyserad: {formatDate(listing.ai_analyzed_at)}
+                        <span className="truncate">Analyserad: {formatDate(listing.ai_analyzed_at)}</span>
                       </p>
                     )}
                   </div>
@@ -641,7 +679,7 @@ export default function Home() {
                               'Ej bedömt'}
                       </p>
                       {listing.ai_reasoning && (
-                        <p className="text-xs text-gray-600 line-clamp-2">
+                        <p className="text-xs text-gray-600 line-clamp-2 hidden sm:block">
                           {listing.ai_reasoning}
                         </p>
                       )}
