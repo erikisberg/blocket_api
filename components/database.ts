@@ -1,0 +1,300 @@
+import { Pool } from 'pg'
+
+// Database connection pool
+const pool = new Pool({
+  connectionString: process.env.NEON_DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+})
+
+// Database types
+export interface Listing {
+  id: string
+  bevakning_id: string
+  ad_id: string
+  title: string
+  price: number
+  currency: string
+  description?: string
+  category?: string
+  condition?: string
+  location?: string
+  seller_type?: string
+  blocket_url?: string
+  frontend_url?: string
+  discovered_at: Date
+  ai_score?: number
+  ai_confidence?: number
+  ai_reasoning?: string
+  ai_factors?: string[]
+  ai_recommendation?: string
+  ai_analyzed_at?: Date
+  ai_model?: string
+  created_at: Date
+  updated_at: Date
+}
+
+export interface SMSNotification {
+  id: string
+  listing_id: string
+  phone_number: string
+  message: string
+  sent_at: Date
+  status: 'pending' | 'sent' | 'delivered' | 'failed'
+  delivery_id?: string
+  error_message?: string
+  created_at: Date
+}
+
+export interface UserSettings {
+  id: string
+  user_id: string
+  phone_number: string
+  sms_enabled: boolean
+  min_score_threshold: number
+  notification_frequency: number
+  max_sms_per_day: number
+  category_filters: string[]
+  created_at: Date
+  updated_at: Date
+}
+
+// Database operations
+export class DatabaseService {
+  
+  // Get or create listing
+  static async upsertListing(listing: Partial<Listing>): Promise<Listing> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        INSERT INTO listings (
+          bevakning_id, ad_id, title, price, currency, description, 
+          category, condition, location, seller_type, blocket_url, frontend_url
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+        ON CONFLICT (ad_id) DO UPDATE SET
+          title = EXCLUDED.title,
+          price = EXCLUDED.price,
+          updated_at = NOW()
+        RETURNING *
+      `
+      
+      const values = [
+        listing.bevakning_id,
+        listing.ad_id,
+        listing.title,
+        listing.price,
+        listing.currency || 'kr',
+        listing.description,
+        listing.category,
+        listing.condition,
+        listing.location,
+        listing.seller_type,
+        listing.blocket_url,
+        listing.frontend_url
+      ]
+      
+      const result = await client.query(query, values)
+      return result.rows[0]
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Update AI analysis for a listing
+  static async updateAIAnalysis(adId: string, aiData: {
+    score: number
+    confidence: number
+    reasoning: string
+    factors: string[]
+    recommendation: string
+    model: string
+  }): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        UPDATE listings 
+        SET 
+          ai_score = $1,
+          ai_confidence = $2,
+          ai_reasoning = $3,
+          ai_factors = $4,
+          ai_recommendation = $5,
+          ai_model = $6,
+          ai_analyzed_at = NOW(),
+          updated_at = NOW()
+        WHERE ad_id = $7
+      `
+      
+      const values = [
+        aiData.score,
+        aiData.confidence,
+        aiData.reasoning,
+        aiData.factors,
+        aiData.recommendation,
+        aiData.model,
+        adId
+      ]
+      
+      await client.query(query, values)
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Get listings that need AI analysis
+  static async getListingsNeedingAnalysis(bevakningId: string): Promise<Listing[]> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        SELECT * FROM listings 
+        WHERE bevakning_id = $1 
+        AND ai_score IS NULL
+        ORDER BY discovered_at DESC
+      `
+      
+      const result = await client.query(query, [bevakningId])
+      return result.rows
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Get high-scoring listings for SMS notifications
+  static async getHighScoringListings(bevakningId: string, minScore: number): Promise<Listing[]> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        SELECT l.* FROM listings l
+        LEFT JOIN sms_notifications sn ON l.id = sn.listing_id
+        WHERE l.bevakning_id = $1 
+        AND l.ai_score >= $2
+        AND sn.id IS NULL
+        ORDER BY l.ai_score DESC, l.ai_confidence DESC
+      `
+      
+      const result = await client.query(query, [bevakningId, minScore])
+      return result.rows
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Create SMS notification
+  static async createSMSNotification(notification: Partial<SMSNotification>): Promise<SMSNotification> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        INSERT INTO sms_notifications (
+          listing_id, phone_number, message, status
+        ) VALUES ($1, $2, $3, $4)
+        RETURNING *
+      `
+      
+      const values = [
+        notification.listing_id,
+        notification.phone_number,
+        notification.message,
+        notification.status || 'pending'
+      ]
+      
+      const result = await client.query(query, values)
+      return result.rows[0]
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Update SMS notification status
+  static async updateSMSStatus(id: string, status: string, deliveryId?: string, errorMessage?: string): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        UPDATE sms_notifications 
+        SET 
+          status = $1,
+          delivery_id = $2,
+          error_message = $3,
+          sent_at = CASE WHEN $1 = 'sent' THEN NOW() ELSE sent_at END
+        WHERE id = $4
+      `
+      
+      const values = [status, deliveryId, errorMessage, id]
+      await client.query(query, values)
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Get user settings
+  static async getUserSettings(userId: string = 'default_user'): Promise<UserSettings> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        SELECT * FROM user_settings 
+        WHERE user_id = $1
+      `
+      
+      const result = await client.query(query, [userId])
+      return result.rows[0]
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Update user settings
+  static async updateUserSettings(userId: string, settings: Partial<UserSettings>): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        UPDATE user_settings 
+        SET 
+          phone_number = COALESCE($1, phone_number),
+          sms_enabled = COALESCE($2, sms_enabled),
+          min_score_threshold = COALESCE($3, min_score_threshold),
+          notification_frequency = COALESCE($4, notification_frequency),
+          max_sms_per_day = COALESCE($5, max_sms_per_day),
+          category_filters = COALESCE($6, category_filters),
+          updated_at = NOW()
+        WHERE user_id = $7
+      `
+      
+      const values = [
+        settings.phone_number,
+        settings.sms_enabled,
+        settings.min_score_threshold,
+        settings.notification_frequency,
+        settings.max_sms_per_day,
+        settings.category_filters,
+        userId
+      ]
+      
+      await client.query(query, values)
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Check if we've sent too many SMS today
+  static async getSMSCountToday(phoneNumber: string): Promise<number> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        SELECT COUNT(*) FROM sms_notifications 
+        WHERE phone_number = $1 
+        AND DATE(sent_at) = CURRENT_DATE
+        AND status IN ('sent', 'delivered')
+      `
+      
+      const result = await client.query(query, [phoneNumber])
+      return parseInt(result.rows[0].count)
+    } finally {
+      client.release()
+    }
+  }
+  
+  // Close database connection
+  static async close(): Promise<void> {
+    await pool.end()
+  }
+}

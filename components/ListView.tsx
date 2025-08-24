@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ExternalLink, Calendar, MapPin, User, TrendingUp } from 'lucide-react'
-import { formatPrice, formatDate } from './lib/utils'
+import { formatPrice, formatDate } from './utils'
 
 interface ListViewProps {
   listings: any[]

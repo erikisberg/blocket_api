@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { cn } from './lib/utils'
+import { cn } from './utils'
 
 interface ImageSliderProps {
   images: Array<{
