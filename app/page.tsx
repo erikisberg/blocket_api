@@ -58,6 +58,7 @@ export default function Home() {
   const [categoryFilter, setCategoryFilter] = useState<string>('all')
   const [loading, setLoading] = useState(true)
   const [viewMode, setViewMode] = useState<'cards' | 'list'>('cards')
+  const [fetchingNew, setFetchingNew] = useState(false)
 
   useEffect(() => {
     // Load listings from database
@@ -173,6 +174,41 @@ export default function Home() {
     } catch (error) {
       console.error('❌ Failed to update images:', error)
       alert('Kunde inte uppdatera bilder. Se konsolen för detaljer.')
+    }
+  }
+
+  const fetchNewListings = async () => {
+    try {
+      setFetchingNew(true)
+      console.log('🔄 Fetching new listings from Blocket...')
+
+      const response = await fetch('/api/cron/monitor-bevakningar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ action: 'run_once' })
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const result = await response.json()
+      console.log('✅ New listings fetch completed:', result)
+
+      if (result.success) {
+        // Reload listings to show new ones
+        window.location.reload()
+      } else {
+        throw new Error(result.error || 'Unknown error')
+      }
+
+    } catch (error) {
+      console.error('❌ Failed to fetch new listings:', error)
+      alert('Kunde inte hämta nya listings. Se konsolen för detaljer.')
+    } finally {
+      setFetchingNew(false)
     }
   }
 
@@ -537,6 +573,39 @@ export default function Home() {
               profit_analysis: listing.profit_analysis // Include profit analysis
             }))}
           />
+        </div>
+
+        {/* Fetch New Listings */}
+        <div className="mt-12">
+          <div className="text-center mb-8">
+            <div className="h-12 w-12 mx-auto mb-4 text-blue-600">🔄</div>
+            <h2 className="text-3xl font-bold mb-2">Hämta nya listings</h2>
+            <p className="text-lg text-gray-600">
+              Hämta nya annonser från Blocket och kör automatisk AI-analys
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <Button 
+              onClick={fetchNewListings}
+              className="px-8 py-3 text-lg"
+              disabled={fetchingNew}
+            >
+              {fetchingNew ? (
+                <>
+                  <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                  Hämtar nya listings...
+                </>
+              ) : (
+                <>
+                  🔄 Hämta nya listings från Blocket
+                </>
+              )}
+            </Button>
+            <p className="text-sm text-gray-500 mt-3">
+              AI-analys körs automatiskt på nya listings
+            </p>
+          </div>
         </div>
       </main>
     </div>
