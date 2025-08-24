@@ -67,13 +67,13 @@ async function migrateJSONToDatabase() {
           discovered_at: new Date(listing.discovered_at),
           
           // AI analysis fields
-          ai_score: listing.ai_analysis?.score || null,
-          ai_confidence: listing.ai_analysis?.confidence || null,
-          ai_reasoning: listing.ai_analysis?.reasoning || null,
+          ai_score: listing.ai_analysis?.score || undefined,
+          ai_confidence: listing.ai_analysis?.confidence || undefined,
+          ai_reasoning: listing.ai_analysis?.reasoning || undefined,
           ai_factors: listing.ai_analysis?.factors || [],
-          ai_recommendation: listing.ai_analysis?.recommendation || null,
-          ai_analyzed_at: listing.ai_analysis?.analyzedAt ? new Date(listing.ai_analysis.analyzedAt) : null,
-          ai_model: listing.ai_analysis?.model || null
+          ai_recommendation: listing.ai_analysis?.recommendation || undefined,
+          ai_analyzed_at: listing.ai_analysis?.analyzedAt ? new Date(listing.ai_analysis.analyzedAt) : undefined,
+          ai_model: listing.ai_analysis?.model || undefined
         }
         
         await DatabaseService.createListing(dbListing)
