@@ -9,7 +9,7 @@ import { BatchAnalysis } from '../components/BatchAnalysis'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import ImageSlider from '../components/ImageSlider'
-import { ChevronLeft, ChevronRight, Search, Filter, Bike, Brain } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Search, Filter, Bike, Brain, Loader2 } from 'lucide-react'
 import { formatPrice, formatDate } from '../components/utils'
 
 interface Listing {
