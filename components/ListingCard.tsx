@@ -137,15 +137,15 @@ export function ListingCard({ listing }: ListingCardProps) {
             }}
             listingId={listing.ad_id}
             bevakningId={listing.bevakning_id}
-            cachedAnalysis={{
+            cachedAnalysis={listing.ai_score ? {
               score: listing.ai_score,
-              reasoning: listing.ai_reasoning,
-              confidence: listing.ai_confidence,
+              reasoning: listing.ai_reasoning || '',
+              confidence: listing.ai_confidence || 0,
               factors: listing.ai_factors || [],
-              recommendation: listing.ai_recommendation,
-              analyzedAt: listing.ai_analyzed_at?.toISOString(),
-              model: listing.ai_model
-            }}
+              recommendation: listing.ai_recommendation || '',
+              analyzedAt: listing.ai_analyzed_at?.toISOString() || '',
+              model: listing.ai_model || ''
+            } : undefined}
           />
         </div>
 
