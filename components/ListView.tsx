@@ -116,13 +116,13 @@ export function ListView({ listings, onListingClick }: ListViewProps) {
                   </div>
 
                   {/* AI Score */}
-                  {listing.ai_analysis ? (
+                  {listing.ai_score ? (
                     <div className="text-center">
-                      <Badge className={`${getScoreColor(listing.ai_analysis.score)} text-white`}>
-                        {listing.ai_analysis.score}/5
+                      <Badge className={`${getScoreColor(listing.ai_score)} text-white`}>
+                        {listing.ai_score}/5
                       </Badge>
                       <p className="text-xs text-gray-600 mt-1 max-w-24">
-                        {getScoreText(listing.ai_analysis.score)}
+                        {getScoreText(listing.ai_score)}
                       </p>
                     </div>
                   ) : (
@@ -162,8 +162,20 @@ export function ListView({ listings, onListingClick }: ListViewProps) {
                 <div className="mt-3 pt-3 border-t border-gray-100">
                   <div className="flex items-center gap-2 mb-2">
                     <TrendingUp className="h-4 w-4 text-blue-600" />
-                    <span className="text-sm font-medium text-blue-800">AI Analys</span>
+                    <span className="text-sm font-medium text-blue-800">
+                      AI Analys ({listing.ai_score}/5)
+                    </span>
                   </div>
+                  
+                  {/* Profit Analysis */}
+                  {listing.profit_analysis && listing.profit_analysis.estimated_profit && (
+                    <div className="mb-2">
+                      <Badge className="bg-green-100 text-green-800 border-green-200">
+                        💰 Vinst: {listing.profit_analysis.estimated_profit} kr
+                      </Badge>
+                    </div>
+                  )}
+                  
                   {listing.ai_reasoning && (
                     <p className="text-sm text-gray-700 line-clamp-2">
                       {listing.ai_reasoning}
