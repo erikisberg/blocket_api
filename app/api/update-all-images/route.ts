@@ -139,30 +139,45 @@ export async function POST(request: NextRequest) {
 // Helper function to create images based on listing data
 function createImagesFromListing(listing: any) {
   const title = listing.title || 'Annons'
-  const encodedTitle = encodeURIComponent(title.substring(0, 30)) // Limit title length
+  const shortTitle = title.substring(0, 25) // Limit title length for SVG
   
-  // Create multiple images with different sizes and colors
+  // Create SVG images with different colors and sizes
   const images = [
     {
-      url: `https://via.placeholder.com/800x600/4f46e5/ffffff?text=${encodedTitle}`,
+      url: createSVGImage(800, 600, '#4f46e5', '#ffffff', shortTitle),
       description: `Huvudbild för ${title}`,
-      thumbnail_url: `https://via.placeholder.com/400x300/4f46e5/ffffff?text=${encodedTitle}`
+      thumbnail_url: createSVGImage(400, 300, '#4f46e5', '#ffffff', shortTitle)
     },
     {
-      url: `https://via.placeholder.com/600x450/10b981/ffffff?text=${encodedTitle}`,
+      url: createSVGImage(600, 450, '#10b981', '#ffffff', shortTitle),
       description: `Extra bild för ${title}`,
-      thumbnail_url: `https://via.placeholder.com/300x225/10b981/ffffff?text=${encodedTitle}`
+      thumbnail_url: createSVGImage(300, 225, '#10b981', '#ffffff', shortTitle)
     }
   ]
   
   // Add more images for expensive items
   if (listing.price && listing.price > 1000) {
     images.push({
-      url: `https://via.placeholder.com/700x500/f59e0b/ffffff?text=${encodedTitle}`,
+      url: createSVGImage(700, 500, '#f59e0b', '#ffffff', shortTitle),
       description: `Detaljbild för ${title}`,
-      thumbnail_url: `https://via.placeholder.com/350x250/f59e0b/ffffff?text=${encodedTitle}`
+      thumbnail_url: createSVGImage(350, 250, '#f59e0b', '#ffffff', shortTitle)
     })
   }
   
   return images
+}
+
+// Helper function to create SVG images
+function createSVGImage(width: number, height: number, bgColor: string, textColor: string, text: string): string {
+  const svg = `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="${bgColor}"/>
+      <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="${Math.min(width, height) / 15}" 
+            fill="${textColor}" text-anchor="middle" dominant-baseline="middle">
+        ${text}
+      </text>
+    </svg>
+  `.trim()
+  
+  return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`
 }

@@ -57,13 +57,12 @@ export async function POST(request: NextRequest) {
           }
         }
         
-        // For now, create a simple placeholder that looks more like a real image
-        // In the future, this could actually fetch from Blocket API
+        // Create SVG placeholder images
         const newImages = [
           {
-            url: `https://via.placeholder.com/400x300/4f46e5/ffffff?text=${encodeURIComponent(listing.title)}`,
+            url: createSVGImage(400, 300, '#4f46e5', '#ffffff', listing.title),
             description: `Bild för ${listing.title}`,
-            thumbnail_url: `https://via.placeholder.com/200x150/4f46e5/ffffff?text=${encodeURIComponent(listing.title)}`
+            thumbnail_url: createSVGImage(200, 150, '#4f46e5', '#ffffff', listing.title)
           }
         ]
         
@@ -103,4 +102,20 @@ export async function POST(request: NextRequest) {
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 })
   }
+}
+
+// Helper function to create SVG images
+function createSVGImage(width: number, height: number, bgColor: string, textColor: string, text: string): string {
+  const shortText = text.substring(0, 25) // Limit text length for SVG
+  const svg = `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="${bgColor}"/>
+      <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="${Math.min(width, height) / 15}" 
+            fill="${textColor}" text-anchor="middle" dominant-baseline="middle">
+        ${shortText}
+      </text>
+    </svg>
+  `.trim()
+  
+  return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`
 }
