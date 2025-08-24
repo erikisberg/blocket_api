@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { DatabaseService } from '@/lib/database'
-import { smsService } from '@/lib/sms-service'
+import { DatabaseService } from '../../../components/database'
+import { smsService } from '../../../components/sms-service'
 
 // Get user settings
 export async function GET(request: NextRequest) {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { monitoringService } from '@/lib/monitoring-service'
-import { DatabaseService } from '@/lib/database'
+import { monitoringService } from '../../../../components/monitoring-service'
+import { DatabaseService } from '../../../../components/database'
 
 // Vercel cron job endpoint
 // This will be called every 10 minutes by Vercel

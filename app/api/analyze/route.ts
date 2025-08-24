@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { analyzeListing, analyzeMultipleListings, ListingForAnalysis } from '@/lib/ai-analysis'
+import { analyzeListing, analyzeMultipleListings, ListingForAnalysis } from '../../../components/ai-analysis'
 
 export async function POST(request: NextRequest) {
   try {
