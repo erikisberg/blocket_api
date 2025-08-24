@@ -28,9 +28,10 @@ async function migrateJSONToDatabase() {
     // Migrate bevakningar
     for (const [bevakningId, bevakningData] of Object.entries(state)) {
       try {
+        const bevakning = bevakningData as { name?: string }
         await DatabaseService.createBevakning({
           bevakning_id: bevakningId,
-          name: bevakningData.name || 'Blocket Bevakning',
+          name: bevakning.name || 'Blocket Bevakning',
           user_id: 'default_user',
           is_active: true
         })
