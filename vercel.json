@@ -1,13 +1,22 @@
 {
-  "crons": [
-    {
-      "path": "/api/cron/monitor-bevakningar",
-      "schedule": "*/10 * * * *"
-    }
-  ],
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install --legacy-peer-deps",
+  "devCommand": "npm run dev",
   "functions": {
-    "app/api/cron/monitor-bevakningar/route.ts": {
-      "maxDuration": 300
+    "app/**/*.ts": {
+      "runtime": "nodejs18.x"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
