@@ -10,6 +10,7 @@ import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import ImageSlider from '../components/ImageSlider'
 import { ChevronLeft, ChevronRight, Search, Filter, Bike, Brain, Loader2 } from 'lucide-react'
+import { Badge } from '../components/ui/badge'
 import { formatPrice, formatDate } from '../components/utils'
 
 interface Listing {
@@ -61,6 +62,15 @@ export default function Home() {
   const [fetchingNew, setFetchingNew] = useState(false)
 
   useEffect(() => {
+    // Handle URL parameters for date filter
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const dateParam = urlParams.get('date')
+      if (dateParam && ['today', 'week', 'month'].includes(dateParam)) {
+        setDateFilter(dateParam as 'today' | 'week' | 'month')
+      }
+    }
+
     // Load listings from database
     fetch('/api/listings-db')
       .then(res => res.json())
@@ -97,18 +107,22 @@ export default function Home() {
     if (dateFilter !== 'all') {
       const discoveredDate = new Date(listing.discovered_at)
       const now = new Date()
-      const diffTime = Math.abs(now.getTime() - discoveredDate.getTime())
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+      
+      // Reset time to start of day for accurate comparison
+      const discoveredStartOfDay = new Date(discoveredDate.getFullYear(), discoveredDate.getMonth(), discoveredDate.getDate())
+      const nowStartOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate())
       
       switch (dateFilter) {
         case 'today':
-          matchesDate = diffDays <= 1
+          matchesDate = discoveredStartOfDay.getTime() === nowStartOfDay.getTime()
           break
         case 'week':
-          matchesDate = diffDays <= 7
+          const weekAgo = new Date(nowStartOfDay.getTime() - (7 * 24 * 60 * 60 * 1000))
+          matchesDate = discoveredStartOfDay >= weekAgo
           break
         case 'month':
-          matchesDate = diffDays <= 30
+          const monthAgo = new Date(nowStartOfDay.getTime() - (30 * 24 * 60 * 60 * 1000))
+          matchesDate = discoveredStartOfDay >= monthAgo
           break
       }
     }
@@ -247,6 +261,12 @@ export default function Home() {
                 <h1 className="text-2xl font-bold">Blocket Bevakningar</h1>
                 <p className="text-sm text-muted-foreground">
                   Cyklar säljes i Jämtland • {filteredListings.length} annonser
+                  {dateFilter !== 'all' && (
+                    <span className="ml-2 text-blue-600">
+                      • Filtrerat: {dateFilter === 'today' ? 'Idag' : 
+                                   dateFilter === 'week' ? 'Senaste veckan' : 'Senaste månaden'}
+                    </span>
+                  )}
                 </p>
               </div>
             </div>
@@ -323,13 +343,21 @@ export default function Home() {
               <select
                 value={dateFilter}
                 onChange={(e) => setDateFilter(e.target.value as 'all' | 'today' | 'week' | 'month')}
-                className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                className={`px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-sm ${
+                  dateFilter !== 'all' ? 'bg-blue-50 border-blue-300' : ''
+                }`}
               >
                 <option value="all">Alla datum</option>
                 <option value="today">Idag</option>
                 <option value="week">Senaste veckan</option>
                 <option value="month">Senaste månaden</option>
               </select>
+              {dateFilter !== 'all' && (
+                <Badge variant="outline" className="bg-blue-100 text-blue-800">
+                  {dateFilter === 'today' ? 'Idag' : 
+                   dateFilter === 'week' ? 'Vecka' : 'Månad'}
+                </Badge>
+              )}
             </div>
 
             {/* Category Filter */}
@@ -358,6 +386,20 @@ export default function Home() {
               className="text-xs"
             >
               Återställ filter
+            </Button>
+
+            {/* Today's Fetch Button */}
+            <Button
+              onClick={() => setDateFilter('today')}
+              variant="outline"
+              size="sm"
+              className={`text-xs ${
+                dateFilter === 'today' 
+                  ? 'bg-green-50 border-green-200 text-green-700' 
+                  : 'bg-gray-50 border-gray-200 text-gray-700'
+              } hover:bg-green-100`}
+            >
+              📅 Dagens hämtning
             </Button>
 
             {/* Update Images Button */}

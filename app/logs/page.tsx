@@ -163,14 +163,25 @@ export default function LogsPage() {
         <p className="text-lg text-gray-600">
           Statistik och historik över alla hämtningar från Blocket
         </p>
-        <Button 
-          onClick={fetchLogs} 
-          variant="outline" 
-          className="mt-4"
-        >
-          <RefreshCw className="h-4 w-4 mr-2" />
-          Uppdatera
-        </Button>
+        <div className="flex gap-2 mt-4">
+          <Button 
+            onClick={fetchLogs} 
+            variant="outline"
+          >
+            <RefreshCw className="h-4 w-4 mr-2" />
+            Uppdatera
+          </Button>
+          
+          <Button 
+            variant="outline"
+            asChild
+            className="bg-green-50 border-green-200 text-green-700 hover:bg-green-100"
+          >
+            <a href="/?date=today">
+              📅 Visa dagens hämtning
+            </a>
+          </Button>
+        </div>
       </div>
 
       {/* Overview Stats */}
