@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { AIAnalysisResult, ListingForAnalysis } from '../lib/ai-analysis'
+import { AIAnalysisResult, ListingForAnalysis } from './lib/ai-analysis'
 import { Brain, TrendingUp, Filter, Loader2, AlertCircle } from 'lucide-react'
 
 interface BatchAnalysisProps {

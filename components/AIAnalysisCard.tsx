@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { AIAnalysisResult, ListingForAnalysis, getCachedAnalysis, isAnalysisFresh } from '../lib/ai-analysis'
+import { AIAnalysisResult, ListingForAnalysis, getCachedAnalysis, isAnalysisFresh } from './lib/ai-analysis'
 import { Brain, TrendingUp, TrendingDown, Minus, Star, Loader2, RefreshCw, Clock } from 'lucide-react'
 
 interface AIAnalysisCardProps {
