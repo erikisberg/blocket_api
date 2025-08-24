@@ -359,6 +359,28 @@ export class DatabaseService {
     }
   }
   
+  // Get all listings
+  static async getAllListings(): Promise<Listing[]> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        SELECT * FROM listings 
+        ORDER BY discovered_at DESC
+      `
+      
+      const result = await client.query(query)
+      return result.rows.map(row => ({
+        ...row,
+        discovered_at: new Date(row.discovered_at),
+        created_at: new Date(row.created_at),
+        updated_at: new Date(row.updated_at),
+        ai_analyzed_at: row.ai_analyzed_at ? new Date(row.ai_analyzed_at) : undefined
+      }))
+    } finally {
+      client.release()
+    }
+  }
+
   // Close database connection
   static async close(): Promise<void> {
     await pool.end()
