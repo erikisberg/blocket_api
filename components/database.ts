@@ -302,12 +302,66 @@ export class DatabaseService {
       `
       
       const result = await client.query(query, [userId])
+      
+      if (result.rows.length === 0) {
+        // Create default settings if none exist
+        const defaultSettings: UserSettings = {
+          id: 'default',
+          user_id: userId,
+          phone_number: '+46701234567',
+          sms_enabled: true,
+          min_score_threshold: 4,
+          notification_frequency: 10,
+          max_sms_per_day: 20,
+          category_filters: ['all'],
+          created_at: new Date(),
+          updated_at: new Date()
+        }
+        
+        // Try to insert default settings
+        try {
+          await this.createUserSettings(userId, defaultSettings)
+          return defaultSettings
+        } catch (insertError) {
+          console.warn('Failed to create default settings, returning fallback:', insertError)
+          return defaultSettings
+        }
+      }
+      
       return result.rows[0]
     } finally {
       client.release()
     }
   }
   
+  // Create user settings
+  static async createUserSettings(userId: string, settings: Partial<UserSettings>): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        INSERT INTO user_settings (
+          user_id, phone_number, sms_enabled, min_score_threshold, 
+          notification_frequency, max_sms_per_day, category_filters
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+        ON CONFLICT (user_id) DO NOTHING
+      `
+      
+      const values = [
+        userId,
+        settings.phone_number || '+46701234567',
+        settings.sms_enabled ?? true,
+        settings.min_score_threshold || 4,
+        settings.notification_frequency || 10,
+        settings.max_sms_per_day || 20,
+        settings.category_filters || ['all']
+      ]
+      
+      await client.query(query, values)
+    } finally {
+      client.release()
+    }
+  }
+
   // Update user settings
   static async updateUserSettings(userId: string, settings: Partial<UserSettings>): Promise<void> {
     const client = await pool.connect()
@@ -376,6 +430,34 @@ export class DatabaseService {
         updated_at: row.updated_at,
         ai_analyzed_at: row.ai_analyzed_at
       }))
+    } finally {
+      client.release()
+    }
+  }
+
+  // Initialize default settings for a user
+  static async initializeDefaultSettings(userId: string = 'default_user'): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        INSERT INTO user_settings (
+          user_id, phone_number, sms_enabled, min_score_threshold, 
+          notification_frequency, max_sms_per_day, category_filters
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+        ON CONFLICT (user_id) DO NOTHING
+      `
+      
+      const values = [
+        userId,
+        '+46701234567',
+        true,
+        4,
+        10,
+        20,
+        ['all']
+      ]
+      
+      await client.query(query, values)
     } finally {
       client.release()
     }

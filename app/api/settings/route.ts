@@ -6,11 +6,24 @@ import { smsService } from '../../../components/sms-service'
 export async function GET(request: NextRequest) {
   try {
     const userId = request.nextUrl.searchParams.get('userId') || 'default_user'
+    console.log(`🔍 Fetching settings for user: ${userId}`)
+    
     const settings = await DatabaseService.getUserSettings(userId)
     
     if (!settings) {
-      return NextResponse.json({ error: 'User settings not found' }, { status: 404 })
+      console.warn(`⚠️ No settings found for user: ${userId}`)
+      return NextResponse.json({ 
+        error: 'User settings not found',
+        userId,
+        suggestion: 'Settings will be created automatically on first access'
+      }, { status: 404 })
     }
+
+    console.log(`✅ Settings found for user: ${userId}`, { 
+      sms_enabled: settings.sms_enabled,
+      phone_number: settings.phone_number,
+      min_score_threshold: settings.min_score_threshold
+    })
 
     return NextResponse.json({ 
       success: true, 
@@ -18,10 +31,11 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Failed to get user settings:', error)
+    console.error('❌ Failed to get user settings:', error)
     return NextResponse.json({ 
       error: 'Failed to get user settings',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: error instanceof Error ? error.message : 'Unknown error',
+      timestamp: new Date().toISOString()
     }, { status: 500 })
   }
 }

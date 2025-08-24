@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk'
 
 // Initialize Anthropic client
 const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY || '',
+  apiKey: process.env.ANTHROPIC_API_KEY || process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY || '',
 })
 
 // Function to get original quality image URL from Blocket
@@ -124,6 +124,18 @@ export function isAnalysisFresh(analysis: AIAnalysisResult): boolean {
 
 export async function analyzeListing(listing: ListingForAnalysis, listingId?: string, bevakningId?: string): Promise<AIAnalysisResult> {
   try {
+    // Validate API key
+    const apiKey = process.env.ANTHROPIC_API_KEY || process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY
+    if (!apiKey) {
+      throw new Error('ANTHROPIC_API_KEY environment variable is not set. Please configure your API key in Vercel environment variables.')
+    }
+    
+    if (apiKey === 'your_api_key_here' || apiKey === 'sk-ant-api03-din-nyckel-här') {
+      throw new Error('Please replace the placeholder API key with your actual Anthropic API key in Vercel environment variables.')
+    }
+    
+    console.log('🔑 Using Anthropic API key:', apiKey.substring(0, 10) + '...')
+    
     // Create the analysis prompt
     const prompt = createAnalysisPrompt(listing)
     
@@ -348,6 +360,18 @@ function parseAIResponse(responseText: string): AIAnalysisResult {
 
 // Batch analysis for multiple listings
 export async function analyzeMultipleListings(listings: ListingForAnalysis[]): Promise<AIAnalysisResult[]> {
+  // Validate API key first
+  const apiKey = process.env.ANTHROPIC_API_KEY || process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY environment variable is not set. Please configure your API key in Vercel environment variables.')
+  }
+  
+  if (apiKey === 'your_api_key_here' || apiKey === 'sk-ant-api03-din-nyckel-här') {
+    throw new Error('Please replace the placeholder API key with your actual Anthropic API key in Vercel environment variables.')
+  }
+  
+  console.log('🔑 Batch analysis using API key:', apiKey.substring(0, 10) + '...')
+  
   const results: AIAnalysisResult[] = []
   
   for (const listing of listings) {
