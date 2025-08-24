@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     }
     
     const jsonContent = fs.readFileSync(jsonPath, 'utf8')
-    const jsonData = JSON.parse(jsonContent)
+    const jsonData = JSON.parse(jsonContent) as Record<string, any>
     
     console.log(`📊 Found ${Object.keys(jsonData).length} bevakningar in JSON`)
     
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       
       // Process each bevakning
       for (const [bevakningId, bevakningData] of Object.entries(jsonData)) {
-        const listings = bevakningData.listings || []
+        const listings = bevakningData?.listings || []
         
         console.log(`🔄 Processing bevakning ${bevakningId} with ${listings.length} listings`)
         
