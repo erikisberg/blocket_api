@@ -288,6 +288,9 @@ export async function analyzeListing(listing: ListingForAnalysis, listingId?: st
       ]
     })
 
+    // Log the raw response for debugging
+    console.log('🤖 Raw AI response:', response.content[0].text.substring(0, 300) + '...')
+
     // Parse the response
     const analysis = parseAIResponse(response.content[0].text)
     
@@ -391,24 +394,33 @@ ${listing.images ? listing.images.map((img, i) =>
 - Risknivå (Låg/Medel/Hög)
 - Lista över exakt vad som behöver fixas
 
-**SVARA I FÖLJANDE FORMAT:**
+**VIKTIGT: SVARA ENDAST I VALID JSON-FORMAT. INGA EXTRA TEXTER FÖRE ELLER EFTER JSON.**
+
+**SVARA I FÖLJANDE FORMAT (EXAKT):**
 {
-  "score": [1-5],
+  "score": 4,
   "reasoning": "Detaljerad förklaring på svenska med fokus på fixkostnader och vinstmarginal",
-  "confidence": [0.0-1.0],
+  "confidence": 0.8,
   "factors": ["Faktor 1", "Faktor 2", "Faktor 3"],
   "recommendation": "Praktisk handelsrekommendation med fixkostnader och förväntad vinst",
   "profit_analysis": {
-    "estimated_repair_cost": "Uppskattad kostnad för lagning och delar (kr)",
-    "estimated_repair_time": "Uppskattad tid för lagning (timmar)",
-    "estimated_sale_price": "Förväntat försäljningspris efter lagning (kr)",
-    "estimated_profit": "Förväntad vinst efter lagning (kr)",
-    "profit_margin_percent": "Vinstmarginal i procent",
-    "risk_level": "Låg/Medel/Hög risk",
-    "repair_items": ["Lista över vad som behöver fixas", "Ex: nya bromsskivor", "rengöring av kedja"],
+    "estimated_repair_cost": 500,
+    "estimated_repair_time": 2,
+    "estimated_sale_price": 2500,
+    "estimated_profit": 800,
+    "profit_margin_percent": 32,
+    "risk_level": "Låg",
+    "repair_items": ["nya bromsskivor", "rengöring av kedja"],
     "market_comparison": "Jämförelse med marknadspriser för liknande varor i bra skick"
   }
 }
+
+**VIKTIGT:**
+- Använd endast dubbla citattecken (") för strängar
+- Använd endast komma (,) för att separera värden
+- Använd endast siffror för numeriska värden (inte "500 kr")
+- Avsluta inte med komma efter sista värdet
+- Inga kommentarer eller extra text i JSON
 
 **TÄNK PÅ:**
 - Marknadspriser för liknande varor i BRA skick (efter fix)
@@ -429,18 +441,25 @@ function parseAIResponse(responseText: string): AIAnalysisResult {
     // Try to extract JSON from the response
     const jsonMatch = responseText.match(/\{[\s\S]*\}/)
     if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0])
+      let jsonText = jsonMatch[0]
       
-      // Validate and return the parsed result
-      return {
-        score: Math.max(1, Math.min(5, parsed.score || 3)),
-        reasoning: parsed.reasoning || 'Ingen förklaring tillgänglig',
-        confidence: Math.max(0, Math.min(1, parsed.confidence || 0.5)),
-        factors: Array.isArray(parsed.factors) ? parsed.factors : ['Inga faktorer angivna'],
-        recommendation: parsed.recommendation || 'Ingen rekommendation tillgänglig',
-        profit_analysis: parsed.profit_analysis || undefined,
-        analyzedAt: new Date().toISOString(),
-        model: 'claude-opus-4-1-20250805'
+      // Try to fix common JSON issues
+      try {
+        const parsed = JSON.parse(jsonText)
+        return createValidAnalysisResult(parsed)
+      } catch (parseError) {
+        console.warn('Initial JSON parse failed, attempting to fix:', parseError)
+        
+        // Try to fix common JSON syntax issues
+        jsonText = fixCommonJSONIssues(jsonText)
+        
+        try {
+          const fixedParsed = JSON.parse(jsonText)
+          return createValidAnalysisResult(fixedParsed)
+        } catch (fixedParseError) {
+          console.warn('Fixed JSON parse also failed:', fixedParseError)
+          throw fixedParseError
+        }
       }
     }
   } catch (error) {
@@ -448,6 +467,23 @@ function parseAIResponse(responseText: string): AIAnalysisResult {
   }
   
   // Fallback parsing for non-JSON responses
+  return createFallbackAnalysisResult(responseText)
+}
+
+function createValidAnalysisResult(parsed: any): AIAnalysisResult {
+  return {
+    score: Math.max(1, Math.min(5, parsed.score || 3)),
+    reasoning: parsed.reasoning || 'Ingen förklaring tillgänglig',
+    confidence: Math.max(0, Math.min(1, parsed.confidence || 0.5)),
+    factors: Array.isArray(parsed.factors) ? parsed.factors : ['Inga faktorer angivna'],
+    recommendation: parsed.recommendation || 'Ingen rekommendation tillgänglig',
+    profit_analysis: parsed.profit_analysis || undefined,
+    analyzedAt: new Date().toISOString(),
+    model: 'claude-opus-4-1-20250805'
+  }
+}
+
+function createFallbackAnalysisResult(responseText: string): AIAnalysisResult {
   const scoreMatch = responseText.match(/score[:\s]*([1-5])/i)
   const score = scoreMatch ? parseInt(scoreMatch[1]) : 3
   
@@ -461,6 +497,56 @@ function parseAIResponse(responseText: string): AIAnalysisResult {
     analyzedAt: new Date().toISOString(),
     model: 'fallback'
   }
+}
+
+function fixCommonJSONIssues(jsonText: string): string {
+  let fixed = jsonText
+  
+  // Fix trailing commas
+  fixed = fixed.replace(/,(\s*[}\]])/g, '$1')
+  
+  // Fix missing quotes around property names
+  fixed = fixed.replace(/([{,]\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:/g, '$1"$2":')
+  
+  // Fix single quotes to double quotes
+  fixed = fixed.replace(/'/g, '"')
+  
+  // Fix unescaped quotes in strings
+  fixed = fixed.replace(/"([^"]*)"([^"]*)"([^"]*)"/g, '"$1\\"$2\\"$3"')
+  
+  // Fix newlines in strings
+  fixed = fixed.replace(/\n/g, '\\n')
+  fixed = fixed.replace(/\r/g, '\\r')
+  
+  // Fix tabs in strings
+  fixed = fixed.replace(/\t/g, '\\t')
+  
+  // Remove any control characters
+  fixed = fixed.replace(/[\x00-\x1F\x7F]/g, '')
+  
+  // Try to balance braces and brackets
+  let braceCount = 0
+  let bracketCount = 0
+  
+  for (let i = 0; i < fixed.length; i++) {
+    if (fixed[i] === '{') braceCount++
+    if (fixed[i] === '}') braceCount--
+    if (fixed[i] === '[') bracketCount++
+    if (fixed[i] === ']') bracketCount--
+  }
+  
+  // Add missing closing braces/brackets
+  while (braceCount > 0) {
+    fixed += '}'
+    braceCount--
+  }
+  while (bracketCount > 0) {
+    fixed += ']'
+    bracketCount--
+  }
+  
+  console.log('🔧 Fixed JSON:', fixed.substring(0, 200) + '...')
+  return fixed
 }
 
 // Batch analysis for multiple listings
