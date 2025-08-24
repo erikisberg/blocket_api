@@ -63,6 +63,72 @@ export interface UserSettings {
 // Database operations
 export class DatabaseService {
   
+  // Create bevakning
+  static async createBevakning(bevakning: { bevakning_id: string; name: string; user_id: string; is_active?: boolean }): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        INSERT INTO bevakningar (bevakning_id, name, user_id, is_active)
+        VALUES ($1, $2, $3, $4)
+        ON CONFLICT (bevakning_id) DO NOTHING
+      `
+      
+      const values = [
+        bevakning.bevakning_id,
+        bevakning.name,
+        bevakning.user_id,
+        bevakning.is_active ?? true
+      ]
+      
+      await client.query(query, values)
+    } finally {
+      client.release()
+    }
+  }
+
+  // Create listing
+  static async createListing(listing: Partial<Listing>): Promise<void> {
+    const client = await pool.connect()
+    try {
+      const query = `
+        INSERT INTO listings (
+          bevakning_id, ad_id, title, price, currency, description, 
+          category, condition, location, seller_type, blocket_url, frontend_url,
+          discovered_at, ai_score, ai_confidence, ai_reasoning, ai_factors, 
+          ai_recommendation, ai_analyzed_at, ai_model
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
+        ON CONFLICT (ad_id) DO NOTHING
+      `
+      
+      const values = [
+        listing.bevakning_id,
+        listing.ad_id,
+        listing.title,
+        listing.price,
+        listing.currency || 'kr',
+        listing.description,
+        listing.category,
+        listing.condition,
+        listing.location,
+        listing.seller_type,
+        listing.blocket_url,
+        listing.frontend_url,
+        listing.discovered_at,
+        listing.ai_score,
+        listing.ai_confidence,
+        listing.ai_reasoning,
+        listing.ai_factors,
+        listing.ai_recommendation,
+        listing.ai_analyzed_at,
+        listing.ai_model
+      ]
+      
+      await client.query(query, values)
+    } finally {
+      client.release()
+    }
+  }
+
   // Get or create listing
   static async upsertListing(listing: Partial<Listing>): Promise<Listing> {
     const client = await pool.connect()
