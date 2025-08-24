@@ -13,6 +13,10 @@ export async function GET(request: NextRequest) {
     const client = await pool.connect()
 
     try {
+      // Test database connection
+      await client.query('SELECT 1')
+      console.log('✅ Database connection successful')
+
       // Get monitoring statistics
       const statsQuery = `
         SELECT 
@@ -26,6 +30,7 @@ export async function GET(request: NextRequest) {
       `
       const statsResult = await client.query(statsQuery)
       const stats = statsResult.rows[0]
+      console.log('✅ Stats query completed')
 
       // Get recent discoveries by date
       const discoveriesQuery = `
@@ -41,6 +46,7 @@ export async function GET(request: NextRequest) {
       `
       const discoveriesResult = await client.query(discoveriesQuery)
       const discoveries = discoveriesResult.rows
+      console.log('✅ Discoveries query completed')
 
       // Get SMS notification history
       const smsQuery = `
@@ -57,6 +63,7 @@ export async function GET(request: NextRequest) {
       `
       const smsResult = await client.query(smsQuery)
       const smsHistory = smsResult.rows
+      console.log('✅ SMS query completed')
 
       // Get category distribution
       const categoryQuery = `
@@ -72,6 +79,7 @@ export async function GET(request: NextRequest) {
       `
       const categoryResult = await client.query(categoryQuery)
       const categoryStats = categoryResult.rows
+      console.log('✅ Category query completed')
 
       // Get price range distribution
       const priceQuery = `
@@ -86,18 +94,26 @@ export async function GET(request: NextRequest) {
           COUNT(*) as count,
           COUNT(CASE WHEN ai_score >= 4 THEN 1 END) as high_score_count
         FROM listings
-        GROUP BY price_range
+        GROUP BY 
+          CASE 
+            WHEN price < 500 THEN '0-500 kr'
+            WHEN price < 1000 THEN '500-1000 kr'
+            WHEN price < 2000 THEN '1000-2000 kr'
+            WHEN price < 5000 THEN '2000-5000 kr'
+            ELSE '5000+ kr'
+          END
         ORDER BY 
-          CASE price_range
-            WHEN '0-500 kr' THEN 1
-            WHEN '500-1000 kr' THEN 2
-            WHEN '1000-2000 kr' THEN 3
-            WHEN '2000-5000 kr' THEN 4
+          CASE 
+            WHEN price < 500 THEN 1
+            WHEN price < 1000 THEN 2
+            WHEN price < 2000 THEN 3
+            WHEN price < 5000 THEN 4
             ELSE 5
           END
       `
       const priceResult = await client.query(priceQuery)
       const priceStats = priceResult.rows
+      console.log('✅ Price query completed')
 
       console.log('📊 Logs and statistics fetched successfully')
 
@@ -120,10 +136,20 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('❌ Failed to fetch monitoring logs:', error)
 
+    // Log more details for debugging
+    if (error instanceof Error) {
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      })
+    }
+
     return NextResponse.json({
       success: false,
       error: 'Failed to fetch monitoring logs',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: error instanceof Error ? error.message : 'Unknown error',
+      timestamp: new Date().toISOString()
     }, { status: 500 })
   }
 }
