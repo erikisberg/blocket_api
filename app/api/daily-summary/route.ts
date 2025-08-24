@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       // Send SMS
       const smsResult = await smsService.sendSMS({
         to: '+46768363183',
-        from: process.env.FORTYSIXELK_SENDER || 'BlocketAlert',
+        from: process.env.FORTYSIXELK_SENDER || 'Blocket',
         message: smsMessage
       })
 

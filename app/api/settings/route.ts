@@ -139,7 +139,7 @@ export async function POST(request: NextRequest) {
       // Send test SMS
       const testMessage = {
         to: formattedPhone,
-        from: process.env.FORTYSIXELK_SENDER || 'BlocketAlert',
+        from: process.env.FORTYSIXELK_SENDER || 'Blocket',
         message: `🧪 TEST SMS från Blocket AI Monitor
 
 Detta är ett test-meddelande för att verifiera att SMS-tjänsten fungerar.

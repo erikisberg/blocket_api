@@ -18,7 +18,7 @@ export class SMSService {
 
   constructor() {
     this.apiKey = process.env.FORTYSIXELK_API_KEY || ''
-    this.sender = process.env.FORTYSIXELK_SENDER || 'BlocketAlert'
+    this.sender = process.env.FORTYSIXELK_SENDER || 'Blocket'
     this.baseUrl = 'https://api.46elk.com/v1'
   }
 
