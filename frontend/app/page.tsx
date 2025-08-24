@@ -65,6 +65,16 @@ interface Listing {
     recommendation: string
     analyzedAt: string
     model: string
+    profit_analysis?: {
+      estimated_repair_cost: string
+      estimated_repair_time: string
+      estimated_sale_price: string
+      estimated_profit: string
+      profit_margin_percent: string
+      risk_level: string
+      repair_items: string[]
+      market_comparison: string
+    }
   }
 }
 
