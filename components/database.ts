@@ -2,7 +2,7 @@ import { Pool } from 'pg'
 
 // Database connection pool
 const pool = new Pool({
-  connectionString: process.env.NEON_DATABASE_URL,
+      connectionString: process.env.POSTGRES_URL || process.env.NEON_DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
