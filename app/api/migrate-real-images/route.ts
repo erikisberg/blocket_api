@@ -37,7 +37,8 @@ export async function POST(request: NextRequest) {
       
       // Process each bevakning
       for (const [bevakningId, bevakningData] of Object.entries(jsonData)) {
-        const listings = bevakningData?.listings || []
+        // bevakningData is an array of listings, each with an "ad" object
+        const listings = Array.isArray(bevakningData) ? bevakningData : []
         
         console.log(`🔄 Processing bevakning ${bevakningId} with ${listings.length} listings`)
         
