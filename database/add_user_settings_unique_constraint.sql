@@ -2,11 +2,12 @@
 -- This is needed for ON CONFLICT to work properly
 
 -- First, remove any duplicate user_id entries if they exist
+-- Use a subquery to find the first occurrence of each user_id
 DELETE FROM user_settings 
 WHERE id NOT IN (
-  SELECT MIN(id) 
+  SELECT DISTINCT ON (user_id) id
   FROM user_settings 
-  GROUP BY user_id
+  ORDER BY user_id, created_at ASC
 );
 
 -- Add unique constraint

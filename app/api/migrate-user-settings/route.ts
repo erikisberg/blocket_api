@@ -18,9 +18,9 @@ export async function POST(request: NextRequest) {
       const deleteQuery = `
         DELETE FROM user_settings 
         WHERE id NOT IN (
-          SELECT MIN(id) 
+          SELECT DISTINCT ON (user_id) id
           FROM user_settings 
-          GROUP BY user_id
+          ORDER BY user_id, created_at ASC
         )
       `
       await client.query(deleteQuery)
