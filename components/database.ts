@@ -72,10 +72,19 @@ export class DatabaseService {
   static async createBevakning(bevakning: { bevakning_id: string; name: string; user_id: string; is_active?: boolean }): Promise<void> {
     const client = await pool.connect()
     try {
+      // First check if bevakning already exists
+      const checkQuery = `SELECT bevakning_id FROM bevakningar WHERE bevakning_id = $1`
+      const checkResult = await client.query(checkQuery, [bevakning.bevakning_id])
+      
+      if (checkResult.rows.length > 0) {
+        console.log(`ℹ️ Bevakning already exists: ${bevakning.bevakning_id}`)
+        return
+      }
+      
+      // Insert new bevakning
       const query = `
         INSERT INTO bevakningar (bevakning_id, name, user_id, is_active)
         VALUES ($1, $2, $3, $4)
-        ON CONFLICT (bevakning_id) DO NOTHING
       `
       
       const values = [
@@ -86,6 +95,7 @@ export class DatabaseService {
       ]
       
       await client.query(query, values)
+      console.log(`✅ Created bevakning: ${bevakning.bevakning_id}`)
     } finally {
       client.release()
     }
@@ -347,12 +357,21 @@ export class DatabaseService {
   static async createUserSettings(userId: string, settings: Partial<UserSettings>): Promise<void> {
     const client = await pool.connect()
     try {
+      // First check if user settings already exist
+      const checkQuery = `SELECT id FROM user_settings WHERE user_id = $1`
+      const checkResult = await client.query(checkQuery, [userId])
+      
+      if (checkResult.rows.length > 0) {
+        console.log(`ℹ️ User settings already exist for user: ${userId}`)
+        return
+      }
+      
+      // Insert new user settings
       const query = `
         INSERT INTO user_settings (
           user_id, phone_number, sms_enabled, min_score_threshold, 
           notification_frequency, max_sms_per_day, category_filters
         ) VALUES ($1, $2, $3, $4, $5, $6, $7)
-        ON CONFLICT (user_id) DO NOTHING
       `
       
       const values = [
@@ -366,6 +385,7 @@ export class DatabaseService {
       ]
       
       await client.query(query, values)
+      console.log(`✅ Created user settings for user: ${userId}`)
     } finally {
       client.release()
     }
