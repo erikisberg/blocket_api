@@ -146,6 +146,34 @@ export default function Home() {
     setCurrentIndex(0)
   }
 
+  const updateAllImages = async () => {
+    try {
+      console.log('🖼️ Starting batch image update...')
+      
+      const response = await fetch('/api/update-all-images', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ forceUpdate: false })
+      })
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      
+      const result = await response.json()
+      console.log('✅ Batch image update completed:', result)
+      
+      // Reload listings to show updated images
+      window.location.reload()
+      
+    } catch (error) {
+      console.error('❌ Failed to update images:', error)
+      alert('Kunde inte uppdatera bilder. Se konsolen för detaljer.')
+    }
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -292,6 +320,17 @@ export default function Home() {
               className="text-xs"
             >
               Återställ filter
+            </Button>
+
+            {/* Update Images Button */}
+            <Button
+              onClick={updateAllImages}
+              variant="outline"
+              size="sm"
+              className="text-xs"
+              className="bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100"
+            >
+              🖼️ Uppdatera alla bilder
             </Button>
           </div>
         </div>

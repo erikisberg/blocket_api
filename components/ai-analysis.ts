@@ -237,8 +237,17 @@ export async function analyzeListing(listing: ListingForAnalysis, listingId?: st
     if (listing.images && listing.images.length > 0) {
       for (const image of listing.images) {
         try {
+          let imageUrl = image.url
+          
+          // Skip placeholder images
+          if (imageUrl.startsWith('data:image/svg+xml;base64') || 
+              imageUrl.includes('via.placeholder.com')) {
+            console.log(`⏭️ Skipping placeholder image for AI analysis`)
+            continue
+          }
+          
           // Get original quality image from Blocket
-          const originalImageUrl = getOriginalQualityImageUrl(image.url)
+          const originalImageUrl = getOriginalQualityImageUrl(imageUrl)
           
           // Fetch original quality image
           const imageResponse = await fetch(originalImageUrl)
