@@ -327,8 +327,7 @@ export default function Home() {
               onClick={updateAllImages}
               variant="outline"
               size="sm"
-              className="text-xs"
-              className="bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100"
+              className="text-xs bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100"
             >
               🖼️ Uppdatera alla bilder
             </Button>
