@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import { Grid3X3, List } from 'lucide-react'
+import { Grid3X3, List, BarChart3 } from 'lucide-react'
 
 interface ViewToggleProps {
   currentView: 'cards' | 'list'
@@ -30,6 +30,18 @@ export function ViewToggle({ currentView, onViewChange }: ViewToggleProps) {
       >
         <List className="h-4 w-4" />
         Lista
+      </Button>
+      
+      <Button
+        variant="ghost"
+        size="sm"
+        asChild
+        className="flex items-center gap-2"
+      >
+        <a href="/logs">
+          <BarChart3 className="h-4 w-4" />
+          Loggar
+        </a>
       </Button>
     </div>
   )
