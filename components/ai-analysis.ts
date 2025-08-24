@@ -78,6 +78,7 @@ export async function saveAnalysisResults(bevakningId: string, listingId: string
     
     // Try to save directly to database first (for backend usage)
     try {
+      console.log(`🔍 Attempting direct database save for listingId: ${listingId}`)
       const { DatabaseService } = await import('./database')
       await DatabaseService.updateAIAnalysis(listingId, {
         score: result.score,
@@ -91,6 +92,11 @@ export async function saveAnalysisResults(bevakningId: string, listingId: string
       return
     } catch (dbError) {
       console.warn('⚠️ Direct database save failed, trying API fallback:', dbError)
+      console.warn('⚠️ Error details:', {
+        listingId,
+        error: dbError instanceof Error ? dbError.message : dbError,
+        stack: dbError instanceof Error ? dbError.stack : undefined
+      })
     }
     
     // Fallback to API call (for frontend usage)

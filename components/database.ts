@@ -221,7 +221,14 @@ export class DatabaseService {
         adId
       ]
       
-      await client.query(query, values)
+      const result = await client.query(query, values)
+      
+      if (result.rowCount === 0) {
+        console.warn(`⚠️ No listing found with ad_id: ${adId}`)
+        throw new Error(`No listing found with ad_id: ${adId}`)
+      }
+      
+      console.log(`✅ AI analysis updated for listing with ad_id: ${adId}`)
     } finally {
       client.release()
     }
