@@ -146,7 +146,7 @@ export function ListingCard({ listing }: ListingCardProps) {
               currency: listing.currency,
               category: getCategoryName(),
               condition: listing.condition || 'Okänt',
-              images: [],
+              images: listing.images || [], // Skicka med riktiga bilder!
               location: getLocationName(),
               sellerType: listing.seller_type || 'Okänd'
             }}
@@ -160,7 +160,8 @@ export function ListingCard({ listing }: ListingCardProps) {
               recommendation: listing.ai_recommendation || '',
               analyzedAt: listing.ai_analyzed_at ? 
                 (typeof listing.ai_analyzed_at === 'string' ? listing.ai_analyzed_at : listing.ai_analyzed_at.toISOString()) : '',
-              model: listing.ai_model || ''
+              model: listing.ai_model || '',
+              profit_analysis: listing.profit_analysis || undefined
             } : undefined}
           />
         </div>
