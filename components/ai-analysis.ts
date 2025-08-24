@@ -71,6 +71,47 @@ export interface ListingForAnalysis {
   sellerType: string
 }
 
+// Function to save actual images to the database
+export async function saveActualImages(listingId: string, images: Array<{ url: string; description?: string }>): Promise<void> {
+  try {
+    console.log(`💾 Saving actual images for listing ${listingId}`)
+    
+    // Try to save directly to database first (for backend usage)
+    try {
+      const { DatabaseService } = await import('./database')
+      await DatabaseService.updateListingImages(listingId, images)
+      console.log(`✅ Actual images saved directly to database for listing ${listingId}`)
+      return
+    } catch (dbError) {
+      console.warn('⚠️ Direct database save failed, trying API fallback:', dbError)
+    }
+    
+    // Fallback to API call (for frontend usage)
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    const response = await fetch(`${baseUrl}/api/update-images`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        listingId,
+        images
+      }),
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(`Failed to save images: ${errorData.error || response.statusText}`)
+    }
+
+    const saveResult = await response.json()
+    console.log(`✅ Actual images saved via API fallback:`, saveResult.message)
+  } catch (error) {
+    console.error('❌ Failed to save actual images:', error)
+    throw error
+  }
+}
+
 // Function to save AI analysis results to the database
 export async function saveAnalysisResults(bevakningId: string, listingId: string, result: AIAnalysisResult): Promise<void> {
   try {
@@ -249,6 +290,16 @@ export async function analyzeListing(listing: ListingForAnalysis, listingId?: st
       try {
         await saveAnalysisResults(bevakningId, listingId, analysis)
         console.log(`✅ Analysis completed and saved for listing ${listingId}`)
+        
+        // Also save the actual images if we have them
+        if (listing.images && listing.images.length > 0) {
+          try {
+            await saveActualImages(listingId, listing.images)
+            console.log(`🖼️ Actual images saved for listing ${listingId}`)
+          } catch (imageSaveError) {
+            console.warn(`⚠️ Failed to save actual images for listing ${listingId}:`, imageSaveError)
+          }
+        }
       } catch (saveError) {
         console.error(`❌ Failed to save analysis for listing ${listingId}:`, saveError)
         // Continue with analysis even if save fails
