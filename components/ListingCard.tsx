@@ -144,7 +144,8 @@ export function ListingCard({ listing }: ListingCardProps) {
               confidence: listing.ai_confidence || 0,
               factors: listing.ai_factors || [],
               recommendation: listing.ai_recommendation || '',
-              analyzedAt: listing.ai_analyzed_at?.toISOString() || '',
+              analyzedAt: listing.ai_analyzed_at ? 
+                (typeof listing.ai_analyzed_at === 'string' ? listing.ai_analyzed_at : listing.ai_analyzed_at.toISOString()) : '',
               model: listing.ai_model || ''
             } : undefined}
           />
