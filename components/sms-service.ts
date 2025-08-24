@@ -19,7 +19,7 @@ export class SMSService {
   constructor() {
     this.apiKey = process.env.FORTYSIXELK_API_KEY || ''
     this.sender = process.env.FORTYSIXELK_SENDER || 'Blocket'
-    this.baseUrl = 'https://api.46elk.com/v1'
+    this.baseUrl = 'https://api.46elk.com'
   }
 
   // Send SMS via 46elk
@@ -54,9 +54,30 @@ export class SMSService {
       }
     } catch (error) {
       console.error('SMS sending failed:', error)
+      
+      // Handle specific network errors
+      if (error instanceof Error) {
+        if (error.message.includes('ENOTFOUND') || error.message.includes('getaddrinfo')) {
+          return {
+            success: false,
+            error: 'SMS API endpoint not reachable. Please check the API URL configuration.'
+          }
+        }
+        if (error.message.includes('fetch failed')) {
+          return {
+            success: false,
+            error: 'Network error when connecting to SMS API. Please check your internet connection and API configuration.'
+          }
+        }
+        return {
+          success: false,
+          error: error.message
+        }
+      }
+      
       return {
         success: false,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: 'Unknown error occurred while sending SMS'
       }
     }
   }
