@@ -76,9 +76,8 @@ export async function saveAnalysisResults(bevakningId: string, listingId: string
   try {
     console.log(`💾 Saving AI analysis for listing ${listingId} in bevakning ${bevakningId}`)
     
-    // Always use API call for frontend components
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
-    const response = await fetch(`${baseUrl}/api/save-analysis`, {
+    // Use relative URL for API calls (works in both development and production)
+    const response = await fetch('/api/save-analysis', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
