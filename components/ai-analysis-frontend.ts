@@ -80,7 +80,7 @@ export function getCachedAnalysis(listing: any): AIAnalysisResult | null {
       recommendation: listing.ai_recommendation || '',
       analyzedAt: listing.ai_analyzed_at || new Date().toISOString(),
       model: listing.ai_model || 'claude-opus-4-1-20250805',
-      profit_analysis: undefined // Will be added later if needed
+      profit_analysis: listing.profit_analysis || undefined
     }
   }
   
