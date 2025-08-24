@@ -71,29 +71,12 @@ export interface ListingForAnalysis {
   sellerType: string
 }
 
-// Function to save AI analysis results to the database
+// Function to save AI analysis results to the database via API
 export async function saveAnalysisResults(bevakningId: string, listingId: string, result: AIAnalysisResult): Promise<void> {
   try {
     console.log(`💾 Saving AI analysis for listing ${listingId} in bevakning ${bevakningId}`)
     
-    // Try to save directly to database first
-    try {
-      const { DatabaseService } = await import('./database')
-      await DatabaseService.updateAIAnalysis(listingId, {
-        score: result.score,
-        confidence: result.confidence,
-        reasoning: result.reasoning,
-        factors: result.factors,
-        recommendation: result.recommendation,
-        model: result.model || 'claude-opus-4-1-20250805'
-      })
-      console.log(`✅ AI analysis saved directly to database for listing ${listingId}`)
-      return
-    } catch (dbError) {
-      console.warn('⚠️ Direct database save failed, trying API fallback:', dbError)
-    }
-    
-    // Fallback to API call
+    // Always use API call for frontend components
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
     const response = await fetch(`${baseUrl}/api/save-analysis`, {
       method: 'POST',
@@ -113,7 +96,7 @@ export async function saveAnalysisResults(bevakningId: string, listingId: string
     }
 
     const saveResult = await response.json()
-    console.log(`✅ AI analysis saved via API fallback:`, saveResult.message)
+    console.log(`✅ AI analysis saved successfully:`, saveResult.message)
   } catch (error) {
     console.error('❌ Failed to save analysis results:', error)
     throw error // Re-throw so calling function knows it failed
