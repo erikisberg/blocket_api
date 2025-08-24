@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
     const listingsData = JSON.parse(fs.readFileSync(listingsPath, 'utf8'))
     const state = JSON.parse(fs.readFileSync(statePath, 'utf8'))
     
-    // Extract listings from the nested structure
-    const listings = Object.values(listingsData).flat()
+    // Extract listings from the nested structure and add type assertion
+    const listings = Object.values(listingsData).flat() as any[]
     
     console.log(`📊 Found ${listings.length} listings and ${Object.keys(state).length} bevakningar`)
     
