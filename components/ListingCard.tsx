@@ -21,6 +21,11 @@ interface Listing {
   seller_type?: string
   blocket_url?: string
   frontend_url?: string
+  images?: Array<{
+    url: string
+    description?: string
+    thumbnail_url?: string
+  }>
   discovered_at: string | Date
   ai_score?: number
   ai_confidence?: number
