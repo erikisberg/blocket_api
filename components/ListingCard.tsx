@@ -38,7 +38,8 @@ interface ListingCardProps {
 }
 
 export function ListingCard({ listing }: ListingCardProps) {
-  const formatDate = (date: Date) => {
+  const formatDate = (dateString: string | Date) => {
+    const date = typeof dateString === 'string' ? new Date(dateString) : dateString
     return date.toLocaleDateString('sv-SE', {
       year: 'numeric',
       month: 'long',

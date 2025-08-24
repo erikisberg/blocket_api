@@ -9,6 +9,7 @@ import { BatchAnalysis } from '@/components/BatchAnalysis'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChevronLeft, ChevronRight, Search, Filter, Bike, Brain } from 'lucide-react'
+import { formatPrice, formatDate } from '../components/utils'
 
 interface Listing {
   id: string
@@ -24,16 +25,16 @@ interface Listing {
   seller_type?: string
   blocket_url?: string
   frontend_url?: string
-  discovered_at: Date
+  discovered_at: string | Date
   ai_score?: number
   ai_confidence?: number
   ai_reasoning?: string
   ai_factors?: string[]
   ai_recommendation?: string
-  ai_analyzed_at?: Date
+  ai_analyzed_at?: string | Date
   ai_model?: string
-  created_at: Date
-  updated_at: Date
+  created_at: string | Date
+  updated_at: string | Date
 }
 
 interface ListingsData {
@@ -385,14 +386,14 @@ export default function Home() {
                     {/* Discovery Date */}
                     <p className="flex items-center gap-1">
                       <span>🔍</span>
-                      Upptäckt: {new Date(listing.discovered_at).toLocaleDateString('sv-SE')}
+                      Upptäckt: {formatDate(listing.discovered_at)}
                     </p>
                     
                     {/* AI Analysis Date */}
                     {listing.ai_analyzed_at && (
                       <p className="flex items-center gap-1">
                         <span>🤖</span>
-                        Analyserad: {new Date(listing.ai_analyzed_at).toLocaleDateString('sv-SE')}
+                        Analyserad: {formatDate(listing.ai_analyzed_at)}
                       </p>
                     )}
                   </div>
