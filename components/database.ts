@@ -194,6 +194,7 @@ export class DatabaseService {
     factors: string[]
     recommendation: string
     model: string
+    profit_analysis?: any
   }): Promise<void> {
     const client = await pool.connect()
     try {
@@ -206,9 +207,10 @@ export class DatabaseService {
           ai_factors = $4,
           ai_recommendation = $5,
           ai_model = $6,
+          profit_analysis = $7,
           ai_analyzed_at = NOW(),
           updated_at = NOW()
-        WHERE ad_id = $7
+        WHERE ad_id = $8
       `
       
       const values = [
@@ -218,6 +220,7 @@ export class DatabaseService {
         aiData.factors,
         aiData.recommendation,
         aiData.model,
+        aiData.profit_analysis ? JSON.stringify(aiData.profit_analysis) : null,
         adId
       ]
       

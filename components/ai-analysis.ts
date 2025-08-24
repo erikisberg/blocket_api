@@ -127,7 +127,8 @@ export async function saveAnalysisResults(bevakningId: string, listingId: string
         reasoning: result.reasoning,
         factors: result.factors,
         recommendation: result.recommendation,
-        model: result.model || 'claude-opus-4-1-20250805'
+        model: result.model || 'claude-opus-4-1-20250805',
+        profit_analysis: result.profit_analysis
       })
       console.log(`✅ AI analysis saved directly to database for listing ${listingId}`)
       return
